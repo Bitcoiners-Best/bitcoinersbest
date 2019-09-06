@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  php:
+    container_name: bitcoinersbest-php
+    image: yiisoftware/yii2-php:7.3-apache
+    volumes:
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      - ./:/app:delegated
+    ports:
+      - 9111:80
+    networks:
+      public_net:
+        ipv4_address: 192.168.21.11
+  db:
+    container_name: bitcoinersbest-db
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: bitcoinersbest_db
+    ports:
+      - 21222:3306
+    #   volumes:
+    #     - ./data/db:/var/lib/mysql
+    networks:
+      public_net:
+        ipv4_address: 192.168.21.22
+
+networks:
+  public_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.21.0/24
