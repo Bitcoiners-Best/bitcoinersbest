@@ -2,6 +2,7 @@
 
 if [ $1 == "build" ]
 then
+    cp .env-example .env
     docker-compose run --rm php composer update --prefer-dist
     docker-compose run --rm php composer install
 
@@ -11,6 +12,8 @@ then
     sleep 10
 
     docker exec bitcoinersbest-php php yii migrate --interactive=0
+
+
 fi
 
 if [ $1 == "start" ]
