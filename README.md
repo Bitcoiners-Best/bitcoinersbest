@@ -46,7 +46,7 @@ Add the following line to your `/etc/hosts` file
     
 You can then access the application through the following URL:
 
-    http://bitcoinersbest.local:8111
+    http://bitcoinersbest.local:9111
    
 ### Starting / Stopping / Destroying Docker containers
     $ bash docker.sh start # Start docker container
