@@ -64,7 +64,7 @@ You can then access the application through the following URL:
 
 Database migrations should be run often to pull in database changes from other devs.
       
-      $ docker exec -it bitcoinersbest-php
+      $ docker exec -it bitcoinersbest-php bash
       $ php yii migrate
     
 **NOTES:** 
