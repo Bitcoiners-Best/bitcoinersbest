@@ -3,21 +3,21 @@
 DIRECTORY STRUCTURE
 -------------------
 
-      src/assets/             contains assets definition
-      src/commands/           contains console commands (controllers)
-      src/components/         contains wrappers for 3rd party plugins, plus some helpers
-      src/config/             contains application configurations
-      src/controllers/        contains Web controller classes
-      src/environments/       contains environment files (this is almost deprecated in favor of .env file)
-      src/mail/               contains view files for e-mails
-      src/migrations/         contains database migration files
-      src/models/             contains model classes
-      src/runtime/            contains files generated during runtime
+      assets/             contains assets definition
+      commands/           contains console commands (controllers)
+      components/         contains wrappers for 3rd party plugins, plus some helpers
+      config/             contains application configurations
+      controllers/        contains Web controller classes
+      environments/       contains environment files (this is almost deprecated in favor of .env file)
+      mail/               contains view files for e-mails
+      migrations/         contains database migration files
+      models/             contains model classes
+      runtime/            contains files generated during runtime
       tests/                  contains various tests for the basic application
       vendor/                 contains dependent 3rd-party packages
-      src/views/              contains view files for the Web application
-      src/web/                contains the entry script and Web resources
-      src/widgets/            contains one widget Alert.php not sure why Yii has it like this
+      views/              contains view files for the Web application
+      web/                contains the entry script and Web resources
+      widgets/            contains one widget Alert.php not sure why Yii has it like this
 
 
 
@@ -64,7 +64,7 @@ You can then access the application through the following URL:
 
 Database migrations should be run often to pull in database changes from other devs.
       
-      $ docker exec -it bitcoinersbest-php
+      $ docker exec -it bitcoinersbest-php bash
       $ php yii migrate
     
 **NOTES:** 
