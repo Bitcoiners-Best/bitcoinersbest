@@ -10,9 +10,6 @@ use yii\web\View;
 
 ?>
 
-<div class="signin-header signup-header">
-    <div>Sign up</div>
-</div>
 <section class="login" id="signup-form-view">
     <br/>
     <div class="pricing-inner text-left">
