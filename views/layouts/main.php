@@ -18,7 +18,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -26,23 +26,41 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+
+<div class="modal-full overlay-effect" id="overlay-modal">
+    <div class="overlay-content bg-white br-4 text-center">
+        <button class="close-modal">Close</button>
+        <h3 class="">Upvote {title}</h3>
+        <h4 class=""><span class="c-">{#}</span> sats</h4>
+        <p class="c-gray-1">All proceeds will be donated to an open-source bitcoin/lightning project</p>
+        <img src="http://lorempixel.com/200/200" class="ew-200 card-img mb-30" alt="...">
+        <a class="btn btn btn-lg btn-block mb-20" href="#" role="button">Copy Payment Request</a>
+        <p class="mb-0 c-gray-1">Powered by <a href="">paywall.link</a></p>
+    </div>
+</div>
+<div class="overlay-module"></div>
+
+
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Bitcoiners Best',
+        'renderInnerContainer' => true,
+        'innerContainerOptions' => [
+            'class' => 'container'
+        ],
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => '',
+            'class' => 'navbar navbar-expand-lg fixed-top navbar-light bg-white d-flex',
         ],
     ]);
     $menuItems = [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'About', 'url' => ['/site/about'], 'options' => ['class' => 'nav-item align-self-center']],
+            ['label' => 'Contact', 'url' => ['/site/contact'], 'options' => ['class' => 'nav-item align-self-center']],
             Yii::$app->user->isGuest ? (
-            ['label' => 'Login', 'url' => ['/site/login']]
+            ['label' => 'Login', 'url' => ['/site/login'], 'options' => ['class' => 'nav-item align-self-center']]
             ) : (
-                '<li>'
+                '<li class="align-self-center">'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
                     'Logout (' . Yii::$app->user->identity->username . ')',
@@ -50,35 +68,139 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            ),
+            ['label' => 'Join', 'url' => ['/site/signup'], 'options' => ['class' => 'nav-item align-self-center']],
+            (
+              '<li class="nav-item align-self-center"><button class="overlay-trigger btn" data-modal="overlay-modal">⚡ Vote 10</button></li>'
+            ),
+
     ];
 
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-    }
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-right flex-grow-1 justify-content-end'],
         'items' => $menuItems
     ]);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <div class="container mt-90">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
+
 </div>
 
-<footer class="footer">
+<footer class="footer bg-black mt-50 pt-20 pt-20">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+      <div class="d-flex">
+        <p class="c-white">&copy; Bitcoiner's Best <?= date('Y') ?></p>
+        <!-- <div class="pl-20 pr-20"><a href="">Terms</a></div>
+        <div class="pl-20 pr-20"><a href="">Privacy</a></div> -->
+        <div class="ml-auto"><a href="">@bitcoinersbest</a></div>
+      </div>
     </div>
 </footer>
+
+
+
+
+
+<script>
+( function( window ) {
+
+'use strict';
+
+function classReg( className ) {
+ return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+}
+
+var hasClass, addClass, removeClass;
+
+if ( 'classList' in document.documentElement ) {
+ hasClass = function( elem, c ) {
+   return elem.classList.contains( c );
+ };
+ addClass = function( elem, c ) {
+   elem.classList.add( c );
+ };
+ removeClass = function( elem, c ) {
+   elem.classList.remove( c );
+ };
+}
+else {
+ hasClass = function( elem, c ) {
+   return classReg( c ).test( elem.className );
+ };
+ addClass = function( elem, c ) {
+   if ( !hasClass( elem, c ) ) {
+     elem.className = elem.className + ' ' + c;
+   }
+ };
+ removeClass = function( elem, c ) {
+   elem.className = elem.className.replace( classReg( c ), ' ' );
+ };
+}
+
+function toggleClass( elem, c ) {
+ var fn = hasClass( elem, c ) ? removeClass : addClass;
+ fn( elem, c );
+}
+
+var classie = {
+ // full names
+ hasClass: hasClass,
+ addClass: addClass,
+ removeClass: removeClass,
+ toggleClass: toggleClass,
+ has: hasClass,
+ add: addClass,
+ remove: removeClass,
+ toggle: toggleClass
+};
+
+// transport
+if ( typeof define === 'function' && define.amd ) {
+ define( classie );
+} else {
+ window.classie = classie;
+}
+})( window );
+
+
+var ModalEffects = (function() {
+ function init() {
+   var overlay = document.querySelector( '.overlay-module' );
+   [].slice.call( document.querySelectorAll( '.overlay-trigger' ) ).forEach( function( el, i ) {
+     var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
+       close = modal.querySelector( '.close-modal' );
+
+     function removeModal( hasPerspective ) {
+       classie.remove( modal, 'modal-show' );
+     }
+
+     function removeModalHandler() {
+       removeModal( classie.has( el, 'md-setperspective' ) );
+     }
+
+     el.addEventListener( 'click', function( ev ) {
+       classie.add( modal, 'modal-show' );
+       overlay.removeEventListener( 'click', removeModalHandler );
+       overlay.addEventListener( 'click', removeModalHandler );
+
+     });
+     close.addEventListener( 'click', function( ev ) {
+       ev.stopPropagation();
+       removeModalHandler();
+     });
+   } );
+ }
+ init();
+})();
+
+</script>
 
 <?php $this->endBody() ?>
 </body>
