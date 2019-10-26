@@ -31,5 +31,5 @@ use yii\web\View;
 </section>
 
 <div class="signin-footer signup-footer">
-    <div>Already signed up? <?=Html::a('Log in',['/home/login'],['id'=>'signup-goto-login']);?></div>
+    <div>Already signed up? <?=Html::a('Log in',['/site/login'],['id'=>'signup-goto-login']);?></div>
 </div>
