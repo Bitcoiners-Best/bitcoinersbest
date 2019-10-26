@@ -36,6 +36,6 @@ $this->title = 'Login';
         </div>
 
     <?php ActiveForm::end(); ?>
-    <p>You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.</p>
+    <p>You may login with <strong>bandit/123456</strong></p>
 
 </div>
