@@ -25,11 +25,7 @@ use yii\web\View;
         <?= $form->field($model, 'password')->passwordInput() ?>
 
         <div class="form-group">
-            <?= Html::submitButton('Sign up', ['class' => 'btn btn-primary login-btn', 'name' => 'signup-button']) ?>
+            <?= Html::submitButton('Sign up', ['class' => 'btn login-btn', 'name' => 'signup-button']) ?>
         </div>
         <?php ActiveForm::end(); ?>
 </section>
-
-<div class="signin-footer signup-footer">
-    <div>Already signed up? <?=Html::a('Log in',['/home/login'],['id'=>'signup-goto-login']);?></div>
-</div>
