@@ -56,7 +56,6 @@ AppAsset::register($this);
     ]);
     $menuItems = [
             ['label' => 'About', 'url' => ['/site/about'], 'options' => ['class' => 'nav-item align-self-center']],
-            ['label' => 'Contact', 'url' => ['/site/contact'], 'options' => ['class' => 'nav-item align-self-center']],
             Yii::$app->user->isGuest ? (
             ['label' => 'Login', 'url' => ['/site/login'], 'options' => ['class' => 'nav-item align-self-center']]
             ) : (
@@ -84,6 +83,9 @@ AppAsset::register($this);
     ?>
 
     <div class="container mt-90">
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
