@@ -125,7 +125,7 @@ a:active  {
   font-weight: 600;
 }
 .bold {
-  font-weight: 700;  
+  font-weight: 700;
 }
 
 /* NAVIGATION */
@@ -162,6 +162,13 @@ a:active  {
     border-radius: 0.25rem;
 }
 
+.nav-item {
+    margin-right: 30px;
+}
+
+.nav-item:last-child {
+    margin-right: 0px;
+}
 
 /* MODULES */
 
