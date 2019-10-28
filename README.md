@@ -35,6 +35,7 @@ INSTALLATION
 Fork repo and then clone
 
     $ git clone https://github.com/<your-user>/bitcoinersbest
+    $ git remote add upstream https://github.com/paywall-ln/bitcoinersbest
 
 Run the build script
 
@@ -64,8 +65,7 @@ You can then access the application through the following URL:
 
 Database migrations should be run often to pull in database changes from other devs.
       
-      $ docker exec -it bitcoinersbest-php bash
-      $ php yii migrate
+      $ docker exec -t bitcoinersbest-php php yii migrate --interactive=0
     
 **NOTES:** 
 - Minimum required Docker engine version `17.04` for development (see [Performance tuning for volume mounts](https://docs.docker.com/docker-for-mac/osxfs-caching/))
