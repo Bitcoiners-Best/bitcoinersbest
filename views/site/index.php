@@ -92,12 +92,9 @@ $this->title = 'Home';
           <img src="http://lorempixel.com/100/100" class="ew-100 card-img br-full" alt="...">
       </div>
       <div class="flex-grow-1 align-self-center">
-          <p><strong>username</strong> @username - <span class="time">17m</span></p>
-          <p>MacBook Air Refresh With Spec Bumps Said To Be Coming Tomorrow</p>
-          <p><a href="">Linked element</a> by <a href="">@username</a></p>
-          <div class="summary">
-              <p><a href="/summary"><i class="fa fa-file-o"></i> View summary</a></p>
-          </div>
+          <h6><strong>username</strong> @username - <span class="time">17m</span></h6>
+          <h5 class="c-gray-1 regular">MacBook Air Refresh With Spec Bumps Said To Be Coming Tomorrow</h5>
+          <h5 class="c-gray-1 regular"><a class="link" href="">Linked element</a> by <a class="link" href="">@username</a></h5>
       </div>
       <div class="align-self-top pl-20">
           <div class="votes text-center">

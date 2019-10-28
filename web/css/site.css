@@ -318,11 +318,6 @@ footer {
   -webkit-appearance: none;
 }
 
-.btn:hover {
-    text-decoration: none;
-    background-color: #FFC42B;
-}
-
 .btn-rect-lg {
   padding: 16px 60px;
 }
@@ -333,6 +328,16 @@ footer {
 
 .btn-rect-sm {
   padding: 16px 20px;
+}
+
+.btn-outline {
+  border: 1px solid #FFCF53;
+}
+
+
+.btn:hover {
+    text-decoration: none;
+    background-color: #FFC42B;
 }
 
 .icon-wrap {

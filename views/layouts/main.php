@@ -29,7 +29,6 @@ AppAsset::register($this);
 
 <div class="modal-full overlay-effect" id="overlay-modal">
     <div class="overlay-content bg-white br-4 text-center">
-
       <button class="close-modal btn br-circle icon-wrap">
         <span class="icon a a-link close rounded"></span>
       </button>
@@ -42,7 +41,6 @@ AppAsset::register($this);
     </div>
 </div>
 <div class="overlay-module"></div>
-
 
 <div class="wrap">
     <?php
@@ -71,7 +69,7 @@ AppAsset::register($this);
                 . Html::endForm()
                 . '</li>'
             ),
-            ['label' => 'Join', 'url' => ['/site/signup'], 'options' => ['class' => 'nav-item align-self-center']],
+            ['label' => 'Join', 'url' => ['/site/signup'], 'options' => ['class' => 'nav-item align-self-center btn-outline']],
             (
               '<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md" data-modal="overlay-modal">⚡ Vote 10</button></li>'
             ),
