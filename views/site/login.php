@@ -16,6 +16,9 @@ $this->title = 'Login';
   </div>
 </div>
 
+<button class="btn btn-rect-xl twitter c-white mt-50 mb-50">Login with Twitter</button>
+
+
 <?php $form = ActiveForm::begin([
     'id' => 'login-form',
     'layout' => 'horizontal',
