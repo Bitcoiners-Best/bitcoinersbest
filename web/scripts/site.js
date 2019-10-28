@@ -1,4 +1,3 @@
-
 ( function( window ) {
 
 'use strict';
@@ -45,7 +44,6 @@ var classie = {
  addClass: addClass,
  removeClass: removeClass,
  toggleClass: toggleClass,
- // short names
  has: hasClass,
  add: addClass,
  remove: removeClass,
@@ -54,13 +52,10 @@ var classie = {
 
 // transport
 if ( typeof define === 'function' && define.amd ) {
- // AMD
  define( classie );
 } else {
- // browser global
  window.classie = classie;
 }
-
 })( window );
 
 
@@ -72,7 +67,7 @@ var ModalEffects = (function() {
        close = modal.querySelector( '.close-modal' );
 
      function removeModal( hasPerspective ) {
-       classie.remove( modal, 'md-show' );
+       classie.remove( modal, 'modal-show' );
      }
 
      function removeModalHandler() {
@@ -80,21 +75,16 @@ var ModalEffects = (function() {
      }
 
      el.addEventListener( 'click', function( ev ) {
-       classie.add( modal, 'md-show' );
+       classie.add( modal, 'modal-show' );
        overlay.removeEventListener( 'click', removeModalHandler );
        overlay.addEventListener( 'click', removeModalHandler );
 
      });
-
      close.addEventListener( 'click', function( ev ) {
        ev.stopPropagation();
        removeModalHandler();
      });
-
    } );
-
  }
-
  init();
-
 })();
