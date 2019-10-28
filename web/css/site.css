@@ -49,6 +49,7 @@ body {
   min-height: 100%;
   padding-top: 90px;
 }
+
 .content {
   padding-top: 90px;
 }
@@ -114,20 +115,16 @@ a:visited {
   /* color: #ffa62d; */
 }
 
-a:hover {
-  cursor: pointer;
-}
-a:active  {
-
-}
-
 .link {
   color: #FFCF53;
   text-decoration: none;
 }
 .link:hover {
-  color: #FFF;
+  color: #FFC42B;
   text-decoration: none;
+}
+.link:active {
+  color: #FFC42B;
 }
 
 .text-uppercase {
@@ -304,7 +301,7 @@ footer {
 
 .btn {
   display: inline-block;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -316,6 +313,10 @@ footer {
   border: none;
   cursor: pointer;
   -webkit-appearance: none;
+}
+
+.btn-rect-xl {
+  padding: 16px 120px;
 }
 
 .btn-rect-lg {
@@ -400,6 +401,14 @@ footer {
     transform: rotate(90deg);
 }
 
+.twitter {
+  color: #ffffff;
+  background-color: #00ACED;
+}
+.twitter:hover {
+  color: #ffffff;
+  background-color: #009DD9;
+}
 
 /* FORMS */
 
@@ -1047,6 +1056,7 @@ label {
     width: 90vw;
   }
 
+
 }
 
 
@@ -1054,28 +1064,6 @@ label {
 
 
 /* LEGACY */
-
-
-/* add sorting icons to gridview sort links */
-a.asc:after, a.desc:after {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 5px;
-}
-
-a.asc:after {
-    content: /*"\e113"*/ "\e151";
-}
-
-a.desc:after {
-    content: /*"\e114"*/ "\e152";
-}
-
 
 .hint-block {
     display: block;
