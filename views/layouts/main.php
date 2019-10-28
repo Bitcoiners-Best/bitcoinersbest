@@ -70,9 +70,8 @@ AppAsset::register($this);
             ),
             ['label' => 'Join', 'url' => ['/site/signup'], 'options' => ['class' => 'nav-item align-self-center']],
             (
-              '<li class="nav-item align-self-center"><button class="overlay-trigger btn" data-modal="overlay-modal">⚡ Vote 10</button></li>'
+              '<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md" data-modal="overlay-modal">⚡ Vote 10</button></li>'
             ),
-
     ];
 
     echo Nav::widget([
@@ -82,24 +81,22 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="content">
-        <div class="container">
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
-            <?= Alert::widget() ?>
-            <?= $content ?>
-        </div>
+    <div class="container">
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?= Alert::widget() ?>
+        <?= $content ?>
     </div>
 </div>
 
 <footer class="footer bg-black">
     <div class="container">
-      <div class="d-flex pt-20 pb-20">
-          <div class="flex-grow-1 flex-row ">
-            <p class="c-white">&copy; Bitcoiner's Best <?= date('Y') ?><a class="ml-20" href="">Terms</a><a class="ml-20" href="">Privacy</a></p>
+      <div class="d-flex">
+          <div class="flex-grow-1 flex-row">
+            <h6 class="c-white">&copy; Bitcoiner's Best <?= date('Y') ?><a class="link ml-20" href="">Terms</a><a class="link ml-20" href="">Privacy</a></h6>
           </div>
-          <p class="c-white m-0"><a href="">@bitcoinersbest</a></p>
+          <h6 class="c-white m-0"><a class="link" href="">@bitcoinersbest</a></h6>
       </div>
     </div>
 </footer>
