@@ -420,6 +420,11 @@ label {
 
 /* COLORS */
 
+
+.c-black {
+  color: #121212;
+}
+
 .c-white {
   color: #ffffff;
 }

@@ -5,25 +5,12 @@
 $this->title = 'Home';
 ?>
 
-
-<!-- <button id="close--nav" class="icon-wrap js-btn -btn">
-  <span class="icon icon--svg a a-link close rounded"></span>
-</button>
-
-<button class="btn br-circle icon-wrap">
-  <span class="icon a a-link close rounded"></span>
-</button>
-
-<button id="plus--nav" class="icon-wrap js-btn -btn">
-  <span class="icon icon--svg a a-link plus rounded"></span>
-</button> -->
-
 <div class="section-selector pt-20 pb-20 bg-white">
   <div class="section-selector d-flex">
-    <h5 class="mb-0">Books</h5>
-    <h5 class="mb-0">Books</h5>
-    <h5 class="mb-0">Books</h5>
-    <h5 class="mb-0">Books</h5>
+    <h5 class="mb-0">Threads</h5>
+    <h5 class="mb-0">Episodes</h5>
+    <h5 class="mb-0">Articles</h5>
+    <h5 class="mb-0">Podcasts</h5>
     <h5 class="mb-0">Books</h5>
   </div>
 </div>
@@ -48,7 +35,7 @@ $this->title = 'Home';
 
   <div class="episode-module d-flex bg-white br-4 mt-30">
       <div class="pr-20">
-          <img src="http://lorempixel.com/100/100" class="ew-100 car  d-img" alt="...">
+          <img src="http://lorempixel.com/100/100" class="ew-100 card-img" alt="...">
       </div>
       <div class="flex-grow-1 align-self-center">
           <h6 class="text-uppercase c-gray-1 medium mb-10">TALES FROM THE CRYPT</h6>
