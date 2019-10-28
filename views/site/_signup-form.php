@@ -29,3 +29,7 @@ use yii\web\View;
         </div>
         <?php ActiveForm::end(); ?>
 </section>
+
+<div class="signin-footer signup-footer">
+    <div>Already signed up? <?=Html::a('Log in',['/site/login'],['id'=>'signup-goto-login']);?></div>
+</div>

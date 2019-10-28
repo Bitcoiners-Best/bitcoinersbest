@@ -28,7 +28,7 @@ class m130524_201442_init extends Migration
         //Create first user: bandot/123456
         $this->execute("INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`)
                             VALUES
-                                (69, 'bandit', 'bandit-authkey', '$2y$13$9LZ5X4420SffJCGCtohnHu2Rc.MSF2y7V9imlHq2M0OwqGa6PBRoa', NULL, 'tk@tk.com', 10, 1554497616, 1562688733);
+                                (69, 'bandit', 'admin-bandit-authkey', '$2y$13$9LZ5X4420SffJCGCtohnHu2Rc.MSF2y7V9imlHq2M0OwqGa6PBRoa', NULL, 'tk@tk.com', 10, 1554497616, 1562688733);
                             ");
     }
 
