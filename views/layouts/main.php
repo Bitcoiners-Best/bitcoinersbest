@@ -82,23 +82,24 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container mt-90">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+    <div class="content">
+        <div class="container">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <?= Alert::widget() ?>
+            <?= $content ?>
+        </div>
     </div>
-
 </div>
 
-<footer class="footer bg-black mt-50 pt-20 pt-20">
+<footer class="footer bg-black">
     <div class="container">
-      <div class="d-flex">
-        <p class="c-white">&copy; Bitcoiner's Best <?= date('Y') ?></p>
-        <!-- <div class="pl-20 pr-20"><a href="">Terms</a></div>
-        <div class="pl-20 pr-20"><a href="">Privacy</a></div> -->
-        <div class="ml-auto"><a href="">@bitcoinersbest</a></div>
+      <div class="d-flex pt-20 pb-20">
+          <div class="flex-grow-1 flex-row ">
+            <p class="c-white">&copy; Bitcoiner's Best <?= date('Y') ?><a class="ml-20" href="">Terms</a><a class="ml-20" href="">Privacy</a></p>
+          </div>
+          <p class="c-white m-0"><a href="">@bitcoinersbest</a></p>
       </div>
     </div>
 </footer>
