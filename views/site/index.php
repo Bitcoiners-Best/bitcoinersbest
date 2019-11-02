@@ -5,8 +5,8 @@
 $this->title = 'Home';
 ?>
 
-<div class="section-selector pt-20 pb-20 bg-white">
-  <div class="section-selector d-flex">
+<div class="section-selector bg-gray-4">
+  <div class="d-flex pt-20 pb-20">
     <h5 class="mb-0">Threads</h5>
     <h5 class="mb-0">Episodes</h5>
     <h5 class="mb-0">Articles</h5>
@@ -16,7 +16,7 @@ $this->title = 'Home';
 </div>
 
 <div class="module-container">
-  <div class="article-module d-flex bg-white br-4 mt-30">
+  <div class="article-module d-flex bg-white br-4 mb-30">
       <div class="flex-grow-1 align-self-center">
           <img src="http://lorempixel.com/400/160" class="card-img" alt="...">
           <h6 class="text-uppercase c-gray-1 medium mt-20 mb-10">TALES FROM THE CRYPT</h6>
@@ -33,7 +33,7 @@ $this->title = 'Home';
       </div>
   </div>
 
-  <div class="episode-module d-flex bg-white br-4 mt-30">
+  <div class="episode-module d-flex bg-white br-4 mb-30">
       <div class="pr-20">
           <img src="http://lorempixel.com/100/100" class="ew-100 card-img" alt="...">
       </div>
@@ -51,7 +51,7 @@ $this->title = 'Home';
       </div>
   </div>
 
-  <div class="book-module d-flex bg-white br-4 mt-30">
+  <div class="book-module d-flex bg-white br-4 mb-30">
       <div class="pr-20">
           <img src="http://lorempixel.com/100/160" class="ew-100 card-img" alt="...">
       </div>
@@ -69,7 +69,7 @@ $this->title = 'Home';
       </div>
   </div>
 
-  <div class="podcast-module d-flex bg-white br-4 mt-30">
+  <div class="podcast-module d-flex bg-white br-4 mb-30">
       <div class="pr-20">
           <img src="http://lorempixel.com/100/100" class="ew-100 card-img" alt="...">
       </div>
@@ -87,7 +87,7 @@ $this->title = 'Home';
       </div>
   </div>
 
-  <div class="thread-module d-flex bg-white br-4 mt-30">
+  <div class="thread-module d-flex bg-white br-4 mb-30">
       <div class="pr-20">
           <img src="http://lorempixel.com/100/100" class="ew-100 card-img br-full" alt="...">
       </div>
