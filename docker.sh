@@ -12,6 +12,7 @@ then
     sleep 10
 
     docker exec bitcoinersbest-php php yii migrate --interactive=0
+    docker exec bitcoinersbest-php php yii migrate --migrationPath=migrations/test --interactive=0
 
 
 fi
