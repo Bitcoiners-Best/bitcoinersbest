@@ -143,4 +143,28 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+
+    /**
+     * Displays privacy policy page.
+     *
+     * @return string
+     */
+    public function actionPrivacy()
+    {
+        return $this->render('privacy');
+    }
+
+
+
+    /**
+     * Displays terms of service page.
+     *
+     * @return string
+     */
+    public function actionTerms()
+    {
+        return $this->render('terms');
+    }
+
 }
