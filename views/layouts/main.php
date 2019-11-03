@@ -19,6 +19,20 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicons/apple-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicons/apple-icon-60x60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicons/apple-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicons/apple-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicons/apple-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicons/apple-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicons/apple-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicons/apple-icon-152x152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-icon-180x180.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicons/favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicons/android-icon-192x192.png"/>
+    <link rel="shortcut icon" href="../favicons/favicon.ico"/>
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -58,7 +72,7 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-            ['label' => 'FAQ', 'url' => ['/site/about'], 'options' => ['class' => 'nav-item align-self-center']],
+            ['label' => 'FAQ', 'url' => ['/site/faq'], 'options' => ['class' => 'nav-item align-self-center']],
             ['label' => 'Login', 'url' => ['/site/login'], 'options' => ['class' => 'nav-item align-self-center'], 'visible'=>Yii::$app->user->isGuest],
             ['label' => 'Join', 'url' => ['/site/signup'], 'options' => ['class' => 'nav-item align-self-center'], 'visible'=>Yii::$app->user->isGuest],
             ['label' => 'Submit', 'url' => ['/content/submit'], 'options' => ['class' => 'nav-item align-self-center'], 'visible'=>!Yii::$app->user->isGuest],
@@ -70,7 +84,7 @@ AppAsset::register($this);
             ),
 
             !Yii::$app->user->isGuest ? (
-              '<li class="align-self-center">' . Html::beginForm(['/site/logout'], 'post') . Html::submitButton('Logout',['class' => 'btn logout']). Html::endForm() . '</li>'
+              '<li class="align-self-center">' . Html::beginForm(['/site/logout'], 'post') . Html::submitButton('Logout',['class' => 'btn btn-rect-md logout']). Html::endForm() . '</li>'
             ) : (
               ''
             ),
