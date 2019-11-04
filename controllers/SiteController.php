@@ -139,8 +139,32 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionAbout()
+    public function actionFaq()
     {
-        return $this->render('about');
+        return $this->render('faq');
     }
+
+
+    /**
+     * Displays privacy policy page.
+     *
+     * @return string
+     */
+    public function actionPrivacy()
+    {
+        return $this->render('privacy');
+    }
+
+
+
+    /**
+     * Displays terms of service page.
+     *
+     * @return string
+     */
+    public function actionTerms()
+    {
+        return $this->render('terms');
+    }
+
 }
