@@ -11,7 +11,6 @@ $this->title = 'Login';
 ?>
 <div class="site-login">
 
-
 <div class="section-header pt-20 pb-20 bg-white">
   <div class="section-header d-flex">
       <h2 class="mb-0"><?= Html::encode($this->title) ?></h2>
@@ -39,7 +38,7 @@ $this->title = 'Login';
 
       <div class="form-group">
           <div class="col-lg-offset-1 col-lg-11">
-              <?= Html::submitButton('Login', ['class' => 'btn', 'name' => 'login-button']) ?>
+              <?= Html::submitButton('Login', ['class' => 'btn btn-rect-xl', 'name' => 'login-button']) ?>
           </div>
       </div>
 

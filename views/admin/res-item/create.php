@@ -9,7 +9,11 @@ $this->title = 'Submit Resource';
 ?>
 <div class="res-item-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+  <div class="section-header pt-20 pb-20 bg-white">
+    <div class="section-header d-flex">
+        <h2 class="mb-0"><?= Html::encode($this->title) ?></h2>
+    </div>
+  </div>
 
     <?= $this->render('_form', [
         'model' => $model,

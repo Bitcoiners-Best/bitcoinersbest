@@ -3,12 +3,12 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-$this->title = 'FAQ';
+$this->title = 'Frequently Asked Questions';
 ?>
 
 <div class="section-header pt-20 pb-20 bg-white">
   <div class="section-header d-flex">
-      <h2 class="mb-0">Frequently Asked Questions</h2>
+      <h2 class="mb-0"><?= Html::encode($this->title) ?></h2>
   </div>
 </div>
 
