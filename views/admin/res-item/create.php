@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ResItem */
 
-$this->title = 'Submit Content';
+$this->title = 'Submit Resource';
 ?>
 <div class="res-item-create">
 

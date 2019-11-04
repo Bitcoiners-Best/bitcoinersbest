@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'res_type_id')->dropDownList(\app\models\ResType::getAvailableTypesAsArray(),['style'=>'width:200px'])->label('Content Type') ?>
+    <?= $form->field($model, 'res_type_id')->dropDownList(\app\models\ResType::getAvailableTypesAsArray(),['style'=>'width:200px'])->label('Resource Type') ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'created_by')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-rect-xl']) ?>
+        <?= Html::submitButton('Submit', ['class' => 'btn btn-rect-xl']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
