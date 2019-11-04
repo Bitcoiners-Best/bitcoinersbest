@@ -47,6 +47,7 @@ body {
 
 .wrap {
   min-height: 100%;
+  padding-top: 140px;
 }
 
 .content {
@@ -164,6 +165,16 @@ a:visited {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 16px 0px;
+    min-height: 80px;
+    height: 80px;
+}
+
+.navbar:before {
+  display: block;
+  content: " ";
+  margin-top: -90px;
+  height: 90px;
+  visibility: hidden;
 }
 
 .navbar-brand {
@@ -228,6 +239,10 @@ a:visited {
     color: #FFCF53;
 }
 
+.navbar-light .navbar-toggler-icon {
+    border-color: rgb(255,255,255);
+}
+
 
 /* FOOTER */
 
@@ -241,7 +256,6 @@ footer {
 }
 
 .module-container {
-  padding-top: 180px;
   margin-bottom: 80px;
 }
 
@@ -329,6 +343,12 @@ footer {
 
 /* BUTTONS */
 
+.btn:focus, 
+.btn.focus {
+    outline: 0;
+    box-shadow: none;
+}
+
 .btn {
   display: inline-block;
   font-weight: 500;
@@ -364,7 +384,6 @@ footer {
 .btn-outline {
   border: 1px solid #FFCF53;
 }
-
 
 .btn:hover {
     text-decoration: none;
@@ -1137,28 +1156,4 @@ label {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
-}
-
-/* align the logout "link" (button in form) of the navbar */
-.nav li > form > button.logout {
-    padding: 15px;
-    border: none;
-}
-
-@media(max-width:767px) {
-    .nav li > form > button.logout {
-        display:block;
-        text-align: left;
-        width: 100%;
-        padding: 10px 15px;
-    }
-}
-
-.nav > li > form > button.logout:focus,
-.nav > li > form > button.logout:hover {
-    text-decoration: none;
-}
-
-.nav > li > form > button.logout:focus {
-    outline: none;
 }
