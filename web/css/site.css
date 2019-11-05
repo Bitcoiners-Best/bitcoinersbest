@@ -503,10 +503,15 @@ footer {
   background-color: #009DD9;
 }
 
+
 /* FORMS */
 
+.resource-type{
+    display: none;
+}
+
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
 label {
