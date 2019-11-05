@@ -15,8 +15,6 @@ body {
 	font-stretch: normal;
 	font-weight: 400
 }
-
-
 @font-face {
 	font-family: "Graphik Web Medium";
 	src: url(/fonts/graphik/Graphik-Medium-Web.eot);
@@ -25,7 +23,6 @@ body {
 	font-stretch: normal;
 	font-weight: 500
 }
-
 @font-face {
 	font-family: "Graphik Web Medium Italic";
 	src: url(/fonts/graphik/Graphik-Medium-Italic-Web.eot);
@@ -34,7 +31,6 @@ body {
 	font-stretch: normal;
 	font-weight: 500
 }
-
 @font-face {
 	font-family: "Graphik Web Semibold";
 	src: url(/fonts/graphik/Graphik-Semibold-Web.eot);
@@ -43,7 +39,6 @@ body {
 	font-stretch: normal;
 	font-weight: 600
 }
-
 
 .wrap {
   min-height: 100%;
@@ -152,9 +147,8 @@ a:visited {
 }
 
 
-
-
 /* NAVIGATION */
+
 .navbar {
     /* position: relative; */
     display: -ms-flexbox;
@@ -315,7 +309,7 @@ footer {
 
 
 
-/* OVERLAY */
+/* MODAL */
 
 .modal-full {
   position: fixed;
@@ -503,10 +497,15 @@ footer {
   background-color: #009DD9;
 }
 
+
 /* FORMS */
 
+.resource-type{
+    display: none;
+}
+
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
 label {
@@ -520,30 +519,34 @@ label {
     height: 48px;
     padding: 16px;
     font-size: 18px;
-    color: #495057;
+    color: #1D2229;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid #ebebeb;
     border-radius: 4px;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -webkit-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
 }
 
 .form-control:focus {
-    color: #495057;
+    color: #1D2229;
     background-color: #fff;
-    border-color: #80bdff;
+    border-color: #ced4da;
     outline: 0;
     box-shadow: none;
 }
 
 .help-block {
-    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #FF5555;
 }
 
 
 
 /* COLORS */
-
 
 .c-black {
   color: #1D2229;
@@ -588,7 +591,6 @@ label {
 }
 
 
-
 /* BORDER RADIUS HELPER CLASSES */
 
 .br-2 {
@@ -603,7 +605,6 @@ label {
 .br-circle {
   border-radius: 50%;
 }
-
 
 
 /* WIDTH HELPER CLASSES */
@@ -626,8 +627,6 @@ label {
   min-width: 200px;
   max-width: 200px;
 }
-
-
 
 
 /* PADDING & MARGIN HELPER CLASSES */
@@ -1121,36 +1120,57 @@ label {
 }
 
 
-
-
+@media (max-width: 992px) {
+  .container-fluid {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+}
 
 /* Smaller than tablet */
 @media (max-width: 768px) {
   h1 {
-      font-size: 32px;
-      line-height: 1.25;
-  }
-  h2 {
       font-size: 28px;
       line-height: 1.25;
   }
+  h2 {
+      font-size: 24px;
+      line-height: 1.25;
+  }
   h3 {
+      font-size: 22px;
+      line-height: 1.25;
+  }
+  h4 {
       font-size: 20px;
       line-height: 1.25;
   }
-  h4 {
+  h5 {
       font-size: 18px;
       line-height: 1.25;
   }
-  h4 {
+  h6 {
       font-size: 16px;
       line-height: 1.25;
   }
   p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.625;
   }
 
+  .wrap {
+      padding-top: 100px;
+      padding-bottom: 50px;
+  }
+
+  .btn-rect-xl,
+  .btn-rect-lg {
+    width: 100%;
+  }
+
+  .help-block {
+    font-size: 14px;
+  }
 
   .ew-80 {
     min-width: 40px;
@@ -1179,25 +1199,4 @@ label {
     padding-left: 4% !important;
     padding-right: 4% !important;
   }
-
-}
-
-
-
-
-
-/* LEGACY */
-
-.hint-block {
-    display: block;
-    margin-top: 5px;
-    color: #999;
-}
-
-.error-summary {
-    color: #a94442;
-    background: #fdf7f7;
-    border-left: 3px solid #eed3d7;
-    padding: 10px 20px;
-    margin: 0 0 15px 0;
 }
