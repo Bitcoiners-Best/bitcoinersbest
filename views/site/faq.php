@@ -16,7 +16,7 @@ $this->title = 'Frequently Asked Questions';
 
 <h4 class="mt-30 c-white">What can I submit to Lapps.co?<h4>
 <p class="c-white">The ideal submission is any bitcoin-only related content creattion, a product or platform that exclusively uses or talks about Bitcoin.</p>
-<p class="c-white-offset">However, if you have a book, article, podcast, or platform that you think would be a good fit, please free to submit it!</p>
+<p class="c-white">However, if you have a book, article, podcast, or platform that you think would be a good fit, please free to submit it!</p>
 
 <h5 class="mt-30 c-white">Where does the money go?<h5>
 <p class="c-white">All of the money that is submitted to upvote content is pooled together and donated monthly to a voted on open-source project.</p>
