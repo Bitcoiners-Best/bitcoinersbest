@@ -64,7 +64,7 @@ AppAsset::register($this);
         </svg><span class="ml-15">Bitcoiners Best</span>',
         'renderInnerContainer' => true,
         'innerContainerOptions' => [
-            'class' => 'container-fluid'
+            'class' => 'container-fluid full'
         ],
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [

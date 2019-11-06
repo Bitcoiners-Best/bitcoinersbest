@@ -7,7 +7,8 @@ use yii\helpers\Html;
 
 $this->title = 'Submit Resource';
 ?>
-<div class="res-item-create">
+
+<section class="res-item-create mt-50">
 
   <div class="section-header pt-20 pb-20">
     <h2 class="mb-0 c-white"><?= Html::encode($this->title) ?></h2>
@@ -17,4 +18,4 @@ $this->title = 'Submit Resource';
         'model' => $model,
     ]) ?>
 
-</div>
+</section>
