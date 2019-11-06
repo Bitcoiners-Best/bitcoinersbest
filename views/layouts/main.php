@@ -42,16 +42,16 @@ AppAsset::register($this);
 
 
 <div class="modal-full overlay-effect" id="overlay-modal">
-    <div class="overlay-content bg-white br-4 text-center">
+    <div class="overlay-content bg-black br-4 text-center">
       <button class="close-modal btn br-circle icon-wrap">
         <span class="icon a a-link close rounded"></span>
       </button>
-        <h3 class="c-black">Upvote {title}</h3>
-        <h4 class="mb-20 c-black"><span class="c-brand">{#}</span> sats</h4>
-        <h6 class="c-gray-1 mb-20">All proceeds will be donated to an open-source bitcoin/lightning project</h6>
+        <h2 class="c-white">Upvote {title}</h2>
+        <h3 class="mb-20 c-white"><span class="c-brand">{#}</span> sats</h3>
+        <h6 class="mb-20 c-white-offset">All proceeds will be donated to an open-source bitcoin/lightning project</h6>
         <img src="http://lorempixel.com/200/200" class="ew-200 card-img mb-30" alt="...">
         <a class="btn btn-rect-lg btn-block mb-20" href="#">Copy Payment Request</a>
-        <h6 class="mb-0 c-gray-1">Powered by <a class="link" href="">paywall.link</a></h6>
+        <h6 class="mb-0"><span class="c-white-offset">Powered by </span><a class="link" href="">paywall.link</a></h6>
     </div>
 </div>
 <div class="overlay-module"></div>
