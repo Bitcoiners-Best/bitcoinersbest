@@ -10,7 +10,7 @@ body {
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #1D2229;
 }
 
 @font-face {
@@ -407,6 +407,10 @@ footer {
   border: none;
   cursor: pointer;
   -webkit-appearance: none;
+  /* transition-duration: .2s;
+  perspective: 1000px;
+  transform-origin: center bottom 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0); */
 }
 
 .btn-rect-xl {
@@ -432,6 +436,113 @@ footer {
 .btn:hover {
     text-decoration: none;
     background-color: #FFC42B;
+}
+
+.pressed {
+  transform: matrix(0.95, 0, 0, 0.98, 0, 0);
+}
+
+.pop-button {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: inherit;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  /* box-shadow: 0 2px 25px rgba(255, 207, 83, 0.5); */
+}
+.pop-button:focus {
+  outline: 0;
+}
+.pop-button:before, .pop-button:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.pop-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, transparent 20%, #FFCF53 20%, transparent 30%), radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, transparent 10%, #FFCF53 15%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.pop-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, transparent 10%, #FFCF53 15%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%), radial-gradient(circle, #FFCF53 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.pop-button:active {
+  transform: scale(0.9);
+  background-color: #FFC42B;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+.pop-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.pop-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+@keyframes topBubbles {
+  0%{
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+    50% {
+      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;}
+ 100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+  background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0%{
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;}
+ 100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+  background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
 }
 
 .icon-wrap {
@@ -462,7 +573,7 @@ footer {
     top: 50%;
     left: 0;
     margin-top: -1px;
-    background: #121212;
+    background: #1D2229;
     border-radius: 4px;
 }
 .close::before {
@@ -504,6 +615,163 @@ footer {
 }
 
 
+/* TEXT CYCLE */
+
+.cycle-wrapper {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+.cycle-wrapper b {
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+}
+.cycle-wrapper b.is-visible {
+  position: relative;
+}
+.no-js .cycle-wrapper b {
+  opacity: 0;
+}
+.no-js .cycle-wrapper b.is-visible {
+  opacity: 1;
+}
+.cycle.slide span {
+  display: inline-block;
+}
+.cycle.slide .cycle-wrapper {
+  overflow: hidden;
+  vertical-align: top;
+}
+.cycle.slide b {
+  opacity: 0;
+  top: .2em;
+  font-weight: 600;
+}
+.cycle.slide b.is-visible {
+  top: 0;
+  opacity: 1;
+  -webkit-animation: slide-in 0.6s;
+  -moz-animation: slide-in 0.6s;
+  animation: slide-in 0.6s;
+}
+.cycle.slide b.is-hidden {
+  -webkit-animation: slide-out 0.6s;
+  -moz-animation: slide-out 0.6s;
+  animation: slide-out 0.6s;
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes slide-in {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-100%);
+  }
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes slide-out {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+  60% {
+    opacity: 0;
+    -webkit-transform: translateY(110%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+}
+@-moz-keyframes slide-out {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+  60% {
+    opacity: 0;
+    -moz-transform: translateY(110%);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(100%);
+  }
+}
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  60% {
+    opacity: 0;
+    -webkit-transform: translateY(110%);
+    -moz-transform: translateY(110%);
+    -ms-transform: translateY(110%);
+    -o-transform: translateY(110%);
+    transform: translateY(110%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+
 /* FORMS */
 
 .resource-type{
@@ -517,6 +785,7 @@ footer {
 label {
     display: inline-block;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .form-control {
@@ -560,6 +829,10 @@ label {
 
 .c-white {
   color: #ffffff;
+}
+.c-white-offset {
+  color: #ffffff;
+  opacity: 0.6;
 }
 
 .c-gray-1 {
