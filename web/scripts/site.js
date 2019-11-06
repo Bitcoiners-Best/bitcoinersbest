@@ -1,22 +1,3 @@
-$( document ).ready(function() {
-
-  $("#resitem-res_type_id").change(function(){
-      $(this).find("option:selected").each(function(){
-          var optionValue = $(this).attr("value");
-          if(optionValue){
-              $(".resource-type").not("." + optionValue).hide();
-              $("." + optionValue).show();
-          } else{
-              $(".resource-type").hide();
-          }
-      });
-  }).change();
-
-});
-
-
-// Class Helper Functions
-
 ( function( window ) {
 
 'use strict';
@@ -77,7 +58,6 @@ if ( typeof define === 'function' && define.amd ) {
 }
 })( window );
 
-// Modal Effects
 
 var ModalEffects = (function() {
  function init() {
