@@ -118,10 +118,21 @@ path {
   color: inherit;
 }
 
-a:link,
-a:visited {
-  /* color: #ffa62d; */
+.link-opacity {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.6;
 }
+.link-opacity:hover {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 1;
+}
+.link-opacity:active {
+  color: #ffffff;
+  opacity: 1;
+}
+
 
 .link {
   color: #FFCF53;

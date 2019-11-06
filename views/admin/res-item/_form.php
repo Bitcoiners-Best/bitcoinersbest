@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'created_by')->textInput(['maxlength' => true]) ?>
 
-    <div class="form-group">
+    <div class="form-group mt-50">
         <?= Html::submitButton('Submit', ['class' => 'btn btn-rect-xl']) ?>
     </div>
 
