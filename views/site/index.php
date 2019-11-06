@@ -21,7 +21,7 @@ $this->title = 'Home';
           <img src="http://lorempixel.com/400/160" class="card-img" alt="...">
           <h6 class="text-uppercase c-white-offset medium mt-20 mb-10">TALES FROM THE CRYPT</h6>
           <h5 class="medium mb-10 c-white">Tales from the Crypt #34: Murad Mahmudov</h5>
-          <h5 class="regular c-white-offset">With the price of a bitcoin surging to new highs in 2019, the bullish case for investors might seem so obvious it does not need...</h5>
+          <h5 class="regular c-gray-1">With the price of a bitcoin surging to new highs in 2019, the bullish case for investors might seem so obvious it does not need...</h5>
       </div>
       <div class="align-self-top pl-20">
           <div class="votes text-center">
@@ -38,7 +38,7 @@ $this->title = 'Home';
           <img src="http://lorempixel.com/100/100" class="ew-100 card-img" alt="...">
       </div>
       <div class="flex-grow-1 align-self-center">
-          <h6 class="text-uppercase c-white-offset medium mb-10">TALES FROM THE CRYPT</h6>
+          <h6 class="text-uppercase c-gray-1 medium mb-10">TALES FROM THE CRYPT</h6>
           <h5 class="medium c-white">Tales from the Crypt #34: Murad Mahmudov</h5>
       </div>
       <div class="align-self-top pl-20">
