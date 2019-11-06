@@ -57,10 +57,13 @@ body {
 }
 
 .container-fluid {
-  padding-left: 15% !important;  /* 7.5% */
-  padding-right: 15% !important; /* 7.5% */
+  padding-left: 27.5% !important;  /* 7.5% */
+  padding-right: 27.5% !important; /* 7.5% */
 }
-
+.container-fluid.full {
+  padding-left: 7.5% !important;  /* 7.5% */
+  padding-right: 7.5% !important; /* 7.5% */
+}
 
 /* HEADERS */
 
@@ -1418,41 +1421,43 @@ label {
 
 
 @media (max-width: 992px) {
-  .container-fluid {
+  .container-fluid,
+  .container-fluid.full {
     padding-left: 10% !important;
     padding-right: 10% !important;
   }
 }
 
+
 /* Smaller than tablet */
 @media (max-width: 768px) {
   h1 {
       font-size: 28px;
-      line-height: 1.25;
+      /* line-height: 1.25; */
   }
   h2 {
       font-size: 24px;
-      line-height: 1.25;
+      /* line-height: 1.25; */
   }
   h3 {
       font-size: 22px;
-      line-height: 1.25;
+      /* line-height: 1.25; */
   }
   h4 {
       font-size: 20px;
-      line-height: 1.25;
+      /* line-height: 1.25; */
   }
   h5 {
-      font-size: 18px;
-      line-height: 1.25;
+      font-size: 16px;
+      /* line-height: 1.25; */
   }
   h6 {
       font-size: 16px;
-      line-height: 1.25;
+      /* line-height: 1.25; */
   }
   p {
     font-size: 16px;
-    line-height: 1.625;
+    /* line-height: 1.625; */
   }
 
   .btn-rect-xl,
@@ -1487,7 +1492,8 @@ label {
     width: 90vw;
   }
 
-  .container-fluid {
+  .container-fluid,
+  .container-fluid.full {
     padding-left: 4% !important;
     padding-right: 4% !important;
   }
