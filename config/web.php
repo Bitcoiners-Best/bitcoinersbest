@@ -54,6 +54,19 @@ $config = [
             ],
             'baseUrl'=>getenv('BASE_URL'),
         ],
+        'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+            'clients' => [
+                'twitter' => [
+                    'class' => 'yii\authclient\clients\Twitter',
+                    'attributeParams' => [
+                        'include_email' => 'true'
+                    ],
+                    'consumerKey' => getenv('TWITTER_CONSUMER_KEY'),
+                    'consumerSecret' => getenv('TWITTER_CONSUMER_SECRET'),
+                ],
+            ],
+        ]
     ],
     'params' => $params,
 ];
