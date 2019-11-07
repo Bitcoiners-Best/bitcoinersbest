@@ -46,10 +46,11 @@ class ContentController extends Controller
         $model = new ResItem();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['/', 'id' => $model->id]);
+            Yii::$app->session->setFlash('contentCreated',TRUE);
+            return $this->redirect(['']);
         }
 
-        return $this->render('/admin/res-item/create', [
+        return $this->render('create', [
             'model' => $model,
         ]);
     }
