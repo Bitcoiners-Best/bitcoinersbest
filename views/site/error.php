@@ -11,13 +11,10 @@ $this->title = $name;
 ?>
 
 <section class="error mt-50 text-center">
-
-    <div class="section-header pt-20 pb-20 c-white text-center">
-      <h2 class="mb-0"><?= Html::encode($this->title) ?></h2>
-    </div>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
-    </div>
-
+  <div class="section-header pt-20 pb-20 c-white text-center">
+    <h1 class="mb-0"><?= Html::encode($this->title) ?></h1>
+  </div>
+  <div class="alert alert-danger">
+      <?= nl2br(Html::encode($message)) ?>
+  </div>
 </section>
