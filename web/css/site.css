@@ -51,7 +51,6 @@ body {
 .wrap {
   min-height: 100%;
   padding-top: 80px;
-  /* padding-bottom: 50px; */
 }
 
 .content {
@@ -328,6 +327,26 @@ footer {
   	-ms-transition: all 200ms ease;
 }
 
+.module-navigation-element {
+    outline: none;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: #fff;
+    opacity: .6;
+    position: relative;
+    border: 0;
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    -webkit-transition: opacity .2s linear;
+    transition: opacity .2s linear;
+}
+
 .module-navigation-element:hover {
   color: #ffffff;
   opacity: 1.0;
@@ -363,6 +382,7 @@ footer {
     -webkit-transition: none;
     transition: none;
     border-radius: 500px;
+
 }
 
 /* MODAL */
@@ -455,6 +475,10 @@ footer {
   border: none;
   cursor: pointer;
   -webkit-appearance: none;
+  /* transition-duration: .2s;
+  perspective: 1000px;
+  transform-origin: center bottom 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0); */
 }
 
 .btn-rect-xl {
@@ -483,6 +507,7 @@ footer {
     background-color: #FFC42B;
 }
 
+
 .push-button {
   transition: transform ease-in 0.1s;
 }
@@ -491,7 +516,7 @@ footer {
 }
 .push-button:active {
   transform: scale(0.98);
-}
+ }
 
 .pop-button {
   display: inline-block;

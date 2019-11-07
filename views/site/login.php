@@ -6,6 +6,8 @@
 
 use yii\helpers\Html;
 use yii\bootstrap4\ActiveForm;
+use yii\authclient\widgets\AuthChoice;
+use yii\helpers\Url;
 
 $this->title = 'Login';
 ?>
