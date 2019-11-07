@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ResItem */
 
-$this->title = 'Submit Resource';
+$this->title = 'Submit your bitcoin resource';
 ?>
 
 <section class="res-item-create mt-50">

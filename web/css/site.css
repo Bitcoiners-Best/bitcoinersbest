@@ -153,6 +153,7 @@ path {
   color: #FFC42B;
 }
 
+
 .link-light {
   color: #7E90A9;
   text-decoration: none;
@@ -164,6 +165,20 @@ path {
 .link-light:active {
   color: #ffffff;
 }
+
+
+.link-white {
+  color: #ffffff;
+  text-decoration: none;
+}
+.link-white:hover {
+  color: #FFCF53;
+  text-decoration: none;
+}
+.link-white:active {
+  color: #FFCF53;
+}
+
 
 .text-uppercase {
   text-transform: uppercase;
@@ -824,7 +839,9 @@ footer {
 label {
     display: inline-block;
     margin-bottom: 10px;
+    font-size: 16px;
     color: #7E90A9;
+    font-weight: 500;
 }
 
 .form-control {
@@ -844,7 +861,8 @@ label {
     -ms-transition: all 200ms ease;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-control:visited {
     color: #fff;
     background-color: #657996;
     border-color: #657996;
@@ -852,9 +870,44 @@ label {
     box-shadow: none;
 }
 
+input:-internal-autofill-selected {
+    background-color: rgb(101, 121, 150);
+    background-image: none !important;
+    border: 0;
+    outline: none;
+    color: rgb(255, 255, 255) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(101, 121, 150) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: inherit;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
 .help-block {
     font-size: 16px;
     margin-top: 10px;
+    font-weight: 500;
     color: #FF5555;
 }
 
