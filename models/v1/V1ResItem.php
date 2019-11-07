@@ -7,11 +7,6 @@ use yii\behaviors\TimestampBehavior;
 
 class V1ResItem extends \app\models\ResItem
 {
-    public function extraFields()
-    {
-        return ['resType','statusType'];
-    }
-
     public function fields()
     {
         $fields = parent::fields();

@@ -50,6 +50,8 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/item'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/res-type'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/status-type'],
                 //'/<controller:\w+>/<action:[A-Za-z0-9 -_.]+>' => '/<controller>/<action>',
             ],
             'baseUrl'=>getenv('BASE_URL'),
