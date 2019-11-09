@@ -46,6 +46,22 @@ class ResItemSearch extends ResItem
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 15
+            ],
+        ]);
+
+        $dataProvider->setSort([
+          'attributes' => [
+              'vote_count' => [
+                  'asc' => ['vote_count' => SORT_ASC],
+                  'desc' => ['vote_count' => SORT_DESC],
+                  'default' => SORT_ASC
+              ],
+          ],
+          'defaultOrder' => [
+              'vote_count' => SORT_DESC
+          ]
         ]);
 
         $this->load($params);

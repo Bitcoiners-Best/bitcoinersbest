@@ -2,20 +2,43 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Url;
+use yii\helpers\Html;
+use yii\widgets\Pjax;
+use yii\grid\GridView;
+use yii\widgets\ListView;
+
+
 $this->title = 'Home';
 ?>
 
-<div class="section-selector">
-  <div class="d-flex justify-content-center pt-30 pb-30 text-uppercase">
-    <a class="module-navigation-element active" href="">Threads</a>
-    <a class="module-navigation-element" href="">Episodes</a>
-    <a class="module-navigation-element" href="">Articles</a>
-    <a class="module-navigation-element" href="">Podcasts</a>
-    <a class="module-navigation-element" href="">Books</a>
-  </div>
-</div>
+<?php
+$this->registerJs(
+  ''// TODO: The PJAX container reload call when the resource type selector changes
+);
+?>
 
-<div class="module-container">
+<?php Pjax::begin(['enablePushState' => false]); ?>
+
+<!--
+TODO 1: Selecting a new resource type from the menu below should update .module-container with the properly filtered entries (PJAX call above)
+-->
+
+<div class="module-container" id="module-container">
+
+  <!--
+  TODO: This section should only ouput based on the resource type selected about to a specific partial
+
+  TODO: The num vote should be mapped, and increment +1 and 10x respectively, with the session & state maintained
+
+  TODO: Isolate all of the resource types in their own _partials
+  -->
+
+  <?= ListView::widget([
+      'dataProvider' => $dataProvider,
+      'itemView' => '_episode',
+  ]) ?>
+
   <div class="article-module d-flex br-4 mb-30">
       <div class="flex-grow-1 align-self-center">
           <img src="http://lorempixel.com/400/160" class="card-img" alt="...">
@@ -34,23 +57,6 @@ $this->title = 'Home';
   </div>
 
 
-  <div class="episode-module d-flex br-4 mb-30">
-      <div class="pr-20">
-          <img src="http://lorempixel.com/100/100" class="ew-100 card-img" alt="...">
-      </div>
-      <div class="flex-grow-1 align-self-center">
-          <h6 class="text-uppercase c-gray-1 medium mb-15">TALES FROM THE CRYPT</h6>
-          <h5 class="medium c-white">Tales from the Crypt #34: Murad Mahmudov</h5>
-      </div>
-      <div class="align-self-top pl-20">
-          <div class="votes text-center">
-              <h6 class="medium mb-5 c-white">535</h6>
-              <button class="btn bg-brand br-circle icon-wrap push-button">
-                <span class="icon a a-link plus rounded"></span>
-              </button>
-          </div>
-      </div>
-  </div>
 
 
   <div class="book-module d-flex br-4 mb-30">
@@ -111,3 +117,4 @@ $this->title = 'Home';
   </div>
 
 </div>
+<?php Pjax::end(); ?>

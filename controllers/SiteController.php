@@ -11,6 +11,11 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
+use app\models\ResItem;
+use app\models\ResType;
+use app\models\StatusType;
+use app\models\ResItemSearch;
+
 class SiteController extends Controller
 {
     /**
@@ -66,8 +71,33 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $itemModel = new ResItem();
+        $searchModel = new ResItemSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $type = ResType::find()->all();
+
+        return $this->render('index', [
+          'type' => $type,
+          'model' => $itemModel,
+          'searchModel' => $searchModel,
+          'dataProvider' => $dataProvider
+        ]);
     }
+
+
+    /**
+     * Displays detail view.
+     *
+     * @return string
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', [
+          'model' => $this->findModel($id)
+        ]);
+    }
+
 
     /**
      * Login action.
