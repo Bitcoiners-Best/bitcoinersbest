@@ -41,6 +41,7 @@ class ResItemSearch extends ResItem
     public function search($params)
     {
         $query = ResItem::find();
+        $query->with('resType');
 
         // add conditions that should always apply here
 
