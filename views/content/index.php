@@ -14,12 +14,14 @@ $this->title = 'Home';
 
 <?php Pjax::begin(['enablePushState' => true,'timeout'=>100000]); ?>
 
-<div class="section-selector">
-    <div class="d-flex justify-content-center pt-30 pb-30 text-uppercase">
-        <?php foreach ($types as $t) { ?>
-            <?=Html::a($t->display_name,['/'.$t->name],['class'=>'module-navigation-element '.($resTypeObject->id==$t->id?'active':'')]);?>
-        <?php } ?>
-    </div>
+<div class="scrolling-wrapper">
+  <div class="section-selector">
+      <div class="d-flex justify-content-center pt-30 pb-30 text-uppercase">
+          <?php foreach ($types as $t) { ?>
+              <?=Html::a($t->display_name,['/'.$t->name],['class'=>'module-navigation-element '.($resTypeObject->id==$t->id?'active':'')]);?>
+          <?php } ?>
+      </div>
+  </div>
 </div>
 
 <div class="module-container" id="module-container">

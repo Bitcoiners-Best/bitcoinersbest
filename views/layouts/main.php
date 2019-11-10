@@ -73,15 +73,6 @@ AppAsset::register($this);
     </div>
 </div>
 
-<div class="modal-full overlay-effect" id="overlay-modal">
-    <div class="overlay-content bg-black br-4 text-center">
-      <!-- <button class="close-modal btn br-circle icon-wrap push-button">
-        <span class="icon a a-link close rounded"></span>
-      </button> -->
-
-    </div>
-</div>
-
 <div class="overlay-module"></div>
 
 <div class="wrap">

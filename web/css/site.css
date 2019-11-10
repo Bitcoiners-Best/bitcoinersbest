@@ -367,6 +367,21 @@ footer {
     border-radius: 500px;
 }
 
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.scrolling-wrapper, .scrolling-wrapper-flexbox {
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.scrolling-wrapper::-webkit-scrollbar,
+.scrolling-wrapper-flexbox::-webkit-scrollbar {
+  display: none;
+  -webkit-appearance: none;
+}
+
 .pagination {
     display: -ms-flexbox;
     display: flex;
@@ -389,6 +404,7 @@ footer {
 .pagination li.active > a {
   color: #FFCF53;
 }
+
 
 /* ALERTS/FLASHES */
 
@@ -1672,6 +1688,10 @@ input:-webkit-autofill {
 
   .help-block {
     font-size: 14px;
+  }
+
+  .module-navigation-element.active:before {
+      margin-left: -25px;
   }
 
   .ew-80 {
