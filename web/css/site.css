@@ -365,8 +365,13 @@ footer {
     -webkit-transition: none;
     transition: none;
     border-radius: 500px;
-
 }
+
+.summary {
+  display: none;
+}
+
+/* ALERTS/FLASHES */
 
 .alert {
     position: relative;
@@ -398,7 +403,6 @@ footer {
 .close:not(:disabled):not(.disabled):focus {
     opacity: 1;
 }
-
 
 /* MODAL */
 
