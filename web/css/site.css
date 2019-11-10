@@ -295,6 +295,7 @@ footer {
 /* MODULES */
 
 .section-selector {
+  margin: 30px 0px 40px;
 }
 
 .module-container {
@@ -1666,16 +1667,24 @@ input:-webkit-autofill {
     font-size: 16px;
   }
 
+  /* MODULES */
   .section-selector > .justify-content-center {
     -ms-flex-pack: left !important;
     justify-content: left !important;
   }
-
+  .section-selector {
+    margin: 20px 0px 30px;
+  }
   .module-navigation-element {
       margin: 10px 15px 10px 0px;
       padding: 5px 15px 5px 0px;
   }
+  .module-navigation-element.active:before {
+      margin-left: -25px;
+  }
 
+
+  /* BUTTONS */
   .btn-rect-xl,
   .btn-rect-lg {
     width: 100%;
@@ -1686,14 +1695,15 @@ input:-webkit-autofill {
       min-width: 280px;
   }
 
+  /* ALERTS */
   .help-block {
     font-size: 14px;
   }
-
-  .module-navigation-element.active:before {
-      margin-left: -25px;
+  .alert {
+      padding: 16px 20px;
   }
 
+  /* SIZE HELPERS */
   .ew-80 {
     min-width: 60px;
     max-width: 60px;
@@ -1707,16 +1717,12 @@ input:-webkit-autofill {
     max-width: 120px;
   }
 
+  /* MODALS */
   .close,
   .plus {
       width: 12px;
       height: 12px;
   }
-
-  .alert {
-      padding: 16px 20px;
-  }
-
   .modal-full {
     width: 90vw;
   }
