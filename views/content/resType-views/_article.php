@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
 ?>
 
-<div class="article-module d-flex br-4 mb-30">
+<div class="article-module d-flex br-4 mb-30 fade-in">
   <div class="flex-grow-1 align-self-center">
       <img src="<?= $model->image ?>" class="card-img" alt="...">
       <h6 class="text-uppercase c-gray-1 medium mt-25 mb-15">TALES FROM THE CRYPT</h6>

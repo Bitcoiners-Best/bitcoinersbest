@@ -6,7 +6,7 @@ use yii\helpers\Html;
 $this->title = 'Frequently Asked Questions';
 ?>
 
-<section class="faq mt-50">
+<section class="faq mt-50 fade-in">
   <div class="section-header pt-20 pb-20 c-white text-center">
     <h1 class="mb-0"><?= Html::encode($this->title) ?></h1>
   </div>
