@@ -76,19 +76,6 @@ class SiteController extends Controller
 
 
     /**
-     * Displays detail view.
-     *
-     * @return string
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-          'model' => $this->findModel($id)
-        ]);
-    }
-
-
-    /**
      * Login action.
      *
      * @return Response|string
