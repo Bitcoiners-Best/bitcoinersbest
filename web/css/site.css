@@ -233,6 +233,10 @@ path {
     border-radius: 0.25rem;
 }
 
+.navbar-collapse {
+    background-color: #1D2229;
+}
+
 .nav-item {
     margin-right: 30px;
 }
@@ -364,6 +368,38 @@ footer {
 
 }
 
+.alert {
+    position: relative;
+    padding: 16px 50px;
+    border: 1px solid #FFCF53;
+    border-radius: 4px;
+    margin-bottom: 0px;
+}
+
+.alert-dismissible .close {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    padding: 10px;
+    color: inherit;
+    height: inherit;
+    width: inherit;
+    opacity: 0.8;
+}
+
+.alert-dismissible .close::before,
+.alert-dismissible .close::after,
+.alert-dismissible .plus::before,
+.alert-dismissible .plus::after {
+    background: #FFCF53;
+}
+
+.close:not(:disabled):not(.disabled):hover,
+.close:not(:disabled):not(.disabled):focus {
+    opacity: 1;
+}
+
+
 /* MODAL */
 
 .modal-full {
@@ -409,7 +445,7 @@ footer {
 
 .overlay-content {
 	position: relative;
-  padding: 30px;
+  padding: 50px;
 }
 
 .overlay-effect .overlay-content {
@@ -454,10 +490,6 @@ footer {
   border: none;
   cursor: pointer;
   -webkit-appearance: none;
-  /* transition-duration: .2s;
-  perspective: 1000px;
-  transform-origin: center bottom 0px;
-  transform: matrix(1, 0, 0, 1, 0, 0); */
 }
 
 .btn-rect-xl {
@@ -823,7 +855,7 @@ footer {
 
 /* FORMS */
 
-.resource-type{
+.resource-type {
     display: none;
 }
 
@@ -873,6 +905,7 @@ input:-internal-autofill-selected {
     color: rgb(255, 255, 255) !important;
 }
 
+/* hacky webkit */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -908,7 +941,7 @@ input:-webkit-autofill {
 
 
 
-/* COLORS */
+/* COLORS & BACKGROUNDS */
 
 .c-black {
   color: #1D2229;
@@ -994,6 +1027,15 @@ input:-webkit-autofill {
   max-width: 200px;
 }
 
+
+/* TRANSISTIONS */
+
+.transition {
+  transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -webkit-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+}
 
 /* PADDING & MARGIN HELPER CLASSES */
 
@@ -1550,9 +1592,18 @@ input:-webkit-autofill {
       height: 12px;
   }
 
+  .alert {
+      padding: 16px 20px;
+  }
+
   .modal-full {
     width: 90vw;
   }
+  .overlay-content {
+  	position: relative;
+    padding: 20px;
+  }
+
 
   .container-fluid,
   .container-fluid.full {

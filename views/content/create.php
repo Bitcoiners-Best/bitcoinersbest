@@ -10,8 +10,14 @@ use yii\web\View;
 $this->title = 'Submit your bitcoin resource';
 ?>
 
+<?php
+if (Yii::$app->session->getFlash('contentCreated')) {
+    echo $this->render('_contentCreated-modal');
+}
+?>
+
 <section class="res-item-create mt-50">
-    <div class="section-header pt-20 pb-20 text-center">
+    <div class="section-header pb-20 text-center">
         <h1 class="mb-0 c-white"><?= Html::encode($this->title) ?></h1>
         <p class="mt-10 c-gray-1">Your submission will be reviewed before it appears live.</p>
     </div>
@@ -19,13 +25,3 @@ $this->title = 'Submit your bitcoin resource';
         'model' => $model,
     ]) ?>
 </section>
-
-
-
-<?php
-
-if (Yii::$app->session->getFlash('contentCreated')) {
-    echo $this->render('_contentCreated-modal',compact('model'));
-}
-
-?>
