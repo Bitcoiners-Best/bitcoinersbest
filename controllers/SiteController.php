@@ -71,18 +71,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $itemModel = new ResItem();
-        $searchModel = new ResItemSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        $type = ResType::find()->all();
-
-        return $this->render('index', [
-          'type' => $type,
-          'model' => $itemModel,
-          'searchModel' => $searchModel,
-          'dataProvider' => $dataProvider
-        ]);
+        return $this->redirect('/article');
     }
 
 
