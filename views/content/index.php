@@ -28,7 +28,13 @@ $this->title = 'Home';
   -->
     <?= ListView::widget([
         'dataProvider' => $dataProvider,
-        'itemView' => 'resType-views/_'.$resTypeObject->name
+        'itemView' => 'resType-views/_'.$resTypeObject->name,
+        'summary' => '',
+        'pager' => [
+          'options' => ['class' => 'pagination d-flex justify-content-center medium'],
+          'prevPageLabel' => '',
+          'nextPageLabel' => '',
+        ],
     ]) ?>
 
 <?php Pjax::end(); ?>
