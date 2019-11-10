@@ -13,17 +13,14 @@ $this->title = 'Home';
 ?>
 
 <?php
-// TODO: The PJAX container reload call when the resource type selector changes
+// reloads the container when a resource is selected
 $this->registerJs(
   '$.pjax("#w0 a", "#w0", {"push":true,"replace":false,"timeout":10000,"scrollTo":false});'
 );
 ?>
 
-<?php Pjax::begin(['enablePushState' => false]); ?>
 
-<!--
-TODO 1: Selecting a new resource type from the menu below should update .module-container with the properly filtered entries (PJAX call above)
--->
+<?php Pjax::begin(['enablePushState' => false]); ?>
 
 <div class="section-selector">
     <div class="d-flex justify-content-center pt-30 pb-30 text-uppercase">
