@@ -67,7 +67,7 @@ class ContentController extends Controller
         $resTypeName = Yii::$app->request->pathInfo;
         $resTypeObject = ResType::find()->where(['name'=>$resTypeName])->one();
 
-        $params['ResItem']['res_type_id'] = $resTypeObject->id;
+        $params['ResItemSearch']['res_type_id'] = $resTypeObject->id;
         $params = ArrayHelper::merge($params,Yii::$app->request->queryParams);
 
         $itemModel = new ResItem();
