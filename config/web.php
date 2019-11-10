@@ -53,6 +53,12 @@ $config = [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/res-type'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/status-type'],
                 //'/<controller:\w+>/<action:[A-Za-z0-9 -_.]+>' => '/<controller>/<action>',
+
+                'article' => 'content/index',
+                'podcast_episode' => '/content/index',
+                'podcast' => '/content/index',
+                'twitter_thread' => '/content/index',
+                'book' => '/content/index'
             ],
             'baseUrl'=>getenv('BASE_URL'),
         ],

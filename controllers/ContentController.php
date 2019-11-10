@@ -3,10 +3,12 @@
 namespace app\controllers;
 
 use app\controllers\admin\BaseAdminController;
+use app\models\ResType;
 use Yii;
 use app\models\ResItem;
 use app\models\ResItemSearch;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -52,6 +54,34 @@ class ContentController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+        ]);
+    }
+
+    /**
+     * Displays homepage.
+     *
+     * @return string
+     */
+    public function actionIndex()
+    {
+        $resTypeName = Yii::$app->request->pathInfo;
+        $resTypeObject = ResType::find()->where(['name'=>$resTypeName])->one();
+
+        $params['ResItemSearch']['res_type_id'] = $resTypeObject->id;
+        $params = ArrayHelper::merge($params,Yii::$app->request->queryParams);
+
+        $itemModel = new ResItem();
+        $searchModel = new ResItemSearch();
+        $dataProvider = $searchModel->search($params);
+
+        $type = ResType::find()->all();
+
+        return $this->render('index', [
+            'types' => $type,
+            'model' => $itemModel,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'resTypeObject'=>$resTypeObject
         ]);
     }
 }
