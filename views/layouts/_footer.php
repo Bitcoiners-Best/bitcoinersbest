@@ -6,7 +6,7 @@
           </div>
           <h6 class="c-white mr-20"><a class="link" href="bitcoinersbest@pm.me">Contact</a></h6>
           <h6 class="c-white m-0"><a class="link" target="_blank" href="https://twitter.com/bitcoiners_best">@bitcoiners_best</a></h6> -->
-            <h6><a class="link-light" href="../site/terms">Terms</a><a class="link-light ml-30" href="../site/privacy">Privacy</a></h6>
+            <h6><a class="link-light medium" href="../site/terms">Terms</a><a class="link-light medium ml-40" href="../site/privacy">Privacy</a></h6>
       </div>
     </div>
 </footer>
