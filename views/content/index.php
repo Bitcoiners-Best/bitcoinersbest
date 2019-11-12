@@ -33,7 +33,7 @@ $this->title = 'Home';
         'itemView' => 'resType-views/_'.$resTypeObject->name,
         'summary' => '',
         'pager' => [
-          'options' => ['class' => 'pagination d-flex justify-content-center medium'],
+          'options' => ['class' => 'pagination d-flex justify-content-center semibold'],
           'prevPageLabel' => '',
           'nextPageLabel' => '',
         ],
