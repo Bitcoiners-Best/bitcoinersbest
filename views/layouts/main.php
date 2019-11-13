@@ -40,39 +40,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-
-<div class="modal-full overlay-effect" id="overlay-modal">
-    <div class="overlay-content bg-black br-4 text-center">
-        <!-- Lightning Paywall Vote -->
-        <!-- <button class="close-modal btn br-circle icon-wrap push-button">
-          <span class="icon a a-link close rounded"></span>
-        </button>
-        <h2 class="c-white">Upvote {title}</h2>
-        <h3 class="mb-20 c-white"><span class="c-brand">{#}</span> sats</h3>
-        <h6 class="mb-20 c-gray-1">All proceeds will be donated to an open-source bitcoin/lightning projects.</h6>
-        <img src="http://lorempixel.com/200/200" class="ew-200 card-img mb-30" alt="...">
-        <a class="btn btn-rect-lg btn-block mb-20 push-button" href="#">Copy Payment Request</a>
-        <h6 class="mb-0"><span class="c-gray-1">Powered by </span><a class="link" href="">paywall.link</a></h6> -->
-
-        <!-- Success Message -->
-        <!-- <img src="" alt="">
-        <h2 class="mb-30 c-white">Successfully upvoted</h2>
-        <h6 class="mb-30 c-gray-1">Thank you for supporting bitcoin education.</h6>
-        <h6 class="mb-30 c-gray-1">Help us decide who to support. Vote on the recipient of this month’s donation to a bitcoin open source project.</h6>
-        <h5><a class="link medium close-modal" href="">Done</a></h5> -->
-
-        <!-- Login/Signup -->
-        <button class="close-modal btn br-circle icon-wrap push-button">
-          <span class="icon a a-link close rounded"></span>
-        </button>
-
-        <h2 class="mt-30 mb-30 c-white">Upvote {resource}</h2>
-        <h6 class="mb-30 c-gray-1">You must be logged in to upvote.</h6>
-        <a class="btn btn-rect-lg btn-block mb-20 push-button" href="/site/signup">Join</a>
-        <a class="link medium close-modal" href="/site/login">Login</a>
-    </div>
-</div>
-
+<?php if (Yii::$app->user->isGuest) { echo $this->render('../_modals/_signin-modal'); }?>
 <div class="overlay-module"></div>
 
 <div class="wrap">
@@ -96,7 +64,7 @@ AppAsset::register($this);
         ['label' => 'Join', 'url' => ['/site/signup'], 'options' => ['class' => 'nav-item align-self-center'], 'visible'=>Yii::$app->user->isGuest],
         ['label' => 'Submit', 'url' => ['/content/submit'], 'options' => ['class' => 'nav-item align-self-center'], 'visible'=>!Yii::$app->user->isGuest],
         (
-          '<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md push-button" data-modal="overlay-modal"><svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          '<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md push-button" data-modal="signin-modal"><svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4.47692 8.91917H0.761182C0.309406 8.91917 -0.0459241 8.53267 0.00483732 8.09662L0.827172 0.882007C0.88301 0.381542 1.31956 0 1.83732 0H6.02514C6.74595 0 7.23834 0.708578 6.9693 1.36265L5.49215 4.95509H9.23326C9.8221 4.95509 10.1876 5.57944 9.88809 6.07495L4.01499 15.7572C3.72057 16.2378 2.96423 15.9504 3.08098 15.4054L4.47692 8.91917Z" fill="#1D2229"/>
           </svg><span class="ml-15">
 Vote</span><span class="ml-10">{x}</span></button></li>'

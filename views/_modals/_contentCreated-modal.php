@@ -2,11 +2,3 @@
   Resource submitted!
   <button type="button c-brand transition" class="close" data-dismiss="alert" aria-label="Close"></button>
 </div>
-
-<?php
-    $this->registerJs("
-    $('#contentCreated').modal({
-          keyboard: false
-        })
-    ");
-?>
