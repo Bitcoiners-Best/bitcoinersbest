@@ -60,6 +60,8 @@ $config = [
                 'twitter_thread' => '/content/index',
                 'book' => '/content/index',
 
+                'profile/<handle:\w+>' => 'profile/index',
+
                 '/<controller:\w+>/<action:[A-Za-z0-9 -_.]+>' => '/<controller>/<action>',
             ],
             'baseUrl'=>getenv('BASE_URL'),

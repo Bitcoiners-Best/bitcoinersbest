@@ -211,4 +211,9 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return 'https://avatars.io/twitter/'.$this->twitter.'/'.$size;
     }
+
+    public function getProfileUrl()
+    {
+        return '/profile/'.$this->twitter;
+    }
 }
