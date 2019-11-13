@@ -60,6 +60,7 @@ class ResItem extends \yii\db\ActiveRecord
             [['status_type_id'],'default','value'=>StatusType::RESITEM_ACTIVE],
             [['submitted_by'],'default','value'=>Yii::$app->user->id],
             [['res_type_id', 'vote_count', 'status_type_id', 'submitted_by'], 'integer'],
+            [['vote_count'],'default', 'value'=>0],
             [['data'], 'string'],
             [['rss','url'],'url'],
             [['title', 'description', 'image', 'rss', 'url', 'created_at', 'created_by'], 'string', 'max' => 255],
