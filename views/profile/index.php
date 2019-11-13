@@ -1,0 +1,1 @@
+<h1 class="c-gray-4">Profile Page for <?=$user->twitter;?></h1>

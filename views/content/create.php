@@ -12,7 +12,7 @@ $this->title = 'Submit Resource';
 
 <?php
 if (Yii::$app->session->getFlash('contentCreated')) {
-    echo $this->render('_contentCreated-modal');
+    echo $this->render('../_modals/_contentCreated-modal');
 }
 ?>
 

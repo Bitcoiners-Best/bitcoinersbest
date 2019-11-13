@@ -52,13 +52,17 @@ $config = [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/item'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/res-type'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/status-type'],
-                //'/<controller:\w+>/<action:[A-Za-z0-9 -_.]+>' => '/<controller>/<action>',
+
 
                 'article' => 'content/index',
                 'podcast_episode' => '/content/index',
                 'podcast' => '/content/index',
                 'twitter_thread' => '/content/index',
-                'book' => '/content/index'
+                'book' => '/content/index',
+
+                'profile/<handle:\w+>' => 'profile/index',
+
+                '/<controller:\w+>/<action:[A-Za-z0-9 -_.]+>' => '/<controller>/<action>',
             ],
             'baseUrl'=>getenv('BASE_URL'),
         ],

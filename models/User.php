@@ -206,4 +206,14 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    public function getProfilePic($size='small')
+    {
+        return 'https://avatars.io/twitter/'.$this->twitter.'/'.$size;
+    }
+
+    public function getProfileUrl()
+    {
+        return '/profile/'.$this->twitter;
+    }
 }
