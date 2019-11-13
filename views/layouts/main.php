@@ -103,7 +103,7 @@ Vote</span><span class="ml-10">{x}</span></button></li>'
         ),
 
         !Yii::$app->user->isGuest ? (
-          '<li class="nav-item align-self-center">' . Html::beginForm(['/site/logout'], 'post') . Html::submitButton('Logout',['class' => 'btn btn-rect-md logout push-button']). Html::endForm() . '</li>'
+          '<img src="'.Yii::$app->user->identity->getProfilePic().'"/><li class="nav-item align-self-center">' . Html::beginForm(['/site/logout'], 'post') . Html::submitButton('Logout',['class' => 'btn btn-rect-md logout push-button']). Html::endForm() . '</li>'
         ) : (
           ''
         ),
