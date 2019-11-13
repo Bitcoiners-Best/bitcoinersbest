@@ -256,6 +256,15 @@ path {
     margin-right: 0px;
 }
 
+.nav-item > a > .profile-picture {
+  max-width: 40px;
+  opacity: 1;
+}
+
+.nav-item > a > .profile-picture:hover {
+  opacity: 0.7;
+}
+
 .nav-link {
     display: block;
     padding: 10px;
@@ -571,7 +580,7 @@ footer {
 }
 
 .btn-rect-md {
-  padding: 12px 30px;
+  padding: 12px 24px;
 }
 
 .btn-rect-sm {
@@ -795,15 +804,26 @@ footer {
   color: #ffffff;
   background-color: #00ACED;
 }
+
 .twitter:hover {
   color: #ffffff;
   background-color: #009DD9;
 }
 
+.vote-total {
+  position: relative;
+}
+
 .vote-increment {
+  position: absolute;
+  top: 0;
   font-family: 'Circular Std';
   font-weight: 500;
   font-style: normal;
+  padding: 4px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 999;
 }
 
 

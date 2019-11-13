@@ -64,14 +64,13 @@ AppAsset::register($this);
         ['label' => 'Join', 'url' => ['/site/signup'], 'options' => ['class' => 'nav-item align-self-center'], 'visible'=>Yii::$app->user->isGuest],
         ['label' => 'Submit', 'url' => ['/content/submit'], 'options' => ['class' => 'nav-item align-self-center'], 'visible'=>!Yii::$app->user->isGuest],
         (
-          '<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md push-button" data-modal="signin-modal"><svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4.47692 8.91917H0.761182C0.309406 8.91917 -0.0459241 8.53267 0.00483732 8.09662L0.827172 0.882007C0.88301 0.381542 1.31956 0 1.83732 0H6.02514C6.74595 0 7.23834 0.708578 6.9693 1.36265L5.49215 4.95509H9.23326C9.8221 4.95509 10.1876 5.57944 9.88809 6.07495L4.01499 15.7572C3.72057 16.2378 2.96423 15.9504 3.08098 15.4054L4.47692 8.91917Z" fill="#1D2229"/>
-          </svg><span class="ml-15">
-Vote</span><span class="ml-10">{x}</span></button></li>'
+          '<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md push-button" data-modal="overlay-modal"><svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.95086 0L0.019522 9.95814C-0.0787614 10.0746 0.216089 10.1911 0.412656 10.1328L2.37832 9.43403C2.86974 9.25933 3.45944 9.43403 3.45944 9.78344L3.85257 15.9563C3.85257 16.0146 3.95086 16.0146 3.95086 15.9563L7.98048 5.93995C8.07876 5.82348 7.78391 5.70701 7.58734 5.76524L5.62168 6.46406C5.13026 6.63876 4.54056 6.46406 4.54056 6.11465L3.95086 0C3.95086 0 4.04914 0 3.95086 0Z" fill="#1D2229"/>
+          </svg><span class="ml-10 semibold">9999</span></button></li>'
         ),
 
         !Yii::$app->user->isGuest ? (
-          '<a href="'.Yii::$app->user->identity->getProfileUrl().'"><img src="'.Yii::$app->user->identity->getProfilePic().'"/></a><li class="nav-item align-self-center">' . Html::beginForm(['/site/logout'], 'post') . Html::submitButton('Logout',['class' => 'btn btn-rect-md logout push-button']). Html::endForm() . '</li>'
+          '<li class="nav-item align-self-center"><a href="'.Yii::$app->user->identity->getProfileUrl().'"><img class="profile-picture br-circle transition" src="'.Yii::$app->user->identity->getProfilePic().'"/></a></li>'
         ) : (
           ''
         ),
