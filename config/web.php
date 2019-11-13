@@ -52,6 +52,7 @@ $config = [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/item'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/res-type'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/status-type'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/res-vote'],
 
 
                 'article' => 'content/index',

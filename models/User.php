@@ -134,6 +134,14 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getResVotes()
+    {
+        return $this->hasMany(ResVote::className(), ['user_id' => 'id']);
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getId()
@@ -215,5 +223,16 @@ class User extends ActiveRecord implements IdentityInterface
     public function getProfileUrl()
     {
         return '/profile/'.$this->twitter;
+    }
+
+    public function canVote1x($res_item_id)
+    {
+        $resVotes = $this->getResVotes()->andWhere(['res_item_id'=>$res_item_id,'status_type_id'=>StatusType::RESVOTE_COUNTED])->orderBy('id DESC')->all();
+        foreach ($resVotes as $rv) {
+            if ($rv->count === 1) {
+                return false;
+            }
+        }
+        return true;
     }
 }
