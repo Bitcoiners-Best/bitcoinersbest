@@ -8,8 +8,13 @@
       <div class="modal-body">
 
         <!-- TODO: Update information on this invoice when the modal appears on a 10X vote click -->
-        <h2 class="c-white">Upvote {title}</h2>
+        <!-- TODO: Display the items voted on (like an itemized receipt)? -->
+        
+        <h2 class="c-white">Invoice Total</h2>
         <h3 class="mb-20 c-white"><span class="c-brand">{#}</span> sats</h3>
+        <p class="c-white">Item 1?</p>
+        <p class="c-white">Item 2?</p>
+        <p class="c-white">Item 3?</p>
         <h6 class="mb-20 c-gray-1">All proceeds will be donated to an open-source bitcoin/lightning projects.</h6>
         <img src="http://lorempixel.com/200/200" class="ew-200 card-img mb-30" alt="...">
         <a class="btn btn-rect-lg btn-block mb-20 push-button" href="#">Copy Payment Request</a>
