@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
 ?>
 
-<div class="book-module d-flex br-4 mb-30 fade-in">
+<div class="book-module d-flex br-4 mb-30">
     <div class="pr-20">
         <img src="<?= $model->image ?>" class="ew-100 card-img" alt="...">
     </div>

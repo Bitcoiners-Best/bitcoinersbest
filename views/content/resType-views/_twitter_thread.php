@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
 ?>
 
-<div class="thread-module d-flex br-4 mb-30 fade-in">
+<div class="thread-module d-flex br-4 mb-30">
   <div class="pr-20">
       <img src="http://lorempixel.com/80/80" class="ew-80 card-img br-circle" alt="...">
   </div>
