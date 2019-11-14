@@ -1,3 +1,62 @@
+$( document ).ready(function() {
+  // var api_url = 'http://bitcoinersbest.local:9111/v1/items'
+  // var key = 'admin-bandit-authkey'
+  // var output = '';
+  //
+  // $.ajax({
+  //   url: api_url + "?access-token=" + key,
+  //   contentType: "application/json",
+  //     dataType: 'json',
+  //     success: function(result){
+  //       $.each(result, function(i, item) {
+  //           output += '<div class="article-module d-flex bg-white br-4 mb-30">';
+  //
+  //           output += '<div class="flex-grow-1 align-self-center">';
+  //           output += '<img src="'+item.image+'" class="card-img" alt="'+item.title+'">';
+  //           output += '<h6 class="text-uppercase c-gray-1 medium mt-20 mb-10">'+item.title+'</h6>';
+  //           output += '<h5 class="medium mb-10">'+item.title+'</h5>';
+  //           output += '<h5 class="regular c-gray-1">'+item.description+'</h5>';
+  //           output += '</div>';
+  //
+  //           output += '<div class="align-self-top pl-20">';
+  //           output += '<div class="votes text-center">';
+  //           output += '<h6 class="medium mb-5">'+item.vote_count+'</h6>';
+  //           output += '<button class="btn bg-brand br-circle icon-wrap">';
+  //           output += '<span class="icon a a-link plus rounded"></span>';
+  //           output += '</button>';
+  //           output += '</div>';
+  //           output += '</div>';
+  //
+  //           output += '</div>';
+  //       });
+  //       jQuery('#module-container').html(output);
+  //     }
+  // })
+
+    $('.vote').on('click', function(event){
+        console.log("success");
+        if ($(".vote-increment").css('opacity') == 0) $(".vote-increment").css('opacity', 1);
+        else $(".vote-increment").css('opacity', 0);
+    });
+
+  // $("#resitem-res_type_id").change(function(){
+  //     $(this).find("option:selected").each(function(){
+  //         var optionValue = $(this).attr("value");
+  //         if(optionValue){
+  //             $(".resource-type").not("." + optionValue).hide();
+  //             $("." + optionValue).show();
+  //         } else{
+  //             $(".resource-type").hide();
+  //         }
+  //     });
+  // }).change();
+
+});
+
+
+
+
+
 jQuery(document).ready(function($){
 	var animationDelay = 2500,
 		barAnimationDelay = 3800,
@@ -142,27 +201,6 @@ jQuery(document).ready(function($){
 });
 
 
-// $(".btn").mousedown(function(){
-//     $(this).addClass("pressed");
-// });
-//
-// $(".btn").mouseup(function(){
-//     $(this).removeClass("pressed");
-// });
-//
-// $(".btn").on("tap",function(){
-//     $(this).addClass("pressed");
-// });
-//
-// $(".btn").on("tap",function(){
-//     $(this).removeClass("pressed");
-// });
-//
-// $(".btn").mouseout(function(){
-//     $(this).removeClass("pressed");
-// });
-
-
 var animateButton = function(e) {
 
   e.preventDefault;
@@ -241,34 +279,3 @@ if ( typeof define === 'function' && define.amd ) {
  window.classie = classie;
 }
 })( window );
-
-
-var ModalEffects = (function() {
- function init() {
-   var overlay = document.querySelector( '.overlay-module' );
-   [].slice.call( document.querySelectorAll( '.overlay-trigger' ) ).forEach( function( el, i ) {
-     var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-       close = modal.querySelector( '.close-modal' );
-
-     function removeModal( hasPerspective ) {
-       classie.remove( modal, 'modal-show' );
-     }
-
-     function removeModalHandler() {
-       removeModal( classie.has( el, 'md-setperspective' ) );
-     }
-
-     el.addEventListener( 'click', function( ev ) {
-       classie.add( modal, 'modal-show' );
-       overlay.removeEventListener( 'click', removeModalHandler );
-       overlay.addEventListener( 'click', removeModalHandler );
-
-     });
-     close.addEventListener( 'click', function( ev ) {
-       ev.stopPropagation();
-       removeModalHandler();
-     });
-   } );
- }
- init();
-})();

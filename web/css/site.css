@@ -47,7 +47,7 @@ body {
 	font-stretch: normal;
 	font-weight: 600
 }
-@font-face {
+/* @font-face {
     font-family: 'Circular Std';
     src: url('CircularStd-Medium.eot');
     src: url('CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
@@ -57,7 +57,7 @@ body {
         url('CircularStd-Medium.svg#CircularStd-Medium') format('svg');
     font-weight: 500;
     font-style: normal;
-}
+} */
 
 .wrap {
   min-height: 100%;
@@ -415,6 +415,15 @@ footer {
   fill: #FFCF53;
 }
 
+#vote-increment {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
 .pagination {
     display: -ms-flexbox;
     display: flex;
@@ -474,71 +483,53 @@ footer {
 
 /* MODAL */
 
-.modal-full {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 35vw;
-  height: auto;
-	z-index: 9999;
-	visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	-moz-transform: translateX(-50%) translateY(-50%);
-	-ms-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
+.modal-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
-.modal-show {
-	visibility: visible;
+.modal-header .close {
+    padding: 12px;
+    margin: 0 0 0 auto;
 }
 
-.overlay-module {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	visibility: hidden;
-	top: 0;
-	left: 0;
-	z-index: 9998;
-	opacity: 0;
-	background: rgba(0, 0, 0, 0.9);
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
+.modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 30px;
 }
 
-.modal-show~.overlay-module {
-	opacity: 1;
-	visibility: visible;
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
 }
 
-.overlay-content {
-	position: relative;
-  padding: 50px;
+.modal.fade .modal-dialog {
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    -webkit-transition: all 0.3s;
+  	-moz-transition: all 0.3s;
+  	transition: all 0.3s;
 }
-
-.overlay-effect .overlay-content {
-	-webkit-transform: translateY(20%);
-	-moz-transform: translateY(20%);
-	-ms-transform: translateY(20%);
-	transform: translateY(20%);
-	opacity: 0;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.modal-show.overlay-effect .overlay-content {
-	-webkit-transform: translateY(0);
-	-moz-transform: translateY(0);
-	-ms-transform: translateY(0);
-	transform: translateY(0);
-	opacity: 1;
-}
-
 
 /* BUTTONS */
 
