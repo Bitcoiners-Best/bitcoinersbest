@@ -40,6 +40,45 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+
+<!-- <nav class='navbar navbar-inverse navbar-fixed-top'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <a class='navbar-brand' href='#'>Dan Stuart</a>
+      <button class='btn navbar-btn btn-link pull-right' data-target='#modalNavigation' data-toggle='modal' type='button'>
+        <span class='sr-only'>Open navigation</span>
+        <span class='glyphicon glyphicon-menu-hamburger'></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class='modal fade modal-fullscreen-menu' id='modalNavigation' role='dialog' tabindex='-1'>
+  <button aria-label='Close' class='close' data-dismiss='modal' type='button'>
+    <span class='sr-only'>Close navigation</span>
+    <span class='glyphicon glyphicon-remove'></span>
+  </button>
+  <div class='modal-dialog'>
+    <nav class='list-group'>
+      <a class='list-group-item' href='#'>Home</a>
+      <a class='list-group-item' href='#'>Services</a>
+      <a class='list-group-item' href='#'>Meet the Team</a>
+      <a class='list-group-item' href='#'>Careers</a>
+      <a class='list-group-item' href='#'>Contact Us</a>
+    </nav>
+  </div>
+</div>
+<div class='jumbotron text-center'>
+  <div class='container'>
+    <h1>Bootstrap Fullscreen Menu</h1>
+    <p>This is a quick demonstration of placing site navigation within a Bootstrap modal.</p>
+    <button class='btn btn-primary btn-lg' data-target='#modalNavigation' data-toggle='modal' type='button'>
+      Open Navigation
+    </button>
+  </div>
+</div> -->
+
+
+
 <?php if (Yii::$app->user->isGuest) {
   echo $this->render('../_modals/_signin-modal');
   echo $this->render('../_modals/_signin-invoice-modal');
@@ -71,12 +110,12 @@ AppAsset::register($this);
         ['label' => 'Submit', 'url' => ['/content/submit'], 'options' => ['class' => 'nav-item align-self-center'], 'visible'=>!Yii::$app->user->isGuest],
         (
           Yii::$app->user->getIsGuest() ?
-          '<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md push-button" data-toggle="modal" data-target="#signin-invoice-modal"><svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          '<!--<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md push-button" data-toggle="modal" data-target="#signin-invoice-modal"><svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.95086 0L0.019522 9.95814C-0.0787614 10.0746 0.216089 10.1911 0.412656 10.1328L2.37832 9.43403C2.86974 9.25933 3.45944 9.43403 3.45944 9.78344L3.85257 15.9563C3.85257 16.0146 3.95086 16.0146 3.95086 15.9563L7.98048 5.93995C8.07876 5.82348 7.78391 5.70701 7.58734 5.76524L5.62168 6.46406C5.13026 6.63876 4.54056 6.46406 4.54056 6.11465L3.95086 0C3.95086 0 4.04914 0 3.95086 0Z" fill="#1D2229"/>
-          </svg><span class="ml-10 semibold">9999</span></button></li>' :
-          '<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md push-button" data-toggle="modal" data-target="#invoice-modal"><svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          </svg><span class="ml-10 semibold">9999</span></button></li>-->' :
+          '<!--<li class="nav-item align-self-center"><button class="overlay-trigger btn btn-rect-md push-button" data-toggle="modal" data-target="#invoice-modal"><svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.95086 0L0.019522 9.95814C-0.0787614 10.0746 0.216089 10.1911 0.412656 10.1328L2.37832 9.43403C2.86974 9.25933 3.45944 9.43403 3.45944 9.78344L3.85257 15.9563C3.85257 16.0146 3.95086 16.0146 3.95086 15.9563L7.98048 5.93995C8.07876 5.82348 7.78391 5.70701 7.58734 5.76524L5.62168 6.46406C5.13026 6.63876 4.54056 6.46406 4.54056 6.11465L3.95086 0C3.95086 0 4.04914 0 3.95086 0Z" fill="#1D2229"/>
-          </svg><span class="ml-10 semibold">9999</span></button></li>'
+          </svg><span class="ml-10 semibold">9999</span></button></li>-->'
         ),
 
         !Yii::$app->user->isGuest ? (
