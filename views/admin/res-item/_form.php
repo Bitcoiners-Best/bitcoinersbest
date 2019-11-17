@@ -14,17 +14,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'res_type_id')->dropDownList(\app\models\ResType::getAvailableTypesAsArray())->label('Resource Type') ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'title')->textInput(['maxlength' => true, 'placeholder' => "Satoshi's Place"]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => '4']) ?>
+    <?= $form->field($model, 'description')->textarea(['rows' => '4', 'placeholder' => "My resource is..."]) ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'image')->textInput(['maxlength' => true, 'placeholder' => "https://satoshis.place/image.jpg"]) ?>
 
-    <?= $form->field($model, 'rss')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'rss')->textInput(['maxlength' => true, 'placeholder' => "https://satoshis.place/rss"]) ?>
 
-    <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'url')->textInput(['maxlength' => true, 'placeholder' => "https://satoshis.place/url"]) ?>
 
-    <?= $form->field($model, 'created_by')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'created_by')->textInput(['maxlength' => true, 'placeholder' => "Marty Bent"]) ?>
 
     <div class="form-group mt-50">
         <?= Html::submitButton('Submit', ['class' => 'btn btn-rect-xl push-button']) ?>
