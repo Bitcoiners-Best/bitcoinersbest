@@ -63,6 +63,8 @@ $config = [
 
                 'profile/<handle:\w+>' => 'profile/index',
 
+                'content/view/<id:\w+>' => 'content/view',
+
                 '/<controller:\w+>/<action:[A-Za-z0-9 -_.]+>' => '/<controller>/<action>',
             ],
             'baseUrl'=>getenv('BASE_URL'),
