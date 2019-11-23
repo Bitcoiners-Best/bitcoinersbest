@@ -9,7 +9,7 @@ use yii\helpers\HtmlPurifier;
     </div>
     <div class="flex-grow-1 align-self-center">
         <h6 class="text-uppercase c-gray-1 medium mb-15"><?= $model->created_by ?></h6>
-        <h5 class="medium c-white"><?= $model->title ?></h5>
+        <a href="/content/view/<?= $model->id ?>"><h5 class="medium c-white"><?= $model->title ?></h5></a>
     </div>
     <div class="align-self-top pl-20">
       <div class="votes text-center">

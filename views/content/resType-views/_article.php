@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
   <div class="flex-grow-1 align-self-center">
       <img src="<?= $model->image ?>" class="card-img" alt="...">
       <h6 class="text-uppercase c-gray-1 medium mt-25 mb-15">TALES FROM THE CRYPT</h6>
-      <h5 class="medium mb-15 c-white"><?= $model->title ?></h5>
+      <a href="/content/view/<?= $model->id ?>"><h5 class="medium mb-15 c-white"><?= $model->title ?></h5></a>
       <h5 class="regular c-gray-1"><?= $model->description ?></h5>
   </div>
   <div class="align-self-top pl-20">
