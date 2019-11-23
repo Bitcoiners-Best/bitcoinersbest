@@ -1,0 +1,38 @@
+{
+  "name": "yii2-vue-basic",
+  "version": "1.0.0",
+  "description": "This file assembles packages needed for running vue application inside yii2.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "webpack --config webpack.config.js",
+    "prod": "webpack --config webpack.config.js --optimize-minimize --mode production"
+  },
+  "keywords": [
+    "yii2",
+    "vue",
+    "webpack",
+    "js",
+    "node"
+  ],
+  "author": "Srdjan Drakul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srdjan92/yii2-vue-basic/issues"
+  },
+  "homepage": "https://github.com/srdjan92/yii2-vue-basic#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
