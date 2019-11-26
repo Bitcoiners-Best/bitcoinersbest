@@ -41,44 +41,6 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 
-<!-- <nav class='navbar navbar-inverse navbar-fixed-top'>
-  <div class='container-fluid'>
-    <div class='navbar-header'>
-      <a class='navbar-brand' href='#'>Dan Stuart</a>
-      <button class='btn navbar-btn btn-link pull-right' data-target='#modalNavigation' data-toggle='modal' type='button'>
-        <span class='sr-only'>Open navigation</span>
-        <span class='glyphicon glyphicon-menu-hamburger'></span>
-      </button>
-    </div>
-  </div>
-</nav>
-<div class='modal fade modal-fullscreen-menu' id='modalNavigation' role='dialog' tabindex='-1'>
-  <button aria-label='Close' class='close' data-dismiss='modal' type='button'>
-    <span class='sr-only'>Close navigation</span>
-    <span class='glyphicon glyphicon-remove'></span>
-  </button>
-  <div class='modal-dialog'>
-    <nav class='list-group'>
-      <a class='list-group-item' href='#'>Home</a>
-      <a class='list-group-item' href='#'>Services</a>
-      <a class='list-group-item' href='#'>Meet the Team</a>
-      <a class='list-group-item' href='#'>Careers</a>
-      <a class='list-group-item' href='#'>Contact Us</a>
-    </nav>
-  </div>
-</div>
-<div class='jumbotron text-center'>
-  <div class='container'>
-    <h1>Bootstrap Fullscreen Menu</h1>
-    <p>This is a quick demonstration of placing site navigation within a Bootstrap modal.</p>
-    <button class='btn btn-primary btn-lg' data-target='#modalNavigation' data-toggle='modal' type='button'>
-      Open Navigation
-    </button>
-  </div>
-</div> -->
-
-
-
 <?php if (Yii::$app->user->isGuest) {
   echo $this->render('../_modals/_signin-modal');
   echo $this->render('../_modals/_signin-invoice-modal');
