@@ -7,8 +7,9 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: [
-    { path: '/', component: HelloWorld }
-  ]
+    { path: '/' }
+  ],
+  mode: 'history'
 });
 
 new Vue({
