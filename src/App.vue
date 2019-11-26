@@ -1,25 +1,45 @@
 <template>
-    <div>
-        <h1>{{ text }}</h1>
+  <div class="wrap">
+    <app-header />
+    <div class="container-fluid">
 
-        <HelloWorld msg="Hello World Vue Component" />
+        <router-view>
+        </router-view>
+
+        <app-footer />
     </div>
+  </div>
 </template>
 
 <script>
-    import HelloWorld from "./components/HelloWorld.vue";
+    import Header from './components/Header.vue';
+    import Footer from './components/Footer.vue';
+
+    import axios from 'axios'
+
+
     export default {
         name: "App",
-        data: function () {
-            return {
-                text: 'This part of application is rendered in Vue.'
-            }
-        },
         components: {
-            HelloWorld
-        }
+          'app-header': Header,
+          'app-footer': Footer
+        },
+        data: function () {
+          return {
+
+          }
+
+        },
+        mounted() {
+
+        },
+        methods: {
+
+        },
+
     }
 </script>
 
-<style scoped>
+<style>
+
 </style>
