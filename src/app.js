@@ -12,12 +12,14 @@ import './assets/css/site.css'
 import Login from "./views/Login.vue";
 import Signup from "./views/Signup.vue";
 
-
 import Submit from "./views/Submit.vue";
 import Profile from "./views/Profile.vue";
 
 import Podcast from "./components/resources/Podcast.vue";
 import Article from "./components/resources/Article.vue";
+import Book from "./components/resources/Book.vue";
+import Thread from "./components/resources/Thread.vue";
+import Episode from "./components/resources/Episode.vue";
 
 import Faq from "./views/Faq.vue";
 import Terms from "./views/Terms.vue";
@@ -29,8 +31,9 @@ Vue.use(BootstrapVue);
 
 const router = new VueRouter({
   mode: 'history',
+  linkExactActiveClass: 'active',
   routes: [
-    { path: '/index/vue' },
+    { path: '/index/vue', component: Article },
 
     { path: '/login', component: Login },
     { path: '/signup', component: Signup },
@@ -40,6 +43,9 @@ const router = new VueRouter({
 
     { path: '/podcast', component: Podcast },
     { path: '/article', component: Article },
+    { path: '/book', component: Book },
+    { path: '/thread', component: Thread },
+    { path: '/episode', component: Episode },
 
     { path: '/faq', component: Faq },
     { path: '/terms', component: Terms},
