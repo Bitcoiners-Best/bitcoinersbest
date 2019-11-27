@@ -1,10 +1,10 @@
 <template>
-  <h1>Thread</h1>
+  <h1 class="c-white">Thread</h1>
 </template>
 
 <script>
     export default {
-        name: 'Thread',
+        name: 'Thread'
     }
 </script>
 
