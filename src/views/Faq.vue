@@ -41,7 +41,7 @@
 </template>
 <script>
     export default {
-        name: 'Frequently Asked Questions',
+        name: 'Faq',
     }
 </script>
 
