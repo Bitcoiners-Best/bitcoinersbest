@@ -2,13 +2,13 @@
   <div class="wrap">
     <app-header />
     <div class="container-fluid">
-        <resource-selector />
+        <resource-selector v-if="['article', 'thread', 'index', 'podcast', 'episode', 'book'].includes($route.name)"/>
         <register-modal />
         <invoice-modal />
 
         <router-view></router-view>
 
-        <b-button v-b-modal.invoice-modal>Trigger Invoice Modal</b-button>
+        <!-- <b-button v-b-modal.invoice-modal>Trigger Invoice Modal</b-button> -->
 
         <app-footer />
     </div>
@@ -23,6 +23,7 @@
     import InvoiceModal from './components/modals/InvoiceModal.vue';
     import RegisterModal from './components/modals/RegisterModal.vue';
 
+
     export default {
         name: "App",
         components: {
@@ -36,7 +37,8 @@
           return {
             loading: true,
             isRegisterModalActive: false,
-            isInvoiceModalActive: false
+            isInvoiceModalActive: false,
+            showResourceSelector: false
           }
         },
         methods: {

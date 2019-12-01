@@ -33,23 +33,23 @@ const router = new VueRouter({
   mode: 'history',
   linkExactActiveClass: 'active',
   routes: [
-    { path: '/index/vue', component: Article },
+    { path: '/index/vue', name: 'index', component: Article },
 
-    { path: '/login', component: Login },
-    { path: '/signup', component: Signup },
+    { path: '/login', name: 'login', component: Login },
+    { path: '/signup', name: 'signup', component: Signup },
 
-    { path: '/submit', component: Submit },
-    { path: '/profile/:name', component: Profile },
+    { path: '/submit', name: 'submit', component: Submit },
+    { path: '/profile/:name', name: 'profile', component: Profile },
 
-    { path: '/podcast', component: Podcast },
-    { path: '/article', component: Article },
-    { path: '/book', component: Book },
-    { path: '/thread', component: Thread },
-    { path: '/episode', component: Episode },
+    { path: '/podcast', name: 'podcast', component: Podcast },
+    { path: '/article', name: 'article', component: Article },
+    { path: '/book', name: 'episode', component: Book },
+    { path: '/thread', name: 'thread', component: Thread },
+    { path: '/episode', name: 'episode', component: Episode },
 
-    { path: '/faq', component: Faq },
-    { path: '/terms', component: Terms},
-    { path: '/privacy', component: Privacy}
+    { path: '/faq', name: 'faq', component: Faq },
+    { path: '/terms', name: 'terms', component: Terms},
+    { path: '/privacy', name: 'privacy', component: Privacy}
   ]
 });
 
