@@ -1,10 +1,11 @@
 <template>
   <div>
-    <div class="article-module d-flex br-4 mb-30" v-for="resource in resources" :key="resource.id">
+    <div v-if="loading">Loading...</div>
+    <div class="article-module d-flex br-4 mb-30 fade-in" v-for="resource in resources" :key="resource.id">
       <div class="flex-grow-1 align-self-center">
           <img :src="resource.image_url" class="card-img" alt="...">
           <h6 class="text-uppercase c-gray-1 medium mt-25 mb-15">TALES FROM THE CRYPT</h6>
-          <a :href="resource.id"><h5 class="medium mb-15 c-white">{{resource.title}}</h5></a>
+          <router-link :to="'/'+resource.id+'/'+resource.title"><h5 class="medium mb-15 c-white">{{resource.title}}</h5></router-link>
           <h5 class="regular c-gray-1">{{resource.description}}</h5>
       </div>
       <div class="align-self-top pl-20">
@@ -29,7 +30,7 @@
   import axios from 'axios'
 
   export default {
-      name: "App",
+      name: "Article",
       components: {
       },
       data: function () {
@@ -47,13 +48,12 @@
           axios.get("http://bitcoinersbest.local:9111/v1/items?access-token=admin-bandit-authkey&V1ResItemSearch[res_type_id]=30")
           .then(function(res){
             self.resources = res.data;
-            console.log('Data: ', res).data;
           })
           .catch(error => {
             console.log(error);
           })
           .finally(() => this.loading = false);
-        }
+        },
       }
   }
 </script>

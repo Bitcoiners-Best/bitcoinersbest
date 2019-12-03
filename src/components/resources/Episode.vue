@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="podcast-module d-flex br-4 mb-30" v-for="resource in resources" :key="resource.id">
+    <div class="podcast-module d-flex br-4 mb-30 fade-in" v-for="resource in resources" :key="resource.id">
         <div class="pr-20">
             <img :src="resource.image_url" class="ew-100 card-img" alt="...">
         </div>
@@ -27,7 +27,7 @@
   import axios from 'axios'
 
   export default {
-      name: "App",
+      name: "Episode",
       components: {
       },
       data: function () {
@@ -42,16 +42,14 @@
       methods: {
         getEpisodes() {
           var self = this;
-          axios.get("http://bitcoinersbest.local:9111/v1/items?access-token=admin-bandit-authkey&V1ResItemSearch[res_type_id]=20")
+          axios.get("http://bitcoinersbest.local:9111/v1/items?access-token=admin-bandit-authkey&V1ResItemSearch[res_type_id]=25")
           .then(function(res){
             self.resources = res.data;
-            console.log('Data: ', res).data;
           })
           .catch(error => {
             console.log(error);
           })
           .finally(() => this.loading = false);
-          // this.getResourceList();
           console.log(this.$route);
         }
       }

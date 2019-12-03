@@ -37,8 +37,7 @@
           return {
             loading: true,
             isRegisterModalActive: false,
-            isInvoiceModalActive: false,
-            showResourceSelector: false
+            isInvoiceModalActive: false
           }
         },
         methods: {

@@ -21,6 +21,8 @@ import Book from "./components/resources/Book.vue";
 import Thread from "./components/resources/Thread.vue";
 import Episode from "./components/resources/Episode.vue";
 
+import Resource from "./views/Resource.vue";
+
 import Faq from "./views/Faq.vue";
 import Terms from "./views/Terms.vue";
 import Privacy from "./views/Privacy.vue";
@@ -28,6 +30,8 @@ import Privacy from "./views/Privacy.vue";
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 
+Vue.config.devtools = true;
+Vue.config.productionTip = false;
 
 const router = new VueRouter({
   mode: 'history',
@@ -43,9 +47,11 @@ const router = new VueRouter({
 
     { path: '/podcast', name: 'podcast', component: Podcast },
     { path: '/article', name: 'article', component: Article },
-    { path: '/book', name: 'episode', component: Book },
+    { path: '/book', name: 'book', component: Book },
     { path: '/thread', name: 'thread', component: Thread },
     { path: '/episode', name: 'episode', component: Episode },
+
+    { path: '/:id/:title', name: 'resource', component: Resource, props: true },
 
     { path: '/faq', name: 'faq', component: Faq },
     { path: '/terms', name: 'terms', component: Terms},

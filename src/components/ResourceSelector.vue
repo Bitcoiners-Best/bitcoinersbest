@@ -1,5 +1,5 @@
 <template>
-  <div class="scrolling-wrapper">
+  <div class="scrolling-wrapper fade-in">
     <div class="section-selector">
         <div class="d-flex justify-content-center text-uppercase">
             <router-link to="/podcast" class="module-navigation-element">Podcast</router-link>
