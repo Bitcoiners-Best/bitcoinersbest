@@ -2,6 +2,8 @@ import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 import App from './App.vue';
 
+import store from './store'
+
 import axios from 'axios';
 import VueRouter from 'vue-router';
 
@@ -59,7 +61,10 @@ const router = new VueRouter({
   ]
 });
 
+
+
 new Vue({
+    store,
     router,
     el: '#app',
     render: h => h(App)
