@@ -6,7 +6,7 @@
         </div>
         <div class="flex-grow-1 align-self-center">
             <h6 class="text-uppercase c-gray-1 medium mb-15">{{ resource.created_by }}</h6>
-            <a :href="resource.id"><h5 class="medium c-white">{{ resource.title }}</h5></a>
+            <router-link :to="'/'+resource.id+'/'+resource.title"><h5 class="medium mb-15 c-white">{{resource.title}}</h5></router-link>
         </div>
         <div class="align-self-top pl-20">
           <div class="votes text-center">
