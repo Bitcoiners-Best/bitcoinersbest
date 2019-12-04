@@ -454,6 +454,8 @@ footer {
     position: relative;
     padding: 16px 50px;
     border: 1px solid #FFCF53;
+    color: #FFCF53;
+    background: transparent;
     border-radius: 4px;
     margin-bottom: 0px;
 }
