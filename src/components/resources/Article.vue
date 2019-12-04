@@ -6,7 +6,8 @@
           <img :src="resource.image" class="card-img" alt="...">
           <h6 class="text-uppercase c-gray-1 medium mt-25 mb-15">TALES FROM THE CRYPT</h6>
           <router-link :to="'/'+resource.id+'/'+resource.title"><h5 class="medium mb-15 c-white">{{resource.title}}</h5></router-link>
-          <h5 class="regular c-gray-1">{{resource.description}}</h5>
+          <h5 v-if="resource.description.length < 140" class="regular c-gray-1">{{resource.description}}</h5>
+          <h5 v-else class="regular c-gray-1">{{ resource.description.substring(0,140) + "..." }}</h5>
       </div>
       <div class="align-self-top pl-20">
           <div class="votes text-center">
