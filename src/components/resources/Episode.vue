@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="c-white" v-if="loading">Loading...</div>
     <div class="podcast-module d-flex br-4 mb-30 fade-in" v-for="resource in resources" :key="resource.id">
         <div class="pr-20">
             <img :src="resource.image_url" class="ew-100 card-img" alt="...">

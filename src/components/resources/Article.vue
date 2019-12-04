@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="loading">Loading...</div>
+    <div class="c-white" v-if="loading">Loading...</div>
     <div class="article-module d-flex br-4 mb-30 fade-in" v-for="resource in resources" :key="resource.id">
       <div class="flex-grow-1 align-self-center">
           <img :src="resource.image" class="card-img" alt="...">
