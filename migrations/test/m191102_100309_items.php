@@ -35,6 +35,23 @@ class m191102_100309_items extends Migration
             }
         }
 
+        $faker = Faker\Factory::create();
+        foreach (\app\models\ResItem::find()->all() as $rt) {
+            for ($x=0;$x<10;$x++) {
+                $array = [];
+                $array = [
+                    'res_item_id'   =>  $rt->id,
+                    'count'         =>  rand(0,20),
+                    'status_type_id'   =>  \app\models\StatusType::RESVOTE_COUNTED,
+                    'transaction_id'         =>  NULL,
+                    'created_at'           =>  time(),
+                    'user_id'           =>  $rt->submitted_by
+
+                ];
+                $this->insert('res_vote',$array);
+            }
+        }
+
     }
 
     /**
