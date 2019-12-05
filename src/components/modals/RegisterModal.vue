@@ -1,5 +1,5 @@
 <template>
-  <b-modal hide-footer id="register-modal" centered title="RegisterModal">
+  <b-modal hide-footer id="register-modal" centered title="">
     <h2 class="mb-30 c-white">Upvote</h2>
     <h6 class="mb-30 c-gray-1">You must be logged in to upvote.</h6>
     <router-link to="/signup" class="btn btn-rect-lg btn-block mb-20 push-button">Join</router-link>
@@ -16,4 +16,5 @@
 </script>
 
 <style>
+
 </style>

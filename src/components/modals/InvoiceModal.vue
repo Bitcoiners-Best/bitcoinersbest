@@ -1,17 +1,7 @@
 <template>
-  <!--
-  OLD
-  <div class="modal fade" id="invoice-modal" tabindex="-1" role="dialog" aria-labelledby="invoice-modal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content bg-black text-center">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          </button>
-        </div>
-        <div class="modal-body"> -->
 
-  <b-modal hide-footer id="invoice-modal" centered title="LightningInvoice">
-    <h2 class="c-white">Invoice Total</h2>
+  <b-modal hide-footer id="invoice-modal" centered title="">
+    <!-- <h2 class="c-white">Invoice Total</h2> -->
     <h3 class="mb-20 c-white"><span class="c-brand">{#}</span> sats</h3>
     <h6 class="mb-20 c-gray-1">All proceeds will be donated to an open-source bitcoin/lightning projects.</h6>
     <h1>QR</h1>
@@ -31,6 +21,7 @@
     export default {
         name: 'Invoice',
     }
+
 </script>
 
 <style>

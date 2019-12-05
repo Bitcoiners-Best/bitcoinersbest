@@ -44,8 +44,8 @@
         getBooks() {
           var self = this;
           axios.get("http://bitcoinersbest.local:9111/v1/items?access-token=admin-bandit-authkey&V1ResItemSearch[res_type_id]=35")
-          .then(function(res){
-            self.resources = res.data;
+          .then(function(response){
+            self.resources = response.data;
           })
           .catch(error => {
             console.log(error);

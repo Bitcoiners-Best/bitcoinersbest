@@ -413,6 +413,7 @@ export default {
         formData.append("title", self.Article.title);
         formData.append("description", self.Article.description);
         formData.append("image", self.Article.image);
+        formData.append("created_by", self.Article.created_by);
         formData.append("res_type_id", this.selected);
         formData.append("url", self.Article.url);
       } else if (this.selected == "35") {
