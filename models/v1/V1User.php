@@ -16,7 +16,7 @@ class V1User extends \app\models\User
     {
         $fields = parent::fields();
 
-        unset($fields['auth_key'],$fields['password_hash'],$fields['password_reset_token']);
+        unset($fields['email'],$fields['auth_key'],$fields['password_hash'],$fields['password_reset_token']);
         return $fields;
     }
 }

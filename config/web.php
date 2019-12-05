@@ -49,6 +49,8 @@ $config = [
             'enableStrictParsing' => false,
             'showScriptName' => false,
             'rules' => [
+                'v1/items/<id:[0-9]+>/votes' => 'v1/item/votes',
+                'v1/items/<id:[0-9]+>/votes/<user_id:[0-9]+>' => 'v1/item/votes',
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/item'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/res-type'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/status-type'],
