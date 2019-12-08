@@ -16,8 +16,8 @@
 </template>
 
 <script>
-    import Header from './components/Header.vue';
-    import Footer from './components/Footer.vue';
+    import Header from './components/layout/Header.vue';
+    import Footer from './components/layout/Footer.vue';
     import ResourceSelector from './components/ResourceSelector.vue';
 
     import InvoiceModal from './components/modals/InvoiceModal.vue';
@@ -36,15 +36,9 @@
         data: function () {
           return {
             loading: true,
-            isRegisterModalActive: false,
-            isInvoiceModalActive: false
           }
         },
         methods: {
-          openModal() {
-              this.isRegisterModalActive = !this.isRegisterModalActive;
-              this.isInvoiceModalActive = !this.isInvoiceModalActive;
-          }
         }
     }
 </script>
