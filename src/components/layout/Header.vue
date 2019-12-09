@@ -2,7 +2,7 @@
 <div>
   <nav id="w1" class="navbar navbar-expand-lg fixed-top navbar-light bg-black d-flex">
     <div class="container-fluid full">
-      <router-link to="/index/vue" class="navbar-brand" @click.native="isMobileMenuActive">
+      <router-link to="/index/vue" class="navbar-brand">
         <svg width="35" height="40" viewBox="0 0 35 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 27.3171V10.0813L17.2358 0L34.4715 10.0813V29.5935L17.2358 40L2.27642 31.2195L12.6829 25.3659V30.2439L17.2358 32.8455V20.1626L5.52846 13.3333V18.8618L10.4065 21.4634L0 27.3171Z" fill="white"/>
         </svg><span class="ml-15">Bitcoiners Best</span>
