@@ -24,7 +24,7 @@
         <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
           <li class="nav-item align-self-center"><router-link to="/login" class="nav-link">Login</router-link></li>
           <li class="nav-item align-self-center"><router-link to="/signup" class="nav-link">Signup</router-link></li>
-          <li class="nav-item align-self-center"><a @click="logout" lass="nav-link">Logout</a></li>
+          <!-- <li class="nav-item align-self-center"><a @click="logout" lass="nav-link">Logout</a></li> -->
           <li class="nav-item align-self-center"><router-link to="/faq" class="nav-link">FAQ</router-link></li>
           <li class="nav-item align-self-center"><router-link to="/submit" class="nav-link">Submit</router-link></li>
           <li class="nav-item align-self-center"><a href="/profile/"><img class="profile-picture br-circle transition" src="https://avatars.io/twitter//small"/></a></li>
@@ -52,8 +52,8 @@
               <li class="menu-nav__li"><router-link to="/login" class="a-h -ss-01" @click.native="isMobileMenuActive"><h2>Login</h2></router-link></li>
               <li class="menu-nav__li"><router-link to="/signup" class="a-h -ss-01" @click.native="isMobileMenuActive"><h2>Signup</h2></router-link></li>
 
-              <li class="menu-nav__li"><router-link to="/profile" class="a-h -ss-01" @click.native="isMobileMenuActive"><h2>Profile</h2></router-link></li>
-              <li class="menu-nav__li"><router-link to="/logout" class="a-h -ss-01" @click.native="isMobileMenuActive"><h2>Logout</h2></router-link></li>
+              <!-- <li class="menu-nav__li"><router-link to="/profile" class="a-h -ss-01" @click.native="isMobileMenuActive"><h2>Profile</h2></router-link></li>
+              <li class="menu-nav__li"><router-link to="/logout" class="a-h -ss-01" @click.native="isMobileMenuActive"><h2>Logout</h2></router-link></li> -->
            </ul>
            <ul class="menu-nav__ul menu-nav__ul--">
              <li class="menu-nav__li"><router-link to="/faq" class="a-h -ss-01" @click.native="isMobileMenuActive"><h2>FAQ</h2></router-link></li>
