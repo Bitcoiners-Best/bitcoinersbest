@@ -49,6 +49,15 @@ You can then access the application through the following URL:
 
     http://bitcoinersbest.local:9111
    
+### vue.js app
+
+    $ npm run dev # regenerates app.js
+    
+Vue files are located 
+    
+    src/
+    src/app.js
+   
 ### Starting / Stopping / Destroying Docker containers
     $ bash docker.sh start # Start docker container
     $ bash docker.sh stop # Stop docker container
