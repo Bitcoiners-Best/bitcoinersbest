@@ -21,7 +21,12 @@ if (Yii::$app->session->getFlash('contentCreated')) {
         <h1 class="mb-0 c-white">Submit<span class="mobile-hide"> your bitcoin</span> resource</h1>
         <p class="mt-10 c-gray-1">Your submission will be reviewed before it appears live.</p>
     </div>
+    <div class="col-md-8">
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
+    </div>
+    <div class="col-md-4">
+
+    </div>
 </section>
