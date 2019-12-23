@@ -23,7 +23,7 @@ import Book from "./components/resources/Book.vue";
 import Thread from "./components/resources/Thread.vue";
 import Episode from "./components/resources/Episode.vue";
 
-import Resource from "./views/Resource.vue";
+//import Resource from "./views/Resource.vue";
 
 import Faq from "./views/Faq.vue";
 import Terms from "./views/Terms.vue";

@@ -34,4 +34,5 @@ tests/_support/_generated
 
 .env
 
-node_modules
+#node modules
+/node_modules
