@@ -53,6 +53,8 @@ You can then access the application through the following URL:
 
     $ npm run dev # regenerates app.js
     
+    $ npm install #if you need to update deps
+    
 Vue files are located 
     
     src/
