@@ -39,7 +39,7 @@ const router = new VueRouter({
   mode: 'history',
   linkExactActiveClass: 'active',
   routes: [
-    { path: '/index/vue', name: 'index', component: Article },
+    { path: '/', name: 'index', component: Article },
 
     { path: '/login', name: 'login', component: Login },
     { path: '/signup', name: 'signup', component: Signup },
@@ -53,7 +53,7 @@ const router = new VueRouter({
     { path: '/thread', name: 'thread', component: Thread },
     { path: '/episode', name: 'episode', component: Episode },
 
-    { path: '/:id/:title', name: 'resource', component: Resource, props: true },
+    //{ path: '/:id/:title', name: 'resource', component: Resource, props: true },
 
     { path: '/faq', name: 'faq', component: Faq },
     { path: '/terms', name: 'terms', component: Terms},
