@@ -7,6 +7,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute'=>'/index/vue',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -56,18 +57,9 @@ $config = [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/status-type'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/res-vote'],
 
-
-                'article' => 'content/index',
-                'podcast_episode' => '/content/index',
-                'podcast' => '/content/index',
-                'twitter_thread' => '/content/index',
-                'book' => '/content/index',
-
-                'profile/<handle:\w+>' => 'profile/index',
-
-                'content/view/<id:\w+>' => 'content/view',
-
                 '/<controller:\w+>/<action:[A-Za-z0-9 -_.]+>' => '/<controller>/<action>',
+
+                '/<url:[a-zA-Z0-9-]+>' => '/',
             ],
             'baseUrl'=>getenv('BASE_URL'),
         ],
