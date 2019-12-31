@@ -1,12 +1,12 @@
 <template>
 
   <b-modal hide-footer id="invoice-modal" centered title="">
-    <!-- <h2 class="c-white">Invoice Total</h2> -->
-    <h3 class="mb-20 c-white"><span class="c-brand">{#}</span> sats</h3>
-    <h6 class="mb-20 c-gray-1">All proceeds will be donated to an open-source bitcoin/lightning projects.</h6>
-    <h1>QR</h1>
+    <h2 class="c-white text-center">Invoice Total</h2>
+    <h3 class="mb-20 c-white text-center"><span class="c-brand">{#}</span> sats</h3>
+    <h6 class="mb-20 c-gray-1 text-center">All proceeds will be donated to open-source bitcoin/lightning projects.</h6>
+    <h1 class="c-white text-center">[ QR ]</h1>
     <a class="btn btn-rect-lg btn-block mb-20 push-button" href="#">Copy Payment Request</a>
-    <h6 class="mb-0"><span class="c-gray-1">Powered by </span><a class="link" href="">paywall.link</a></h6>
+    <h6 class="mb-0 text-center"><span class="c-gray-1">Powered by </span><a class="link" target="_blank" href="https://paywall.link/">paywall.link</a></h6>
 
   <!-- TODO: When the invoice is paid, this success message should replace the modal-body content above -->
   <!-- <img src="" alt="">
