@@ -9,43 +9,13 @@
 <b-form @submit.prevent="addResource" @reset="resetForm" id="submit-resource">
   <b-row>
   <b-col cols="12">
-   <h3 class="mb-0 c-white mb-20">Pick your resource type: </h3>
-    <b-form-select v-model="selected" :options="options" class="submit-resouce-selector"></b-form-select>
+   <label class="c-white mb-20">Pick your resource type: </label>
+    <b-form-select v-model="selected" :options="options" class="submit-resouce-selector mb-30"></b-form-select>
   </b-col>
  </b-row>
-  <!-- <div class="mt-3 c-white">Selected: <strong>{{ selected }}</strong></div> -->
-
   <div v-if="selected === '20'">
     <b-row>
-      <h6 class="mb-20 mt-20 c-white">TODO: *manually enter RSS & Created by -- autopopulate the rest based on RSS from the input URL</h6>
       <b-col cols="8">
-
-         <b-form-group id="input-podcast-rss" label="Podcast RSS" label-for="input-podcast-rss">
-          <b-form-input
-            id="input-podcast-rss"
-            v-model="Podcast.rss"
-            required
-            placeholder="Podcast RSS"
-          ></b-form-input>
-         </b-form-group>
-
-         <b-form-group id="input-podcast-created-by" label="Created by" label-for="input-podcast-created-by">
-          <b-form-input
-            id="input-podcast-created-by"
-            v-model="Podcast.created_by"
-            required
-            placeholder="Created by"
-          ></b-form-input>
-         </b-form-group>
-
-         <b-form-group id="input-podcast-title" label="Podcast Title" label-for="input-podcast-title">
-          <b-form-input
-            id="input-podcast-title"
-            v-model="Podcast.title"
-            required
-            placeholder="Podcast Title"
-          ></b-form-input>
-        </b-form-group>
 
         <b-form-group id="input-podcast-url" label="Podcast URL" label-for="input-podcast-url">
          <b-form-input
@@ -56,14 +26,14 @@
          ></b-form-input>
        </b-form-group>
 
-        <b-form-group id="input-podcast-image" label="Podcast Image" label-for="input-podcast-image">
+        <b-form-group id="input-podcast-title" label="Podcast Title" label-for="input-podcast-title">
          <b-form-input
-           id="input-podcast-image"
-           v-model="Podcast.image"
+           id="input-podcast-title"
+           v-model="Podcast.title"
            required
-           placeholder="Podcast Image"
+           placeholder="Podcast Title"
          ></b-form-input>
-        </b-form-group>
+       </b-form-group>
 
        <b-form-group id="input-podcast-description" label="Podcast Description" label-for="input-podcast-description">
          <b-form-textarea
@@ -75,6 +45,56 @@
          ></b-form-textarea>
        </b-form-group>
 
+        <!-- <b-form-file
+          v-model="Podcast.file"
+          :state="Boolean(file)"
+          placeholder="Choose a file or drop it here..."
+          drop-placeholder="Drop file here..."
+          accept=".jpg, .jpeg, .png"
+          @change="onFileChange
+         "></b-form-file>
+        <div class="mt-3">Selected file: {{ file ? file.name : '' }}</div> -->
+
+
+          <div v-if="!Podcast.image">
+            <h2>Select an image</h2>
+            <input type="file" @change="onFileChange">
+          </div>
+          <div v-else>
+            <div id="preview">
+              <img :src="Podcast.image" />
+              <button @click="removeImage">Remove image</button>
+            </div>
+          </div>
+
+         <b-form-group id="input-podcast-created-by" label="Created by" label-for="input-podcast-created-by">
+          <b-form-input
+            id="input-podcast-created-by"
+            v-model="Podcast.created_by"
+            required
+            placeholder="Created by"
+          ></b-form-input>
+         </b-form-group>
+
+         <b-form-group id="input-podcast-rss" label="Podcast RSS" label-for="input-podcast-rss">
+          <b-form-input
+            id="input-podcast-rss"
+            v-model="Podcast.rss"
+            required
+            placeholder="Podcast RSS"
+          ></b-form-input>
+         </b-form-group>
+
+
+        <!-- <b-form-group id="input-podcast-image" label="Podcast Image" label-for="input-podcast-image">
+         <b-form-input
+           id="input-podcast-image"
+           v-model="Podcast.image"
+           required
+           placeholder="Podcast Image"
+         ></b-form-input>
+        </b-form-group> -->
+
        <b-button type="submit" class="btn btn-rect-lg push-button">Submit</b-button>
 
       </b-col>
@@ -84,6 +104,11 @@
           <pre class="m-0">{{ Podcast }}</pre>
         </b-card>
 
+        <div class="mt-2 c-white">
+          <div id="preview">
+              <img v-if="Podcast.image" :src="Podcast.image" />
+          </div>
+        </div>
         <div class="mt-2 c-white">{{ Podcast.image }}</div>
         <div class="mt-2 c-white">{{ Podcast.title }}</div>
         <div class="mt-2 c-white">{{ Podcast.description }}</div>
@@ -114,7 +139,7 @@
        ></b-form-input>
       </b-form-group>
 
-      <p class="mb-20 c-white">Podcast Dropdown Select of Added Podcasts OR</p>
+      <!-- <p class="mb-20 c-white">Podcast Dropdown Select of Added Podcasts OR</p> -->
       <b-form-group id="input-episode-podcast" label="Episode Podcast" label-for="input-episode-podcast">
        <b-form-input
          id="input-episode-podcast"
@@ -124,14 +149,25 @@
        ></b-form-input>
        </b-form-group>
 
-       <b-form-group id="input-podcast-image" label="Podcast Image" label-for="input-podcast-image">
+       <!-- <b-form-group id="input-podcast-image" label="Podcast Image" label-for="input-podcast-image">
         <b-form-input
           id="input-podcast-image"
           v-model="Episode.image"
           required
           placeholder="Podcast Image"
         ></b-form-input>
-        </b-form-group>
+        </b-form-group> -->
+
+        <div v-if="!Episode.image">
+          <h2>Select an image</h2>
+          <input type="file" @change="onFileChange">
+        </div>
+        <div v-else>
+          <div id="preview">
+            <img :src="Episode.image" />
+            <button @click="removeImage">Remove image</button>
+          </div>
+        </div>
 
         <b-form-group id="input-episode-url" label="Episode URL" label-for="input-episode-url">
          <b-form-input
@@ -157,6 +193,7 @@
       <div class="mt-2 c-white">{{ Episode.title }}</div>
     </b-col>
   </b-row>
+
   </div>
 
 
@@ -182,19 +219,25 @@
          ></b-form-input>
         </b-form-group>
 
-      <p class="c-white">Pull meta tags for below</p>
-      <!-- Notes from Github: PHP has a function for this - get_meta_tags - the meta tags we need are
-       description, og:image , og:title - the lat two are OpenGraph meta tags,
-       but are present on most html pages, including Medium.</p> -->
-
-       <b-form-group id="input-article-image" label="Article Image" label-for="input-article-image">
+       <!-- <b-form-group id="input-article-image" label="Article Image" label-for="input-article-image">
         <b-form-input
           id="input-article-image"
           v-model="Article.image"
           required
           placeholder="Article Image"
         ></b-form-input>
-       </b-form-group>
+       </b-form-group> -->
+
+       <div v-if="!Article.image">
+         <h2>Select an image</h2>
+         <input type="file" @change="onFileChange">
+       </div>
+       <div v-else>
+         <div id="preview">
+           <img :src="Article.image" />
+           <button @click="removeImage">Remove image</button>
+         </div>
+       </div>
 
      <b-form-group id="input-article-title" label="Article Title" label-for="input-article-title">
       <b-form-input
@@ -256,14 +299,26 @@
          ></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-book-image" label="Book Image" label-for="input-book-image">
+        <!-- <b-form-group id="input-book-image" label="Book Image" label-for="input-book-image">
          <b-form-input
            id="input-book-image"
            v-model="Book.image"
            required
            placeholder="Book Image"
          ></b-form-input>
-        </b-form-group>
+        </b-form-group> -->
+
+        <div v-if="!Book.image">
+          <h2>Select an image</h2>
+          <input type="file" @change="onFileChange">
+        </div>
+        <div v-else>
+          <div id="preview">
+            <img :src="Book.image" />
+            <button @click="removeImage">Remove image</button>
+          </div>
+        </div>
+
 
         <b-form-group id="input-book-url" label="Book URL" label-for="input-book-url">
          <b-form-input
@@ -287,9 +342,9 @@
         <div class="mt-2 c-white">{{ Book.image }}</div>
         <div class="mt-2 c-white">{{ Book.title }}</div>
         <div class="mt-2 c-white">{{ Book.description }}</div>
-
       </b-col>
   </b-row>
+
   </div>
 
 
@@ -319,7 +374,7 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      // resource objects
+      url: null,
       Podcast: {
         id: '',
         title: '',
@@ -334,8 +389,9 @@ export default {
         id: '',
         title: '',
         image: '',
-        rss: '',
+        _image: '',
         url: '',
+        rss: 'null',
         created_by: '',
         res_type_id: '25',
       },
@@ -382,8 +438,25 @@ export default {
   },
 
   methods: {
-    resetForm(evt) {
+    onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length)
+        return;
+      this.createImage(files[0]);
+    },
+    createImage(file) {
+      this.Podcast.image = new Image();
+      var reader = new FileReader();
+      var vm = this;
 
+      reader.onload = (e) => {
+        vm.Podcast.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+      console.log(file);
+    },
+    removeImage: function (e) {
+      this.Podcast.image = '';
     },
     addResource(evt) {
       var self = this;
@@ -400,15 +473,19 @@ export default {
       if (this.selected == "20") {
         formData.append("title", self.Podcast.title);
         formData.append("description", self.Podcast.description);
-        formData.append("image", self.Podcast.image);
+        formData.append("image", this.Podcast.image);
+        formData.append("rss", self.Podcast.rss);
+        formData.append("created_by", self.Podcast.created_by);
         formData.append("res_type_id", this.selected);
         formData.append("url", self.Podcast.url);
       } else if (this.selected == "25") {
         formData.append("title", self.Episode.title);
         formData.append("description", self.Episode.description);
         formData.append("image", self.Episode.image);
+        formData.append("created_by", self.Episode.created_by);
         formData.append("res_type_id", this.selected);
         formData.append("url", self.Episode.url);
+        formData.append("rss", this.Episode.rss);
       } else if (this.selected == "30") {
         formData.append("title", self.Article.title);
         formData.append("description", self.Article.description);
@@ -418,24 +495,54 @@ export default {
         formData.append("url", self.Article.url);
       } else if (this.selected == "35") {
         formData.append("title", self.Book.title);
-        formData.append("description", self.Book.description);
         formData.append("image", self.Book.image);
+        formData.append("created_by", self.Book.created_by);
         formData.append("res_type_id", this.selected);
         formData.append("url", self.Book.url);
       }
-
 
       axios.post('http://bitcoinersbest.local:9111/v1/items?access-token=admin-bandit-authkey', formData, config)
       .then((response) => {
         console.log(response.data);
         self.submitting = false;
         self.resourceSubmitted = true;
-        // self.resetForm();
+
+        this.resetForm(this.selected);
       })
       .catch(error => {
         console.log(error);
       });
 
+    },
+    // todo:
+    // reduce this
+    resetForm(selected) {
+      if (selected == "20") {
+        this.Podcast.title = '';
+        this.Podcast.description = '';
+        this.Podcast.image = '';
+        this.Podcast.url = '';
+        this.Podcast.created_by = '';
+      } else if (selected == "25") {
+        this.Episode.title = '';
+        this.Episode.description = '';
+        this.Episode.image = '';
+        this.Episode.url = '';
+        this.Episode.created_by = '';
+      } else if (selected == "30") {
+        this.Article.title = '';
+        this.Article.description = '';
+        this.Article.image = '';
+        this.Article.url = '';
+        this.Article.created_by = '';
+      } else if (selected == "35") {
+        this.Book.title = '';
+        this.Book.image = '';
+        this.Book.url = '';
+        this.Book.created_by = '';
+      } else if (selected == "40") {
+
+      }
     }
   }
 }
@@ -462,6 +569,18 @@ export default {
   appearance: none;
   padding: 20px;
 }
+
+#preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#preview img {
+  max-width: 100%;
+  max-height: 500px;
+}
+
 
 </style>
 
