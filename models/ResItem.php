@@ -61,9 +61,9 @@ class ResItem extends \yii\db\ActiveRecord
             [['submitted_by'],'default','value'=>Yii::$app->user->id],
             [['res_type_id', 'vote_count', 'status_type_id', 'submitted_by'], 'integer'],
             [['vote_count'],'default', 'value'=>0],
-            [['data'], 'string'],
+            [['data','image'], 'string'],
             [['rss','url'],'url'],
-            [['title', 'description', 'image', 'rss', 'url', 'created_at', 'created_by'], 'string', 'max' => 255],
+            [['title', 'description', 'rss', 'url', 'created_at', 'created_by'], 'string', 'max' => 255],
         ];
     }
 
@@ -120,4 +120,25 @@ class ResItem extends \yii\db\ActiveRecord
     {
         return $this->hasMany(ResVote::className(), ['res_item_id' => 'id']);
     }
+
+    public function beforeSave($insert) {
+
+        if ($insert) {
+            if ($this->image) {
+                $cl = \Cloudinary\Uploader::upload($this->image);
+                if ($url = @$cl['secure_url'])
+                    $this->image = $url;
+                else {
+                    $this->addError('image','Could not save image!');
+                    return false;
+                }
+
+            }
+        }
+
+        return parent::beforeSave($insert);
+
+    }
+
+
 }
