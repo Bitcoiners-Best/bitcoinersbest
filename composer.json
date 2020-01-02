@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "vlucas/phpdotenv": "^3.4@dev",
         "guzzlehttp/guzzle": "^6.3@dev",
-        "yiisoft/yii2-authclient": "^2.2"
+        "yiisoft/yii2-authclient": "^2.2",
+        "cloudinary/cloudinary_php": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
