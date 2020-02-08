@@ -61,6 +61,7 @@ class ResourcesController < ApplicationController
           :title,
           :description,
           :created_by,
+          :image,
           :rss
         ]
       )

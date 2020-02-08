@@ -30,6 +30,11 @@
     </div>
 
     <div class="form-group">
+      <%= form.label :description, 'Podcast Image', class: 'd-block' %>
+      <%= form.file_field :image, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
       <%= form.label :created_by, class: 'd-block' %>
       <%= form.text_field :created_by, class: 'form-control' %>
     </div>

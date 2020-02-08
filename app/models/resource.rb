@@ -18,6 +18,7 @@ class Resource < ApplicationRecord
            :description,
            :url,
            :rss,
+           :image,
            to: :resourceable, prefix: false
 
   accepts_nested_attributes_for :resourceable

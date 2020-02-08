@@ -1,7 +1,11 @@
 <section class="detail mt-50 fade-in" v-cloak>
    <div class="section-header pt-20 pb-20 c-white text-center">
     <p><%= @resource.slug %></p>
-    <p><%= @resource.title %></p>
+    <h1><%= @resource.title %></h1>
+
+    <%- if @resource.image.attached? %>
+      <p><%= image_tag @resource.image %></p>
+    <% end %>
 
       <a target="_blank" class="c-white" href="<%= @resource.url %>">Open Original Source</a>
       <p class="c-white">Submitted <%= distance_of_time_in_words_to_now(@resource.created_at) %> ago</p>

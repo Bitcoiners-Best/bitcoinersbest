@@ -13,7 +13,11 @@
 <div data-controller='vote-observer'>
   <% @resources.each do |resource| %>
     <div class="<%= resource.resourceable_type %>-module d-flex br-4 mb-30 fade-in" data-controller='vote' data-vote-type="<%= resource.resourceable_type %>" id="resource-<%= resource.id %>" data-vote-url="<%= new_resource_vote_path(resource.id) %>">
-      <p class="c-white"><%= resource.id %></p>
+      <%if resource.resourceable.respond_to?(:image) && resource.resourceable.image.attached? %>
+        <div class="pr-20">
+          <%= image_tag resource.resourceable.image.variant(resize_to_limit: [100, 100]), class: 'ew-100 card-img' %>
+        </div>
+      <% end %>
       <div class="flex-grow-1 align-self-center">
           <!-- <img src="article.resItem.image" class="card-img" alt="..."> -->
           <%= render resource.resourceable %>
