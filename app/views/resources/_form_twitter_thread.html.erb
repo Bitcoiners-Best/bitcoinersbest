@@ -1,0 +1,36 @@
+<%= form_for(resource, url: resources_path(resource_type: resource.resourceable_type, resource_id: resource.id), local: true, id: 'submit-resource') do |form| %>
+  <%= form.hidden_field :resourceable_type %>
+  <% if resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+      <ul>
+        <% resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.fields_for :resourceable do |form| %>
+
+    <div class="form-group">
+      <%= form.label :url, 'Thread URL', class: 'd-block' %>
+      <%= form.text_field :url, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :title, 'Thread Title', class: 'd-block' %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :created_by, class: 'd-block' %>
+      <%= form.text_field :created_by, class: 'form-control' %>
+    </div>
+  <%- end %>
+
+  <div class="actions">
+    <%= form.submit 'Submit Thread', class: 'btn btn btn-rect-lg push-button btn-secondary' %>
+  </div>
+<% end %>
