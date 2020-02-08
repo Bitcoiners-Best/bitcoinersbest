@@ -4,7 +4,7 @@ RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
-RUN gem install bundler
+RUN gem install rails bundler
 COPY . /myapp
 RUN echo $PWD; bundle install; rails webpacker:install
 
