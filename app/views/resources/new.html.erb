@@ -6,6 +6,18 @@
     <p class="mt-10 c-gray-1">Your submission will be reviewed before it appears live.</p>
   </div>
 
+  <% if @resource && @resource.errors.any? %>
+    <div id="error_explanation" class="c-white">
+      <p><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</p>
+
+      <ul>
+        <% @resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div data-controller="resource-type-selector" data-target='resource-type-selector.container'>
     <label class="c-white mb-20">Pick your resource type: </label>
     <select class="form-control" data-action='change->resource-type-selector#selected' data-target='resource-type-selector.select'>

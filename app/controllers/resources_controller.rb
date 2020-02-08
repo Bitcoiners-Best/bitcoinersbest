@@ -1,5 +1,6 @@
 class ResourcesController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
+  before_action :load_resources, only: [:new, :create]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /resources
@@ -21,12 +22,6 @@ class ResourcesController < ApplicationController
 
   # GET /resources/new
   def new
-    @resources = {}
-
-    Resource::CATEGORIES.each do |category, display|
-      @resources[category] = Resource.new
-      @resources[category].resourceable = (category.to_s.classify.constantize.new rescue nil)
-    end
   end
 
   # POST /resources
@@ -37,7 +32,7 @@ class ResourcesController < ApplicationController
 
     respond_to do |format|
       if @resource.save
-        format.html { redirect_to "/#{@resource.resourceable_type.downcase.pluralize}/#{@resource.slug}", notice: 'Resource was successfully created.' }
+        format.html { redirect_to "/#{@resource.resourceable_type.underscore.pluralize}/#{@resource.slug}", notice: 'Resource was successfully created.' }
         format.json { render :show, status: :created, location: @resource }
       else
         format.html { render :new }
@@ -47,6 +42,16 @@ class ResourcesController < ApplicationController
   end
 
   private
+
+  def load_resources
+    @resources = {}
+
+    Resource::CATEGORIES.each do |category, display|
+      @resources[category] = Resource.new
+      @resources[category].resourceable = (category.to_s.classify.constantize.new rescue nil)
+    end
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_resource
       @resource = Resource.friendly.find(params[:id])
