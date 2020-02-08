@@ -1,0 +1,26 @@
+<section class="submit-resource mt-50 fade-in new-resource">
+  <div class="section-header pb-20 text-center">
+    <h1 class="mb-0 c-white">
+      Submit your bitcoin resource
+    </h1>
+    <p class="mt-10 c-gray-1">Your submission will be reviewed before it appears live.</p>
+  </div>
+
+  <div data-controller="resource-type-selector" data-target='resource-type-selector.container'>
+    <label class="c-white mb-20">Pick your resource type: </label>
+    <select class="form-control" data-action='change->resource-type-selector#selected' data-target='resource-type-selector.select'>
+      <option value="Select Resource" selected disabled>Select Resource</option>
+      <%- Resource::CATEGORIES.each do |category, display| %>
+        <option value="<%= category %>"><%= display %></option>
+      <% end %>
+    </select>
+
+    <%- Resource::CATEGORIES.each do |category, display| %>
+      <div id="<%= category %>" class="category fade-in">
+        <%= render "form_#{category.to_s}", resource: @resources[category] rescue "no #{category} partial yet" %>
+      </div>
+    <%- end %>
+  </div>
+
+
+</section>

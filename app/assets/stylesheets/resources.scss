@@ -1,0 +1,25 @@
+// Place all the styles related to the Podcasts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+section.new-resource {
+  .category {
+    display: none;
+  }
+
+  .podcast .category#podcast { display: block; }
+  .episode .category#episode { display: block; }
+  .article .category#article { display: block; }
+  .book .category#book { display: block; }
+  .thread .category#thread { display: block; }
+}
+
+.votes {
+  .vote:not(.already-voted) {
+    .ten-x { display: none; }
+  }
+
+  .vote.already-voted {
+    .regular-vote { display: none; }
+  }
+}

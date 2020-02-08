@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  resource: one
+  count: 1
+  payment_request: MyString
+  settled: false
+  expires_at: 2020-02-08 10:03:50
+
+two:
+  user: two
+  resource: two
+  count: 1
+  payment_request: MyString
+  settled: false
+  expires_at: 2020-02-08 10:03:50

@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://unpkg.com/lnpay-js@^0.1/dist/lnpay.min.js"></script>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="<%= current_user ? 'signed-in' : '' %>" data-lnpay-key="<%= Rails.application.credentials.dig(:lnpay, :key) %>">
+    <%= render partial: 'shared/navbar' %>
+    <div class="wrap">
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render partial: 'shared/invoice_modal' %>
+    <%= render partial: 'shared/signin_modal' %>
   </body>
 </html>
