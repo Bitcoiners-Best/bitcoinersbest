@@ -6,10 +6,12 @@ class ResourcesController < ApplicationController
   # GET /resources.json
   def index
     if params[:type]
-      @resources = Resource.where(resourceable_type: params[:type].to_s.classify).all
+      @resources = Resource.where(resourceable_type: params[:type].to_s.classify)
     else
-      @resources = Resource.all
+      @resources = Resource
     end
+
+    @resources = @resources.order(vote_count: :desc).all
   end
 
   # GET /resources/1
