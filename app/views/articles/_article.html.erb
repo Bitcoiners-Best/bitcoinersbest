@@ -1,5 +1,5 @@
 <h6 class="text-uppercase c-gray-1 medium mt-25 mb-15"><%= article.created_by %></h6>
-<a href="<%= article_path(article) %>"><h5 class="medium mb-15 c-white"><%= article.title %></h5></a>
+<a href="<%= article_path(article.resource.slug) %>"><h5 class="medium mb-15 c-white"><%= article.title %></h5></a>
 <h5 class="regular c-gray-1">
   <% if article.description.to_s.length < 140 %>
     <%= article.description.to_s %>
