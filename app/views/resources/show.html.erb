@@ -4,7 +4,7 @@
     <h1><%= @resource.title %></h1>
 
     <%- if @resource.resourceable.respond_to?(:image) && @resource.image.attached? %>
-      <p><%= image_tag @resource.image %></p>
+      <p><%= image_tag @resource.image.variant(resize_to_limit: [640, 640]) %></p>
     <% end %>
 
       <a target="_blank" class="c-white" href="<%= @resource.url %>">Open Original Source</a>
