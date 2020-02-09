@@ -4,13 +4,16 @@ class VotesController < ApplicationController
   def new
     vote_service = VoteService.new(current_user, @resource)
 
-    if vote_service.has_already_voted?
-      @vote = vote_service.get_voting_invoice(amount: 100, vote_count: 10)
-    else
+    case vote_service.settled_votes
+    when 0
       @vote = vote_service.create_free_vote(vote_count: 1)
+      @vote.save!
+    when 1
+      @vote = vote_service.get_voting_invoice(amount: 10, vote_count: 10)
+      @vote.save!
+    else
+      @vote = { error: 'already-voted' }
     end
-
-    @vote.save!
 
     render json: @vote
   end

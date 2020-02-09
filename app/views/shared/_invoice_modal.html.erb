@@ -6,14 +6,24 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div id="invoice-modal-settled" class="modal-body text-center fade-in" style="display: none;">
+
+      <div data-error='already-voted' class="modal-body text-center fade-in" style="display: none;">
         <!-- TODO: When the invoice is paid, this success message should replace the modal-body content above -->
+        <img src="" alt="">
+        <h2 class="mb-30 c-white">Successfully upvoted</h2>
+        <h6 class="mb-30 c-gray-1">You have already upvoted this resource.</h6>
+        <h6 class="mb-30 c-gray-1">Thank you for supporting bitcoin education.</h6>
+        <h5><a class="link medium close-modal" href="" aria-label="Close">Done</a></h5>
+      </div>
+
+      <div id="invoice-modal-settled" class="modal-body text-center fade-in" style="display: none;">
         <img src="" alt="">
         <h2 class="mb-30 c-white">Successfully upvoted</h2>
         <h6 class="mb-30 c-gray-1">Thank you for supporting bitcoin education.</h6>
         <h6 class="mb-30 c-gray-1">Help us decide who to support. Vote on the recipient of this month’s donation to a bitcoin open source project.</h6>
         <h5><a class="link medium close-modal" href="" aria-label="Close">Done</a></h5>
       </div>
+
       <div id="invoice-modal-unsettled" class="modal-body text-center" data-controller="clipboard">
         <h2 class="c-white text-center">Invoice Total</h2>
         <h3 class="mb-20 c-white text-center"><span class="c-brand" id="invoiceTotal">{#}</span> sats</h3>

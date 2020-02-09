@@ -71,8 +71,13 @@ export default class extends Controller {
         .then(data => {
           if (data.settled) {
             this.voted(data.resource_id);
-          } else {
+          } else if (!data.error) {
             this.setup_invoice(data);
+          } else {
+            $('#invoice-modal-unsettled').hide()
+            $('#invoice-modal-settled').hide()
+            $(`#invoiceModal [data-error='${data.error}']`).show()
+            $('#invoiceModal').modal('show');
           }
         })
     } else {

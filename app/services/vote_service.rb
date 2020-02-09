@@ -6,11 +6,11 @@ class VoteService
     @resource = resource
   end
 
-  def has_already_voted?
+  def settled_votes
     @user.votes
       .where(resource: @resource)
       .where(settled: true)
-      .any?
+      .count
   end
 
   def get_voting_invoice(amount:, vote_count:)
