@@ -10,9 +10,9 @@
   </div>
 </div>
 
-<div>
+<div class="container">
   <% @resources.each do |resource| %>
-    <div class="<%= resource.resourceable_type %>-module d-flex br-4 mb-30 fade-in" data-controller='vote' data-vote-type="<%= resource.resourceable_type %>" id="resource-<%= resource.id %>" data-vote-url="<%= new_resource_vote_path(resource.id) %>">
+    <div class="<%= resource.resourceable_type %>-module d-flex br-4 mb-30 fade-in resource" data-controller='vote' data-vote-type="<%= resource.resourceable_type %>" id="resource-<%= resource.id %>" data-vote-url="<%= new_resource_vote_path(resource.id) %>">
       <div class="pr-20">
         <%if resource.resourceable.respond_to?(:image) && resource.resourceable.image.attached? %>
           <%= image_tag resource.resourceable.image.variant(resize_to_limit: [100, 100]), class: 'ew-100 card-img' %>
@@ -43,6 +43,10 @@
   <% end %>
 </div>
 
-<br>
+<div id="infinite-scrolling">
+  <%= will_paginate %>
+</div>
 
-<%= link_to 'Submit', new_resource_path %>
+<script>
+  new InfinityScroll(document.querySelector('.container'), {path: '.next_page', append: '.resource'});
+</script>

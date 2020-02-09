@@ -71,3 +71,9 @@ $ bash docker.sh start # Start docker container
 $ bash docker.sh stop # Stop docker container
 $ bash docker.sh destroy # Destroy docker containers
 ```
+
+### Useful commands
+
+```
+docker exec -it bitcoinersbest-rails rails c # Access rails console
+```

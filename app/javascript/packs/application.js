@@ -20,8 +20,10 @@ import { definitionsFromContext } from "stimulus/webpack-helpers"
 import "controllers"
 import 'jquery'
 import('src/plugins')
+import InfinityScroll from 'infinite-scroll';
 
 import JQuery from 'jquery';
 window.$ = window.JQuery = JQuery;
+window.InfinityScroll = window.InfinityScroll = InfinityScroll;
 
 import QRCode from 'qrcode';
