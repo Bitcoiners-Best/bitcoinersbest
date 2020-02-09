@@ -9,7 +9,7 @@ class VotesController < ApplicationController
       @vote = vote_service.create_free_vote(vote_count: 1)
       @vote.save!
     when 1
-      @vote = vote_service.get_voting_invoice(amount: 10, vote_count: 10)
+      @vote = vote_service.get_voting_invoice(amount: 10000, vote_count: 10)
       @vote.save!
     else
       @vote = { error: 'already-voted' }
