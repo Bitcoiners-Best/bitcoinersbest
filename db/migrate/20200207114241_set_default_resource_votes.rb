@@ -1,5 +1,5 @@
 class SetDefaultResourceVotes < ActiveRecord::Migration[6.0]
   def change
-    set_default :resources, :votes, 0
+    change_column :resources, :votes, :integer, default: 0
   end
 end

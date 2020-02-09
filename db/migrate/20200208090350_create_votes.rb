@@ -13,6 +13,6 @@ class CreateVotes < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    add_index :votes, [:user, :resource, :settled]
+    add_index :votes, [:user_id, :resource_id, :settled]
   end
 end
