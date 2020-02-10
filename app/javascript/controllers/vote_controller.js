@@ -25,24 +25,21 @@ export default class extends Controller {
     }
   }
 
-  checkInvoiceStatus(id) {
+  checkInvoiceStatus(id, resource_id) {
     let lntx = new LNPayLnTx(id);
     lntx.getInfo((result) =>  {
       if (result.settled == 1) {
         clearInterval(this.invoiceCheckInterval);
-        this.invoiceSettled()
+        this.invoiceSettled(resource_id)
       }
     });
   }
 
-  invoiceSettled() {
+  invoiceSettled(resource_id) {
+    $(`#resource-${resource_id} .votes .vote`).attr('data-user-votes', 2);
     $('#invoice-modal-unsettled').fadeOut(() => {
       $('#invoice-modal-settled').fadeIn()
     })
-  }
-
-  voted(resource_id) {
-    $(`#resource-${resource_id} .votes .vote`).addClass('already-voted');
   }
 
   user_signedin() {
@@ -54,7 +51,7 @@ export default class extends Controller {
     $('#invoice-input').val(data.payment_request);
 
     this.invoiceCheckInterval = setInterval(
-      () => { this.checkInvoiceStatus(data.payment_id) },
+      () => { this.checkInvoiceStatus(data.payment_id, data.resource_id) },
     1500)
 
     QRCode.toCanvas($('#invoice-canvas')[0], `lightning:${data.payment_request}`);
@@ -70,7 +67,7 @@ export default class extends Controller {
         .then(response => response.json())
         .then(data => {
           if (data.settled) {
-            this.voted(data.resource_id);
+            $(`#resource-${data.resource_id} .votes .vote`).attr('data-user-votes', 1);
           } else if (!data.error) {
             this.setup_invoice(data);
           } else {

@@ -26,7 +26,7 @@ class User < ApplicationRecord
     end
   end
 
-  def voted_for?(resource)
-    votes.detect{|vote| vote.resource_id == resource.id}
+  def settled_votes_for(resource)
+    votes.settled.select{|vote| vote.resource_id == resource.id}.count
   end
 end
