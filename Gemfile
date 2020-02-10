@@ -66,3 +66,4 @@ gem 'eye'
 gem 'image_processing', '~> 1.2'
 gem 'pg'
 gem 'will_paginate'
+gem "administrate"
