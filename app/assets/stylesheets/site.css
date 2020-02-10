@@ -1843,3 +1843,222 @@ textarea:-ms-input-placeholder {
     display: none;
   }
 }
+
+
+.-btn {
+  background: 0;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.-btn:hover {
+  transition: all 400ms ease;
+}
+
+.-btn.is-btn-hover:focus {
+  outline: 0;
+}
+.-btn--full {
+  width: 100%;
+}
+.a-h {
+  border-bottom: 1px solid transparent;
+  color: #FFF;
+  transition: color 200ms ease;
+  display: inline-block;
+}
+.a-h:hover {
+  color: #FFCF53;
+}
+.a-h.isActiveElement {
+  color: #807e7e;
+}
+.menu-nav {
+  font-size: 0;
+  pointer-events: none
+}
+
+.menu-nav.isActiveEvents {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-nav__li {
+  display: block;
+}
+
+.menu-nav__li .a-h {
+  padding-bottom: 25px;
+}
+
+a.menu-nav__a.p:hover,
+a.menu-nav__a.p.isActiveElement {
+    color: #FFCF53;
+}
+
+.menu-nav__col {
+  vertical-align: top;
+}
+
+.menu-nav__a,
+.menu-nav__col {
+  display: inline-block;
+}
+
+.menu__nav .isActiveElement {
+  color: #FFC23F;
+}
+
+.menu-nav__col:last-child {
+  margin-top: 120px;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+    cursor: pointer;
+    border: 0;
+    outline: 0 !important;
+}
+.icon-wrap {
+  cursor: pointer;
+  display: inline-block;
+  margin: -20px;
+  padding: 20px;
+}
+
+.icon {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+}
+.icon-svg svg {
+  fill: #fff;
+  transition: fill 400ms ease;
+}
+.icon-list {
+  height: 18px;
+  width: 24px;
+}
+.icon-arrow-left {
+  height: 20px;
+  width: 12px;
+}
+.close-btn {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  text-align: right;
+  float: right;
+}
+.close-btn:hover::before, .close-btn:hover::after {
+  opacity: 0.8;
+}
+.close-btn::before, .close-btn::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background: #fff;
+}
+.close-btn::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.close-btn::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.close-btn.big {
+  -webkit-transform: scale(3);
+  -moz-transform: scale(3);
+  -ms-transform: scale(3);
+  -o-transform: scale(3);
+  transform: scale(3);
+}
+.close-btn.hairline::before, .close-btn.hairline::after {
+  height: 1px;
+}
+.close-btn.thick::before, .close-btn.thick::after {
+  height: 4px;
+  margin-top: -2px;
+}
+.close-btn.black::before, .close-btn.black::after {
+  height: 8px;
+  margin-top: -4px;
+}
+.screen {
+  background-color: #121212;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 200ms cubic-bezier(.55, .055, .675, .19), visibility 200ms cubic-bezier(.55, .055, .675, .19);
+  visibility: hidden;
+  z-index: 9999;
+}
+.screen.isActiveElement {
+  visibility: visible;
+  opacity: 1;
+  -webkit-overflow-scrolling: touch;
+}
+.screen__wrap {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition: opacity 200ms cubic-bezier(.55, .055, .675, .19) 100ms, transform 200ms ease 100ms;
+}
+.menu-nav.isActiveEvents .screen__wrap {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  /* cursor: pointer; */
+  height: 100%;
+}
+.animate {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition: opacity 600ms ease-out, transform 400ms ease-out;
+}
+.animate.isActiveElement {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.is-hidden {
+  display: none;
+}
+.is-clipped {
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+.mobile-show {
+  display: none !important;
+}
+@media only screen and (max-width:1024px) {
+  .mobile-hide {
+    display: none !important;
+  }
+  .mobile-show {
+    display: inline-block !important;
+  }
+}

@@ -1,24 +1,59 @@
-<nav id="w1" class="navbar navbar-expand-lg fixed-top navbar-light bg-black d-flex">
-  <div class="container-fluid full">
-    <a href="/" class="navbar-brand">
-      <svg width="35" height="40" viewBox="0 0 35 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 27.3171V10.0813L17.2358 0L34.4715 10.0813V29.5935L17.2358 40L2.27642 31.2195L12.6829 25.3659V30.2439L17.2358 32.8455V20.1626L5.52846 13.3333V18.8618L10.4065 21.4634L0 27.3171Z" fill="white"/>
-      </svg><span class="ml-15">Bitcoiners Best</span>
-    </a>
-    <div id="w1-collapse" class="collapse navbar-collapse">
-      <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
-        <% unless current_user %>
-          <li class="nav-item align-self-center"><a href="<%= new_user_session_url %>" class="nav-link">Login</a></li>
-          <li class="nav-item align-self-center"><a href="<%= new_user_registration_url %>" class="nav-link">Signup</a></li>
-        <% end %>
-        <!-- <li class="nav-item align-self-center"><a @click="logout" lass="nav-link">Logout</a></li> -->
-        <li class="nav-item align-self-center"><a href="<%= faq_path %>" class="nav-link">FAQ</a></li>
-        <li class="nav-item align-self-center"><a href="<%= new_resource_path %>" class="nav-link">Submit</a></li>
-        <li class="nav-item align-self-center"><a href="/profile/"><img class="profile-picture br-circle transition" src="<%= current_user ? current_user.image : 'https://avatars.io/twitter//small' %>"/></a></li>
-        <% if current_user %>
-          <li class="nav-item align-self-center"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
-        <% end %>
-      </ul>
+<div data-controller="navbar">
+  <nav id="w1" class="navbar navbar-expand-lg fixed-top navbar-light bg-black d-flex">
+    <div class="container-fluid full">
+      <a href="/" class="navbar-brand">
+        <svg width="35" height="40" viewBox="0 0 35 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 27.3171V10.0813L17.2358 0L34.4715 10.0813V29.5935L17.2358 40L2.27642 31.2195L12.6829 25.3659V30.2439L17.2358 32.8455V20.1626L5.52846 13.3333V18.8618L10.4065 21.4634L0 27.3171Z" fill="white"/>
+        </svg><span class="ml-15">Bitcoiners Best</span>
+      </a>
+      <button class="icon-wrap js-controller--nav js-btn -btn mobile-show" data-action="navbar#open">
+         <span class="icon icon-svg icon-list">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 24 18" xml:space="preserve">
+               <rect width="20" height="2"></rect>
+               <rect y="8" width="20" height="2"></rect>
+            </svg>
+         </span>
+      </button>
+      <div id="w1-collapse" class="collapse navbar-collapse">
+        <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
+          <% unless current_user %>
+            <li class="nav-item align-self-center"><a href="<%= new_user_session_url %>" class="nav-link">Login</a></li>
+            <li class="nav-item align-self-center"><a href="<%= new_user_registration_url %>" class="nav-link">Signup</a></li>
+          <% end %>
+          <li class="nav-item align-self-center"><a href="<%= faq_path %>" class="nav-link">FAQ</a></li>
+          <li class="nav-item align-self-center"><a href="<%= new_resource_path %>" class="nav-link">Submit</a></li>
+          <li class="nav-item align-self-center"><a href="/profile/"><img class="profile-picture br-circle transition" src="<%= current_user ? current_user.image : 'https://avatars.io/twitter//small' %>"/></a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+
+  <nav id="mobile--menu--nav" class="menu-nav js-menu-nav screen wrapper is-hoverable is-cover is-cover--moment is-menu-open is-clipped" data-target="navbar.mobileMenu">
+      <nav id="w1" class="navbar navbar-expand-lg fixed-top navbar-light d-flex">
+          <div class="container-fluid full">
+              <a href="/" class="navbar-brand active router-link-active">
+                  <svg width="35" height="40" viewBox="0 0 35 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 27.3171V10.0813L17.2358 0L34.4715 10.0813V29.5935L17.2358 40L2.27642 31.2195L12.6829 25.3659V30.2439L17.2358 32.8455V20.1626L5.52846 13.3333V18.8618L10.4065 21.4634L0 27.3171Z" fill="white"></path>
+                  </svg><span class="ml-15">Bitcoiners Best</span></a>
+              <button id="close-btn--nav" class="icon-wrap js-controller--nav js-btn -btn mobile-show" data-action='navbar#close'><span class="icon icon-svg a a-link close-btn rounded"></span></button>
+          </div>
+      </nav>
+      <div class="screen__wrap">
+          <div class="container-fluid full">
+              <div class="menu-nav__col">
+                  <% unless current_user %>
+                    <ul class="menu-nav__ul menu-nav__ul--">
+                        <li class="menu-nav__li"><a href="/login" class="a-h -ss-01"><h2>Login</h2></a></li>
+                        <li class="menu-nav__li"><a href="/signup" class="a-h -ss-01"><h2>Signup</h2></a></li>
+                    </ul>
+                  <% end %>
+                  <ul class="menu-nav__ul menu-nav__ul--">
+                      <li class="menu-nav__li"><a href="/faq" class="a-h -ss-01"><h2>FAQ</h2></a></li>
+                      <li class="menu-nav__li"><a href="<%= new_resource_path %>" class="a-h -ss-01"><h2>Submit</h2></a></li>
+                      <li class="nav-item align-self-center"><a href="/profile/"><img class="profile-picture br-circle transition" src="<%= current_user ? current_user.image : 'https://avatars.io/twitter//small' %>"/></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </nav>
+</div>
