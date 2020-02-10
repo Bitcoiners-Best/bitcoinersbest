@@ -29,7 +29,7 @@ class ResourcesController < ApplicationController
   # POST /resources.json
   def create
     @resource = Resource.new(resource_params)
-    @resource.created_by = User.first
+    @resource.created_by = current_user
 
     respond_to do |format|
       if @resource.save
