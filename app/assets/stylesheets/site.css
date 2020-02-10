@@ -505,7 +505,7 @@ footer {
     position: relative;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 30px;
+    padding: 0px 30px 30px 30px;
 }
 
 .modal-content {

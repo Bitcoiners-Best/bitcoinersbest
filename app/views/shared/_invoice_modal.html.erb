@@ -2,18 +2,16 @@
   <div class="modal-dialog modal-md modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal">
         </button>
       </div>
 
       <div data-error='already-voted' class="modal-body text-center fade-in" style="display: none;">
-        <!-- TODO: When the invoice is paid, this success message should replace the modal-body content above -->
         <img src="" alt="">
         <h2 class="mb-30 c-white">Successfully upvoted</h2>
         <h6 class="mb-30 c-gray-1">You have already upvoted this resource.</h6>
         <h6 class="mb-30 c-gray-1">Thank you for supporting bitcoin education.</h6>
-        <h5><a class="link medium close-modal" href="" aria-label="Close">Done</a></h5>
+        <h5><a class="link medium close-modal" href="">Done</a></h5>
       </div>
 
       <div id="invoice-modal-settled" class="modal-body text-center fade-in" style="display: none;">
@@ -29,7 +27,7 @@
         <h3 class="mb-20 c-white text-center"><span class="c-brand" id="invoiceTotal">{#}</span> sats</h3>
         <h6 class="mb-20 c-gray-1 text-center">All proceeds will be donated to open-source bitcoin/lightning projects.</h6>
         <canvas id="invoice-canvas"></canvas>
-        <a class="btn btn-rect-lg btn-block mb-20 push-button" data-action="clipboard#copy" data-target="clipboard.button">Copy Payment Request</a>
+        <a class="btn btn-rect-lg btn-block mt-20 push-button" data-action="clipboard#copy" data-target="clipboard.button">Copy Payment Request</a>
         <input id="invoice-input" type="input" data-target="clipboard.source" style="position: relative; top: -50px; z-index: -100" />
         <h6 class="mb-0 text-center">
           <span class="c-gray-1">Powered by </span><a target="_blank" href="https://paywall.link/" class="link">paywall.link</a></h6>
