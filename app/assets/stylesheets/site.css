@@ -257,7 +257,7 @@ path {
 }
 
 .nav-item > a > .profile-picture {
-  max-width: 40px;
+  max-width: 36px;
   opacity: 1;
 }
 
@@ -819,6 +819,13 @@ footer {
 }
 
 
+/* FORMS & SUBMIT */
+.select-resource {
+
+}
+
+
+
 /* TEXT CYCLE */
 
 .cycle-wrapper {
@@ -1158,6 +1165,9 @@ textarea:-ms-input-placeholder {
 .ew-200 {
   min-width: 200px;
   max-width: 200px;
+}
+.ew-320 {
+  max-width: 400px;
 }
 
 
