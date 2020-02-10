@@ -29,6 +29,7 @@ class VoteDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   user
   resource
+  settled
   id
   count
   ].freeze
