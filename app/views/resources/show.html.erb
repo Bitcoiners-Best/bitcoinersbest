@@ -1,9 +1,9 @@
 <% title @resource.title %>
 <section class="detail mt-50 fade-in" v-cloak>
    <div class="section-header pt-20 pb-20 c-white text-center">
-    <p><%= @resource.slug %></p>
-    <h1><%= @resource.title %></h1>
-    <%= render partial: 'resources/pending_approval' if !@resource.approved %>
+     <%= render partial: 'resources/pending_approval' if !@resource.approved %>
+     <p><%= @resource.slug %></p>
+     <h1><%= @resource.title %></h1>
 
     <%- if @resource.resourceable.respond_to?(:image) && @resource.image.attached? %>
       <p><%= image_tag @resource.image.variant(resize_to_limit: [640, 640]) %></p>
@@ -18,4 +18,3 @@
 
    </div>
  </section>
-
