@@ -14,10 +14,6 @@ export default class extends Controller {
     if (this.invoiceCheckInterval) {
       clearInterval(this.invoiceCheckInterval);
     }
-
-    $('#invoiceModal [data-error]').hide()
-    $('#invoice-modal-unsettled').show()
-    $('#invoice-modal-settled').hide()
   }
 
   disconnect() {
@@ -57,6 +53,12 @@ export default class extends Controller {
 
     QRCode.toCanvas($('#invoice-canvas')[0], `lightning:${data.payment_request}`);
 
+    this.show_invoice_modal_with_modal_body('#invoice-modal-unsettled')
+  }
+
+  show_invoice_modal_with_modal_body(sel) {
+    $(`#invoiceModal .modal-body:not(${sel}`).hide()
+    $(`#invoiceModal .modal-body${sel}`).show()
     $('#invoiceModal').modal('show');
   }
 
@@ -67,15 +69,13 @@ export default class extends Controller {
       fetch(vote_url)
         .then(response => response.json())
         .then(data => {
+          // When the server comes back immediately with a settled vote, there's a single vote
           if (data.settled) {
             $(`#resource-${data.resource_id} .votes .vote`).attr('data-user-votes', 1);
           } else if (!data.error) {
             this.setup_invoice(data);
           } else {
-            $('#invoice-modal-unsettled').hide()
-            $('#invoice-modal-settled').hide()
-            $(`#invoiceModal [data-error='${data.error}']`).show()
-            $('#invoiceModal').modal('show');
+            this.show_invoice_modal_with_modal_body(`[data-error='${data.error}']`)
           }
         })
     } else {
