@@ -3,6 +3,11 @@
    <div class="section-header pt-20 pb-20 c-white text-center">
     <p><%= @resource.slug %></p>
     <h1><%= @resource.title %></h1>
+    <% if !@resource.approved %>
+      <h4 class="c-white text-center mt-20 mb-20">
+        We've received your submission and it's now pending moderation. We'll have a look at it soon!
+      </h4>
+    <% end %>
 
     <%- if @resource.resourceable.respond_to?(:image) && @resource.image.attached? %>
       <p><%= image_tag @resource.image.variant(resize_to_limit: [640, 640]) %></p>
