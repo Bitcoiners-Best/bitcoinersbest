@@ -22,7 +22,9 @@
           <% end %>
           <li class="nav-item align-self-center"><a href="<%= faq_path %>" class="nav-link">FAQ</a></li>
           <li class="nav-item align-self-center"><a href="<%= new_resource_path %>" class="nav-link">Submit</a></li>
-          <li class="nav-item align-self-center"><a href="/profile/"><img class="profile-picture br-circle transition" src="<%= current_user ? current_user.image : 'https://avatars.io/twitter//small' %>"/></a></li>
+          <% if current_user %>
+            <li class="nav-item align-self-center"><a href="/profile/"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -50,7 +52,9 @@
                   <ul class="menu-nav__ul menu-nav__ul--">
                       <li class="menu-nav__li"><a href="/faq" class="a-h -ss-01"><h2>FAQ</h2></a></li>
                       <li class="menu-nav__li"><a href="<%= new_resource_path %>" class="a-h -ss-01"><h2>Submit</h2></a></li>
-                      <li class="nav-item align-self-center"><a href="/profile/"><img class="profile-picture br-circle transition" src="<%= current_user ? current_user.image : 'https://avatars.io/twitter//small' %>"/></a></li>
+                      <% if current_user %>
+                        <li class="nav-item align-self-center"><a href="/profile/"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
+                      <% end %>
                   </ul>
               </div>
           </div>
