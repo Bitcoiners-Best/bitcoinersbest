@@ -11,8 +11,8 @@ class Resource < ApplicationRecord
   friendly_id :title, use: :slugged
 
   belongs_to :created_by, class_name: 'User'
-  belongs_to :resourceable, polymorphic: true
-  has_many :votes
+  belongs_to :resourceable, polymorphic: true, dependent: :destroy
+  has_many :votes, dependent: :destroy
 
   delegate :title,
            :description,
@@ -22,6 +22,8 @@ class Resource < ApplicationRecord
            to: :resourceable, prefix: false
 
   accepts_nested_attributes_for :resourceable
+
+  scope :visible, -> { where(approved: true, archived: false) }
 
   def build_resourceable(params)
     self.resourceable = resourceable_type.constantize.new(params)

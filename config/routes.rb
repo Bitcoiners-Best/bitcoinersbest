@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :users
+      resources :articles
+      resources :votes
+      resources :books
+      resources :twitter_threads
+      resources :resources
+      resources :episodes
+      resources :podcasts
+
+      root to: "users#index"
+    end
   resources :resources, only: [:new, :create] do
     resources :votes, only: [:new, :create, :destroy]
   end
