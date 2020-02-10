@@ -15,6 +15,7 @@ export default class extends Controller {
       clearInterval(this.invoiceCheckInterval);
     }
 
+    $('#invoiceModal [data-error]').hide()
     $('#invoice-modal-unsettled').show()
     $('#invoice-modal-settled').hide()
   }
