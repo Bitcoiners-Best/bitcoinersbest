@@ -3,6 +3,7 @@
    <div class="section-header pt-20 pb-20 c-white text-center">
     <p><%= @resource.slug %></p>
     <h1><%= @resource.title %></h1>
+    <%= render partial: 'resources/pending_approval' if !@resource.approved %>
 
     <%- if @resource.resourceable.respond_to?(:image) && @resource.image.attached? %>
       <p><%= image_tag @resource.image %></p>
