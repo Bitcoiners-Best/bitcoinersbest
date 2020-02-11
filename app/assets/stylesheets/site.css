@@ -1173,8 +1173,12 @@ textarea:-ms-input-placeholder {
   max-width: 200px;
 }
 .ew-320 {
+  max-width: 320px;
+}
+.ew-500 {
   max-width: 400px;
 }
+
 
 
 /* TRANSISTIONS */
