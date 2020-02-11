@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
   has_many :votes
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   def email_required?
     false
   end

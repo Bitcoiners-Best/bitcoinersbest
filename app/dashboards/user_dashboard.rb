@@ -23,6 +23,7 @@ class UserDashboard < Administrate::BaseDashboard
     description: Field::String,
     admin: Field::Boolean,
     name: Field::String,
+    slug: Field::String,
     username: Field::String,
   }.freeze
 
@@ -35,6 +36,7 @@ class UserDashboard < Administrate::BaseDashboard
   votes
   id
   username
+  slug
   admin
   ].freeze
 
@@ -51,6 +53,7 @@ class UserDashboard < Administrate::BaseDashboard
   description
   admin
   username
+  slug
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -64,6 +67,7 @@ class UserDashboard < Administrate::BaseDashboard
   admin
   description
   username
+  slug
   ].freeze
 
   # COLLECTION_FILTERS

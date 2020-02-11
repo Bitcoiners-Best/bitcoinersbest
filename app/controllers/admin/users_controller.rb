@@ -13,9 +13,9 @@ module Admin
     # This will be used to set the resource for the `show`, `edit`, and `update`
     # actions.
     #
-    # def find_resource(param)
-    #   Foo.find_by!(slug: param)
-    # end
+    def find_resource(param)
+      User.friendly.find(param)
+    end
 
     # Override this if you have certain roles that require a subset
     # this will be used to set the records shown on the `index` action.
