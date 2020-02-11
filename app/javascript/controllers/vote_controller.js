@@ -34,6 +34,13 @@ export default class extends Controller {
 
   invoiceSettled(resource_id) {
     $(`#resource-${resource_id} .votes .vote`).attr('data-user-votes', 2);
+
+    const titleElement = $('#invoiceModal [data-invoice-role="title"]')
+    titleElement.fadeOut((el) => {
+      titleElement.text('')
+      titleElement.show()
+    })
+
     $('#invoice-modal-unsettled').fadeOut(() => {
       $('#invoice-modal-settled').fadeIn()
     })
@@ -44,7 +51,6 @@ export default class extends Controller {
   }
 
   setup_invoice(data) {
-    $('#invoiceModal [data-invoice-role="title"]').text(this.data.get('title'));
     $('#invoiceModal [data-invoice-role="total"]').text('10k');
     $('#invoice-input').val(data.payment_request);
 
@@ -54,13 +60,14 @@ export default class extends Controller {
 
     QRCode.toCanvas($('#invoiceModal [data-invoice-role="qr"]')[0], `lightning:${data.payment_request}`);
 
-    this.show_invoice_modal_with_modal_body('#invoice-modal-unsettled')
+    this.show_invoice_modal_with_modal_body('#invoice-modal-unsettled', this.data.get('title'))
   }
 
-  show_invoice_modal_with_modal_body(sel) {
+  show_invoice_modal_with_modal_body(sel, title) {
+    $('#invoiceModal [data-invoice-role="title"]').text(title)
     $(`#invoiceModal .modal-body:not(${sel}`).hide()
     $(`#invoiceModal .modal-body${sel}`).show()
-    $('#invoiceModal').modal('show');
+    $('#invoiceModal').modal('show')
   }
 
   invoice_modal() {
@@ -76,7 +83,7 @@ export default class extends Controller {
           } else if (!data.error) {
             this.setup_invoice(data);
           } else {
-            this.show_invoice_modal_with_modal_body(`[data-error='${data.error}']`)
+            this.show_invoice_modal_with_modal_body(`[data-error='${data.error}']`, '')
           }
         })
     } else {
