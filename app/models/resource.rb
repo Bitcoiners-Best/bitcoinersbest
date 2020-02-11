@@ -25,6 +25,8 @@ class Resource < ApplicationRecord
 
   scope :visible, -> { where(approved: true, archived: false) }
 
+  default_scope { order(vote_count: :desc) }
+
   def build_resourceable(params)
     self.resourceable = resourceable_type.constantize.new(params)
   end
