@@ -58,7 +58,8 @@ export default class extends Controller {
       () => { this.checkInvoiceStatus(data.payment_id, data.resource_id) },
     1500)
 
-    QRCode.toCanvas($('#invoiceModal [data-invoice-role="qr"]')[0], `lightning:${data.payment_request}`);
+    QRCode.toCanvas($('#invoiceModal [data-invoice-role="qr"]')[0], `lightning:${data.payment_request}`,
+      { width: 260 });
 
     this.show_invoice_modal_with_modal_body('#invoice-modal-unsettled', this.data.get('title'))
   }
