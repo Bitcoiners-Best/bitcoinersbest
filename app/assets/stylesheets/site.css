@@ -306,6 +306,13 @@ path {
     border-color: rgb(255,255,255);
 }
 
+.logo {
+
+}
+
+.logotype {
+  margin-left: 15px;
+}
 
 /* FOOTER */
 
@@ -1778,6 +1785,15 @@ textarea:-ms-input-placeholder {
   }
   p {
     font-size: 16px;
+  }
+
+  /* HEADER */
+  .logo {
+    height: 36px;
+  }
+
+  .logotype {
+    margin-left: 10px;
   }
 
   /* MODULES */

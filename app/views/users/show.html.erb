@@ -7,7 +7,7 @@
         <img class="br-circle transition" src="<%= @user.image %>"/>
       </div>
       <div class="col-3 text-center">
-        <h1 class="mb-20"><%= @user.name %></h1>
+        <h1 class="mb-20"><a href="https://twitter.com/<%= @user.name %>">@<%= @user.name %></a></h1>
       </div>
       <% if @user == current_user %>
         <div class="col text-right">
