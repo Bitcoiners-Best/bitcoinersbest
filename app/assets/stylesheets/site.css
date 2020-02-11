@@ -601,6 +601,22 @@ footer {
     background-color: #FFC42B;
 }
 
+.btn-secondary,
+.btn-primary {
+    color: #1D2229;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+    color: #1D2229;
+    background-color: #FFC42B;
+    border-color: none;
+}
+
 
 .push-button {
   transition: transform ease-in 0.1s;
@@ -837,6 +853,9 @@ footer {
 
 }
 
+textarea.form-control {
+    min-height: 120px;
+}
 
 
 /* TEXT CYCLE */
