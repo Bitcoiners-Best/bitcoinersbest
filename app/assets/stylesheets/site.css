@@ -545,6 +545,11 @@ footer {
     transition: all 0.3s;
 }
 
+.invoice-paid-success {
+    max-height: 120px;
+}
+
+
 /* BUTTONS */
 
 
