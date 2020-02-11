@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[twitter]
 
   has_many :votes
+  has_many :resources, foreign_key: :created_by_id
 
   extend FriendlyId
   friendly_id :username, use: :slugged
