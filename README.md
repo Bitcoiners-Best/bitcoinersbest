@@ -60,7 +60,7 @@ secret_key_base: ... # A random string, can be created by running `rails secret`
 ### Twitter app settings
 
 The twitter app, created in https://developer.twitter.com, should be enabled with OAuth access, providing a callback that points to
-`http://localhost:3001/users/auth/twitter/callback`.
+`http://localhost:3001/auth/twitter/callback`.
 
 ## Running
 
