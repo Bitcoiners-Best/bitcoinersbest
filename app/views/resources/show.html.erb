@@ -6,6 +6,10 @@
      <h1 class="mb-20"><%= @resource.title %></h1>
      <p class="c-white">Submitted <%= distance_of_time_in_words_to_now(@resource.created_at) %> ago</p>
 
+     <% if @resource.description %>
+       <p class="c-white"><%= @resource.description %></p>
+     <% end %>
+
       <%- if @resource.resourceable.respond_to?(:image) && @resource.image.attached? %>
         <p><%= image_tag @resource.image.variant(resize_to_limit: [640, 640]), class: 'img-fluid ew-320' %></p>
       <% end %>
