@@ -1,0 +1,6 @@
+<%= content_tag :div, class: "exception c-white", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status.to_s.first == "5" && Rails.application.routes.recognize_path("/")) do %>
+
+  <% if %w(4 5).include?(@exception.status.to_s.first) %>
+    <% render partial: "#{@exception.status.to_s.first}xx" %>
+  <% end %>
+<% end %>

@@ -136,6 +136,10 @@ GEM
       activesupport (>= 5.0)
       request_store (>= 1.0)
     erubi (1.9.0)
+    exception_handler (0.8.0.0)
+      bundler
+      rails (>= 4.2.0)
+      responders
     execjs (2.7.0)
     eye (0.10.0)
       celluloid (~> 0.17.3)
@@ -369,6 +373,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   draper
+  exception_handler (~> 0.8.0.0)
   eye
   friendly_id (~> 5.2.4)
   image_processing (~> 1.2)

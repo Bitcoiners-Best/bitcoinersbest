@@ -68,3 +68,4 @@ gem 'pg'
 gem 'will_paginate'
 gem "administrate"
 gem 'draper'
+gem 'exception_handler', '~> 0.8.0.0'
