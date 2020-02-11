@@ -2,6 +2,7 @@
   <div class="modal-dialog modal-md modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <h5 class="modal-title c-white" data-invoice-role="title"></h5>
         <button type="button" class="close" data-dismiss="modal">
         </button>
       </div>
@@ -24,9 +25,9 @@
 
       <div id="invoice-modal-unsettled" class="modal-body text-center" data-controller="clipboard">
         <h2 class="c-white text-center">Invoice Total</h2>
-        <h3 class="mb-20 c-white text-center"><span class="c-brand" id="invoiceTotal">{#}</span> sats</h3>
+        <h3 class="mb-20 c-white text-center"><span class="c-brand" data-invoice-role="total"></span> sats</h3>
         <h6 class="mb-20 c-gray-1 text-center">All proceeds will be donated to open-source bitcoin/lightning projects.</h6>
-        <canvas id="invoice-canvas"></canvas>
+        <canvas data-invoice-role="qr"></canvas>
         <a class="btn btn-rect-lg btn-block mt-20 push-button" data-action="clipboard#copy" data-target="clipboard.button">Copy Payment Request</a>
         <input id="invoice-input" type="input" data-target="clipboard.source" style="position: relative; top: -50px; z-index: -100" />
         <h6 class="mb-0 text-center">

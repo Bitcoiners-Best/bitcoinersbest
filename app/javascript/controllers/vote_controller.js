@@ -44,14 +44,15 @@ export default class extends Controller {
   }
 
   setup_invoice(data) {
-    $('#invoiceTotal').text('10k');
+    $('#invoiceModal [data-invoice-role="title"]').text(this.data.get('title'));
+    $('#invoiceModal [data-invoice-role="total"]').text('10k');
     $('#invoice-input').val(data.payment_request);
 
     this.invoiceCheckInterval = setInterval(
       () => { this.checkInvoiceStatus(data.payment_id, data.resource_id) },
     1500)
 
-    QRCode.toCanvas($('#invoice-canvas')[0], `lightning:${data.payment_request}`);
+    QRCode.toCanvas($('#invoiceModal [data-invoice-role="qr"]')[0], `lightning:${data.payment_request}`);
 
     this.show_invoice_modal_with_modal_body('#invoice-modal-unsettled')
   }
