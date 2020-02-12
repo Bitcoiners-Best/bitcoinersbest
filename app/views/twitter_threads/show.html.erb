@@ -5,10 +5,6 @@
     <h1><%= @resource.title %></h1>
     <%= render partial: 'resources/pending_approval' if !@resource.approved %>
 
-    <%- if @resource.resourceable.respond_to?(:image) && @resource.image.attached? %>
-      <%= image_tag @resource.image.variant(resize_to_limit: [640, 640]), class: 'img-fluid' %>
-    <% end %>
-
     <div style="margin: auto; max-width: 500px;">
       <blockquote class="twitter-tweet" data-theme="dark"><a href="<%= @resource.url %>"></a></blockquote>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
