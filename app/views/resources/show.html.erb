@@ -9,8 +9,8 @@
 
     <h1 class="mt-30 mb-30 c-white"><%= @resource.title %></h1>
 
-    <% if @resource.description %>
-    <p class="regular c-gray-1 mb-30 mt-30"><%= @resource.description %></p>
+    <% if @resource.respond_to?(:description) %>
+        <p class="regular c-gray-1 mb-30 mt-30"><%= @resource.description %></p>
     <% end %>
 
     <p class="regular c-gray-1 mb-30">Submitted <%= distance_of_time_in_words_to_now(@resource.created_at) %> ago</p>
