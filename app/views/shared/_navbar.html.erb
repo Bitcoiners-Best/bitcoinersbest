@@ -16,14 +16,14 @@
       </button>
       <div id="w1-collapse" class="collapse navbar-collapse">
         <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
-          <% if current_user.try(:admin?) %>
-            <%= navbar_link(admin_resources_path, 'Admin') %>
-          <% end %>
           <%= navbar_link(faq_path, 'FAQ') %>
           <%= navbar_link(new_resource_path, 'Submit') %>
           <% unless current_user %>
             <%= navbar_link(new_user_session_path, 'Login') %>
             <%= navbar_link(new_user_registration_path, 'Join') %>
+          <% end %>
+          <% if current_user.try(:admin?) %>
+            <%= navbar_link(admin_resources_path, 'Admin') %>
           <% end %>
           <% if current_user %>
             <li class="nav-item align-self-center"><a href="<%= user_profile_path %>"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
@@ -49,6 +49,9 @@
                   <ul class="menu-nav__ul menu-nav__ul--">
                       <li class="menu-nav__li"><a href="<%= faq_path %>" class="a-h -ss-01"><h2>FAQ</h2></a></li>
                       <li class="menu-nav__li"><a href="<%= new_resource_path %>" class="a-h -ss-01"><h2>Submit</h2></a></li>
+                      <% if current_user.try(:admin?) %>
+                        <%= navbar_link(admin_resources_path, 'Admin') %>
+                      <% end %>
                       <% if current_user %>
                         <li class="nav-item align-self-center"><a href="<%= user_profile_path %>"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
                       <% end %>
