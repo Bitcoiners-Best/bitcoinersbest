@@ -7,9 +7,7 @@
     <h4 class="mb-30 c-white"><a href="https://twitter.com/<%= @user.name %>">@<%= @user.name %></a></h4>
 
     <% if @user == current_user %>
-      <div class="col text-right">
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn btn-rect-lg push-button btn-secondary' %>
-      </div>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn btn-rect-lg push-button btn-secondary' %>
     <% end %>
   </div>
 
