@@ -16,6 +16,9 @@
       </button>
       <div id="w1-collapse" class="collapse navbar-collapse">
         <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
+          <% if current_user.try(:admin?) %>
+            <%= navbar_link(admin_resources_path, 'Admin') %>
+          <% end %>
           <%= navbar_link(faq_path, 'FAQ') %>
           <%= navbar_link(new_resource_path, 'Submit') %>
           <% unless current_user %>
