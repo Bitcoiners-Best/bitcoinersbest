@@ -1,16 +1,17 @@
 <% title @resource.title %>
 <section class="detail mt-50 fade-in" v-cloak>
-   <div class="section-header pt-20 pb-20 c-white text-center">
-    <p><%= @resource.slug %></p>
-    <h1><%= @resource.title %></h1>
-    <%= render partial: 'resources/pending_approval' if !@resource.approved %>
+   <div class="section-header pb-20 c-white text-center">
+     <%= render partial: 'resources/pending_approval' if !@resource.approved %>
+    <h1 class="mt-30 mb-30 c-white"><%= @resource.title %></h1>
 
-    <div style="margin: auto; max-width: 500px;">
+    <div style="margin: auto; max-width: 500px;" class="mb-30 mt-30">
       <blockquote class="twitter-tweet" data-theme="dark"><a href="<%= @resource.url %>"></a></blockquote>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 
-      <a target="_blank" class="c-white" href="<%= @resource.url %>">Open Original Source</a>
-      <p class="c-white">Submitted <%= distance_of_time_in_words_to_now(@resource.created_at) %> ago</p>
+    <p class="regular c-gray-1 mb-30">Submitted <%= distance_of_time_in_words_to_now(@resource.created_at) %> ago</p>
+
+    <p class="mt-30 mb-30"><a target="_blank" class="link" href="<%= @resource.url %>">View Original Source</a></p>
+
    </div>
  </section>
