@@ -611,6 +611,11 @@ footer {
     color: #1D2229;
 }
 
+.btn-secondary:hover,
+.btn-primary:hover {
+    color: #1D2229;
+}
+
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle,
