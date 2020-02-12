@@ -2122,3 +2122,7 @@ button:not(:disabled),
     display: inline-block !important;
   }
 }
+
+.turbolinks-progress-bar {
+  background-color: #FFCF53;
+}
