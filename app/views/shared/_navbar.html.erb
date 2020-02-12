@@ -16,11 +16,11 @@
       </button>
       <div id="w1-collapse" class="collapse navbar-collapse">
         <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
-          <li class="nav-item align-self-center"><a href="<%= faq_path %>" class="nav-link">FAQ</a></li>
-          <li class="nav-item align-self-center"><a href="<%= new_resource_path %>" class="nav-link">Submit</a></li>
+          <%= navbar_link(faq_path, 'FAQ') %>
+          <%= navbar_link(new_resource_path, 'Submit') %>
           <% unless current_user %>
-            <li class="nav-item align-self-center"><a href="<%= new_user_session_url %>" class="nav-link">Login</a></li>
-            <li class="nav-item align-self-center"><a href="<%= new_user_registration_url %>" class="nav-link">Join</a></li>
+            <%= navbar_link(new_user_session_path, 'Login') %>
+            <%= navbar_link(new_user_registration_path, 'Join') %>
           <% end %>
           <% if current_user %>
             <li class="nav-item align-self-center"><a href="<%= user_profile_path %>"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
@@ -47,13 +47,13 @@
                       <li class="menu-nav__li"><a href="<%= faq_path %>" class="a-h -ss-01"><h2>FAQ</h2></a></li>
                       <li class="menu-nav__li"><a href="<%= new_resource_path %>" class="a-h -ss-01"><h2>Submit</h2></a></li>
                       <% if current_user %>
-                        <li class="nav-item align-self-center"><a href="/profile/"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
+                        <li class="nav-item align-self-center"><a href="<%= user_profile_path %>"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
                       <% end %>
                   </ul>
                   <% unless current_user %>
                   <ul class="menu-nav__ul menu-nav__ul--">
-                      <li class="menu-nav__li"><a href="<%= new_user_session_url %>" class="a-h -ss-01"><h2>Login</h2></a></li>
-                      <li class="menu-nav__li"><a href="<%= new_user_registration_url %>" class="a-h -ss-01"><h2>Join</h2></a></li>
+                      <li class="menu-nav__li"><a href="<%= new_user_session_path %>" class="a-h -ss-01"><h2>Login</h2></a></li>
+                      <li class="menu-nav__li"><a href="<%= new_user_registration_path %>" class="a-h -ss-01"><h2>Join</h2></a></li>
                   </ul>
                   <% end %>
               </div>
