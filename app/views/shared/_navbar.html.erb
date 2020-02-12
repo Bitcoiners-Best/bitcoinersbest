@@ -49,11 +49,19 @@
                   <ul class="menu-nav__ul menu-nav__ul--">
                       <li class="menu-nav__li"><a href="<%= faq_path %>" class="a-h -ss-01"><h2>FAQ</h2></a></li>
                       <li class="menu-nav__li"><a href="<%= new_resource_path %>" class="a-h -ss-01"><h2>Submit</h2></a></li>
-                      <% if current_user.try(:admin?) %>
-                        <%= navbar_link(admin_resources_path, 'Admin') %>
-                      <% end %>
                       <% if current_user %>
-                        <li class="nav-item align-self-center"><a href="<%= user_profile_path %>"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <img class="profile-picture br-circle transition" src="<%= current_user.image %>"/>
+                            </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="<%= user_profile_path %>">Profile</a>
+                              <% if current_user.try(:admin?) %>
+                              <a class="dropdown-item" href="<%= admin_resources_path %>">Admin</a>
+                              <% end %>
+                              <a class="dropdown-item" href="<%= link_to 'Logout', destroy_user_session_path, method: :delete %>">Logout</a>
+                          </div>
+                        </li>
                       <% end %>
                   </ul>
                   <% unless current_user %>

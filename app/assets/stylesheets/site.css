@@ -314,6 +314,56 @@ path {
   margin-left: 15px;
 }
 
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 120px;
+    padding: 10px 0px;
+    margin: 12px 0 0;
+    font-size: 16px;
+    color: #fff;
+    text-align: left;
+    list-style: none;
+    background-color: #1D2229;
+    background-clip: padding-box;
+    border: 1px solid rgba(126,144,169,0.25);
+    border-radius: 0.25rem;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 10px 30px;
+    clear: both;
+    font-weight: 500;
+    color: #fff;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #FFCF53;
+    text-decoration: none;
+    background-color: #1D2229;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #FFCF53;
+    text-decoration: none;
+    background-color: #1D2229;
+}
+
+
 /* FOOTER */
 
 footer {
