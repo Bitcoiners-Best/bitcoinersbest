@@ -1,0 +1,168 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - TwitterRubyGem/6.2.0
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic QzVTY0pPekI0amJEYTY5N2ozeXFQRjNUTzpocHh4UVNuWElrNHNCWVU1ZFlIeExwNTV3N1d4dVpyMGFVSVlHbk5MWjVGQ28wRnlDWg==
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.twitter.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Connection:
+      - close
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '157'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 12 Feb 2020 16:02:10 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Wed, 12 Feb 2020 16:02:10 GMT
+      Ml:
+      - A
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_f
+      Set-Cookie:
+      - guest_id=v1%3A158152333058596947; Max-Age=63072000; Expires=Fri, 11 Feb 2022
+        16:02:10 GMT; Path=/; Domain=.twitter.com; Secure
+      - personalization_id="v1_9Z3QK0MAq0erVNihty9/tA=="; Max-Age=63072000; Expires=Fri,
+        11 Feb 2022 16:02:10 GMT; Path=/; Domain=.twitter.com
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - a8c861826f2a32425f3bf51dd59d49ff
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Response-Time:
+      - '123'
+      X-Transaction:
+      - 00b222d200233d37
+      X-Tsa-Request-Body-Time:
+      - '0'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Ua-Compatible:
+      - IE=edge,chrome=1
+      X-Xss-Protection:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"token_type":"bearer","access_token":"AAAAAAAAAAAAAAAAAAAAAMiMCQEAAAAAeFn%2BdErtWxGt%2F7bTX2SkPabgx30%3Ddf6s8OxLGGZkc8YIxS8bJvWXdGCnNvoSrtxIYvggjqgtyOYx34"}'
+    http_version: null
+  recorded_at: Wed, 12 Feb 2020 16:02:10 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/show/1225169242510647296.json?tweet_mode=extended
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - TwitterRubyGem/6.2.0
+      Authorization:
+      - Bearer AAAAAAAAAAAAAAAAAAAAAMiMCQEAAAAAeFn%2BdErtWxGt%2F7bTX2SkPabgx30%3Ddf6s8OxLGGZkc8YIxS8bJvWXdGCnNvoSrtxIYvggjqgtyOYx34
+      Connection:
+      - close
+      Host:
+      - api.twitter.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Connection:
+      - close
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '4808'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 12 Feb 2020 16:02:11 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Wed, 12 Feb 2020 16:02:11 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_f
+      Set-Cookie:
+      - guest_id=v1%3A158152333186107016; Max-Age=63072000; Expires=Fri, 11 Feb 2022
+        16:02:11 GMT; Path=/; Domain=.twitter.com; Secure
+      - personalization_id="v1_AcSswxX0UVm6WTwSjGnKRA=="; Max-Age=63072000; Expires=Fri,
+        11 Feb 2022 16:02:11 GMT; Path=/; Domain=.twitter.com
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read
+      X-Connection-Hash:
+      - d8716e13698645214919ad94ebdf4237
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '900'
+      X-Rate-Limit-Remaining:
+      - '877'
+      X-Rate-Limit-Reset:
+      - '1581523345'
+      X-Response-Time:
+      - '130'
+      X-Transaction:
+      - 0065ace300749a51
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"created_at":"Wed Feb 05 21:28:04 +0000 2020","id":1225169242510647296,"id_str":"1225169242510647296","full_text":"Appears
+        @trylolli is requiring a bank account for some users when they try to withdraw.
+        Shotgun KYC is user hostile &amp; never acceptable.\n\nReminder: Never keep
+        large balances in custodial wallets\/services. Withdraw frequently. Not your
+        keys, not your coins.\n\nh\/t @cryptopahmp https:\/\/t.co\/hQ4svA2vAR","truncated":false,"display_text_range":[0,277],"entities":{"hashtags":[],"symbols":[],"user_mentions":[{"screen_name":"trylolli","name":"Lolli
+        \ud83c\udf6d","id":971046392872521730,"id_str":"971046392872521730","indices":[8,17]},{"screen_name":"CryptoPahmp","name":"DollarCostPAHMPIT","id":599046729,"id_str":"599046729","indices":[265,277]}],"urls":[],"media":[{"id":1225169233861988352,"id_str":"1225169233861988352","indices":[278,301],"media_url":"http:\/\/pbs.twimg.com\/media\/EQCs7U4U0AAMA25.jpg","media_url_https":"https:\/\/pbs.twimg.com\/media\/EQCs7U4U0AAMA25.jpg","url":"https:\/\/t.co\/hQ4svA2vAR","display_url":"pic.twitter.com\/hQ4svA2vAR","expanded_url":"https:\/\/twitter.com\/matt_odell\/status\/1225169242510647296\/photo\/1","type":"photo","sizes":{"thumb":{"w":150,"h":150,"resize":"crop"},"large":{"w":1242,"h":1856,"resize":"fit"},"medium":{"w":803,"h":1200,"resize":"fit"},"small":{"w":455,"h":680,"resize":"fit"}}}]},"extended_entities":{"media":[{"id":1225169233861988352,"id_str":"1225169233861988352","indices":[278,301],"media_url":"http:\/\/pbs.twimg.com\/media\/EQCs7U4U0AAMA25.jpg","media_url_https":"https:\/\/pbs.twimg.com\/media\/EQCs7U4U0AAMA25.jpg","url":"https:\/\/t.co\/hQ4svA2vAR","display_url":"pic.twitter.com\/hQ4svA2vAR","expanded_url":"https:\/\/twitter.com\/matt_odell\/status\/1225169242510647296\/photo\/1","type":"photo","sizes":{"thumb":{"w":150,"h":150,"resize":"crop"},"large":{"w":1242,"h":1856,"resize":"fit"},"medium":{"w":803,"h":1200,"resize":"fit"},"small":{"w":455,"h":680,"resize":"fit"}}}]},"source":"\u003ca
+        href=\"https:\/\/mobile.twitter.com\" rel=\"nofollow\"\u003eTwitter Web App\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":47966112,"id_str":"47966112","name":"Matt
+        Odell","screen_name":"matt_odell","location":"PGP: 1E87 BC1E EDC4 3852","description":"bitcoin
+        & privacy\u25fb\ufe0fprojects: @tftc21 @finalmessageio @btccitadel\u25fb\ufe0fresources:
+        https:\/\/t.co\/MaETdBUifv, https:\/\/t.co\/MHiMFtEBa9, https:\/\/t.co\/QmwsttsXIY,
+        https:\/\/t.co\/QuxFmjOdMb\u25fb\ufe0fstay humble. stack sats.","url":"https:\/\/t.co\/jqoWDeTuHH","entities":{"url":{"urls":[{"url":"https:\/\/t.co\/jqoWDeTuHH","expanded_url":"http:\/\/tftc.io","display_url":"tftc.io","indices":[0,23]}]},"description":{"urls":[{"url":"https:\/\/t.co\/MaETdBUifv","expanded_url":"http:\/\/nobsbtc.com","display_url":"nobsbtc.com","indices":[77,100]},{"url":"https:\/\/t.co\/MHiMFtEBa9","expanded_url":"http:\/\/btcintro.com","display_url":"btcintro.com","indices":[102,125]},{"url":"https:\/\/t.co\/QmwsttsXIY","expanded_url":"http:\/\/btcprivacy.org","display_url":"btcprivacy.org","indices":[127,150]},{"url":"https:\/\/t.co\/QuxFmjOdMb","expanded_url":"http:\/\/chatbtc.org","display_url":"chatbtc.org","indices":[152,175]}]}},"protected":false,"followers_count":35890,"friends_count":1048,"listed_count":919,"created_at":"Wed
+        Jun 17 13:52:16 +0000 2009","favourites_count":61122,"utc_offset":null,"time_zone":null,"geo_enabled":true,"verified":false,"statuses_count":16265,"lang":null,"contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"1A1B1F","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/1116682986207031296\/iaLCBlEv_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/1116682986207031296\/iaLCBlEv_normal.jpg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/47966112\/1571327795","profile_link_color":"000000","profile_sidebar_border_color":"FFFFFF","profile_sidebar_fill_color":"252429","profile_text_color":"666666","profile_use_background_image":true,"has_extended_profile":false,"default_profile":false,"default_profile_image":false,"following":null,"follow_request_sent":null,"notifications":null,"translator_type":"none"},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":60,"favorite_count":347,"favorited":false,"retweeted":false,"possibly_sensitive":false,"possibly_sensitive_appealable":false,"lang":"en"}'
+    http_version: null
+  recorded_at: Wed, 12 Feb 2020 16:02:11 GMT
+recorded_with: VCR 5.1.0

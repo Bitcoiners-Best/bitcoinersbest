@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  if Rails.env.development?
+    require 'mr_video'
+    mount MrVideo::Engine => '/mr_video'
+  end
+
   namespace :admin do
       resources :users
       resources :articles

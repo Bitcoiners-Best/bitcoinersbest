@@ -16,3 +16,10 @@ Rails.application.config.assets.precompile += %w(
   administrate/application.css
   administrate/application.js
 )
+
+if Rails.env.development?
+  Rails.application.config.assets.precompile += %w(
+    mr_video/application.css
+    mr_video/application.js
+  )
+end

@@ -14,6 +14,8 @@ class Resource < ApplicationRecord
   belongs_to :resourceable, polymorphic: true, dependent: :destroy
   has_many :votes, dependent: :destroy
 
+  validates :slug, presence: true
+
   delegate :title,
            :description,
            :url,
