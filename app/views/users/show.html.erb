@@ -1,34 +1,29 @@
 <% title @user.name %>
 
 <section class="detail mt-50 fade-in">
-  <div class="pt-20 pb-20 c-white">
-    <div class="row">
-      <div class="col-1 text-right">
-        <img class="br-circle transition" src="<%= @user.image %>"/>
+
+  <div class="text-center">
+    <img class="br-circle transition mb-20" src="<%= @user.image %>"/>
+    <h4 class="mb-30 c-white"><a href="https://twitter.com/<%= @user.name %>">@<%= @user.name %></a></h4>
+
+    <% if @user == current_user %>
+      <div class="col text-right">
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn btn-rect-lg push-button btn-secondary' %>
       </div>
-      <div class="col-3 text-center">
-        <h1 class="mb-20"><a href="https://twitter.com/<%= @user.name %>">@<%= @user.name %></a></h1>
-      </div>
-      <% if @user == current_user %>
-        <div class="col text-right">
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn btn-rect-lg push-button btn-secondary' %>
-        </div>
-      <% end %>
-    </div>
-    <p class="mt-30">
-      <%= @user.description %>
-    </p>
+    <% end %>
   </div>
 
   <% if @resources.any? %>
-    <h2 class="c-white mt-30 mb-30">
+    <h3 class="c-white mt-50 mb-50">
       <% if @user == current_user %>
         My
       <% else %>
         <%= @user.name %>'s
       <% end %>
       submissions
-    </h2>
+    </h3>
     <%= render partial: 'resources/list', locals: { resources: @resources } %>
   <% end %>
+
+
 </section>
