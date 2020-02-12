@@ -1,4 +1,11 @@
 <% title @resource.title %>
+<% set_meta_tags 'og:title' => @resource.title %>
+<%- if @resource.resourceable.respond_to?(:description) %>
+  <% set_meta_tags 'og:description' => @resource.description %>
+<% end %>
+<%- if @resource.resourceable.respond_to?(:image) && @resource.resourceable.image.attached? %>
+  <% set_meta_tags 'og:image' => rails_blob_url(@resource.image, disposition: "inline") %>
+<% end %>
 <section class="detail mt-50 fade-in">
    <div class="section-header pb-20 c-white text-center">
     <%= render partial: 'resources/pending_approval' if !@resource.approved %>
