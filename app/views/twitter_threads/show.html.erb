@@ -6,7 +6,7 @@
     <%= render partial: 'resources/pending_approval' if !@resource.approved %>
 
     <%- if @resource.resourceable.respond_to?(:image) && @resource.image.attached? %>
-      <p><%= image_tag @resource.image %></p>
+      <%= image_tag @resource.image.variant(resize_to_limit: [640, 640]), class: 'img-fluid' %>
     <% end %>
 
     <div style="margin: auto; max-width: 500px;">
