@@ -72,3 +72,5 @@ gem 'will_paginate'
 gem "administrate"
 gem 'draper'
 gem 'exception_handler', '~> 0.8.0.0'
+gem 'tweet_url'
+gem 'twitter', github: 'heelhook/twitter'

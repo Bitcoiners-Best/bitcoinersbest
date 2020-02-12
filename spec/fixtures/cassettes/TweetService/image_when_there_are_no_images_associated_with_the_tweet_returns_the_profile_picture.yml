@@ -1,0 +1,167 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - TwitterRubyGem/6.2.0
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic QzVTY0pPekI0amJEYTY5N2ozeXFQRjNUTzpocHh4UVNuWElrNHNCWVU1ZFlIeExwNTV3N1d4dVpyMGFVSVlHbk5MWjVGQ28wRnlDWg==
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.twitter.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Connection:
+      - close
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '157'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 12 Feb 2020 16:02:09 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Wed, 12 Feb 2020 16:02:09 GMT
+      Ml:
+      - A
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_f
+      Set-Cookie:
+      - guest_id=v1%3A158152332980942354; Max-Age=63072000; Expires=Fri, 11 Feb 2022
+        16:02:09 GMT; Path=/; Domain=.twitter.com; Secure
+      - personalization_id="v1_UkX67nwFNB2YYnaqkt9Q3A=="; Max-Age=63072000; Expires=Fri,
+        11 Feb 2022 16:02:09 GMT; Path=/; Domain=.twitter.com
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 97e2064794c1c218010a06c3683bded9
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Response-Time:
+      - '116'
+      X-Transaction:
+      - 00021b5500940d3e
+      X-Tsa-Request-Body-Time:
+      - '0'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Ua-Compatible:
+      - IE=edge,chrome=1
+      X-Xss-Protection:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"token_type":"bearer","access_token":"AAAAAAAAAAAAAAAAAAAAAMiMCQEAAAAAeFn%2BdErtWxGt%2F7bTX2SkPabgx30%3Ddf6s8OxLGGZkc8YIxS8bJvWXdGCnNvoSrtxIYvggjqgtyOYx34"}'
+    http_version: null
+  recorded_at: Wed, 12 Feb 2020 16:02:09 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/show/941700770763812864.json?tweet_mode=extended
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - TwitterRubyGem/6.2.0
+      Authorization:
+      - Bearer AAAAAAAAAAAAAAAAAAAAAMiMCQEAAAAAeFn%2BdErtWxGt%2F7bTX2SkPabgx30%3Ddf6s8OxLGGZkc8YIxS8bJvWXdGCnNvoSrtxIYvggjqgtyOYx34
+      Connection:
+      - close
+      Host:
+      - api.twitter.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Connection:
+      - close
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '3399'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 12 Feb 2020 16:02:10 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Wed, 12 Feb 2020 16:02:10 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_f
+      Set-Cookie:
+      - guest_id=v1%3A158152333020187928; Max-Age=63072000; Expires=Fri, 11 Feb 2022
+        16:02:10 GMT; Path=/; Domain=.twitter.com; Secure
+      - personalization_id="v1_3eAxJKWEHyIPbKwx946cpA=="; Max-Age=63072000; Expires=Fri,
+        11 Feb 2022 16:02:10 GMT; Path=/; Domain=.twitter.com
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read
+      X-Connection-Hash:
+      - 3ced027ff9cf817ee675c7e26413e447
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '900'
+      X-Rate-Limit-Remaining:
+      - '878'
+      X-Rate-Limit-Reset:
+      - '1581523345'
+      X-Response-Time:
+      - '131'
+      X-Transaction:
+      - '009330100009e6ac'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"created_at":"Fri Dec 15 16:05:34 +0000 2017","id":941700770763812864,"id_str":"941700770763812864","full_text":"Please
+        don''t trust me. I''m merely a tool in your own quest for knowledge.\n\nMy
+        aim is to help you but I demand you do your own due diligence. \n\nRead. Read
+        a lot. Discuss &amp; argue. Test your ideas on others. Understand what you''re
+        investing in. Please.\n\n#bitcoin $btc #cryptocurrency","truncated":false,"display_text_range":[0,284],"entities":{"hashtags":[{"text":"bitcoin","indices":[255,263]},{"text":"cryptocurrency","indices":[269,284]}],"symbols":[{"text":"btc","indices":[264,268]}],"user_mentions":[],"urls":[]},"source":"\u003ca
+        href=\"http:\/\/twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":47966112,"id_str":"47966112","name":"Matt
+        Odell","screen_name":"matt_odell","location":"PGP: 1E87 BC1E EDC4 3852","description":"bitcoin
+        & privacy\u25fb\ufe0fprojects: @tftc21 @finalmessageio @btccitadel\u25fb\ufe0fresources:
+        https:\/\/t.co\/MaETdBUifv, https:\/\/t.co\/MHiMFtEBa9, https:\/\/t.co\/QmwsttsXIY,
+        https:\/\/t.co\/QuxFmjOdMb\u25fb\ufe0fstay humble. stack sats.","url":"https:\/\/t.co\/jqoWDeTuHH","entities":{"url":{"urls":[{"url":"https:\/\/t.co\/jqoWDeTuHH","expanded_url":"http:\/\/tftc.io","display_url":"tftc.io","indices":[0,23]}]},"description":{"urls":[{"url":"https:\/\/t.co\/MaETdBUifv","expanded_url":"http:\/\/nobsbtc.com","display_url":"nobsbtc.com","indices":[77,100]},{"url":"https:\/\/t.co\/MHiMFtEBa9","expanded_url":"http:\/\/btcintro.com","display_url":"btcintro.com","indices":[102,125]},{"url":"https:\/\/t.co\/QmwsttsXIY","expanded_url":"http:\/\/btcprivacy.org","display_url":"btcprivacy.org","indices":[127,150]},{"url":"https:\/\/t.co\/QuxFmjOdMb","expanded_url":"http:\/\/chatbtc.org","display_url":"chatbtc.org","indices":[152,175]}]}},"protected":false,"followers_count":35890,"friends_count":1048,"listed_count":919,"created_at":"Wed
+        Jun 17 13:52:16 +0000 2009","favourites_count":61122,"utc_offset":null,"time_zone":null,"geo_enabled":true,"verified":false,"statuses_count":16265,"lang":null,"contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"1A1B1F","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/1116682986207031296\/iaLCBlEv_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/1116682986207031296\/iaLCBlEv_normal.jpg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/47966112\/1571327795","profile_link_color":"000000","profile_sidebar_border_color":"FFFFFF","profile_sidebar_fill_color":"252429","profile_text_color":"666666","profile_use_background_image":true,"has_extended_profile":false,"default_profile":false,"default_profile_image":false,"following":null,"follow_request_sent":null,"notifications":null,"translator_type":"none"},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":134,"favorite_count":844,"favorited":false,"retweeted":false,"lang":"en"}'
+    http_version: null
+  recorded_at: Wed, 12 Feb 2020 16:02:10 GMT
+recorded_with: VCR 5.1.0
