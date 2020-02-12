@@ -9,7 +9,7 @@
 
     <h1 class="mt-30 mb-30 c-white"><%= @resource.title %></h1>
 
-    <% if @resource.respond_to?(:description) %>
+    <% if @resource.resourceable.respond_to?(:description) %>
         <p class="regular c-gray-1 mb-30 mt-30"><%= @resource.description %></p>
     <% end %>
 
