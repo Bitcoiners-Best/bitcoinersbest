@@ -22,7 +22,7 @@
 
   <div data-controller="resource-type-selector" data-target='resource-type-selector.container'>
     <!-- <label class="c-white mb-20">Pick your resource type: </label> -->
-    <select class="form-control select-resource" data-action='change->resource-type-selector#selected' data-target='resource-type-selector.select'>
+    <select class="form-control select-resource mb-20" data-action='change->resource-type-selector#selected' data-target='resource-type-selector.select'>
       <option value="Select Resource" selected disabled>Select Resource</option>
       <%- Resource::CATEGORIES.each do |category, display| %>
         <option value="<%= category %>"><%= display %></option>
