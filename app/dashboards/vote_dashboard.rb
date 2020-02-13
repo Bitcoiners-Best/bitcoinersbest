@@ -41,7 +41,6 @@ class VoteDashboard < Administrate::BaseDashboard
   resource
   id
   count
-  payment_request
   payment_amount
   payment_id
   settled
