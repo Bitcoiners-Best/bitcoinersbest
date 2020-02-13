@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
     @projects = @projects.paginate(page: params[:page], per_page: 15)
 
     @donation_amount = Vote.settled
-    @donation_amount = @donation_amount.where('created_at > ?', @last_donation_time)
+    @donation_amount = @donation_amount.where('created_at > ?', @last_donation_time) if @last_donation_time
     @donation_amount = @donation_amount.sum(:payment_amount)
   end
 
