@@ -32,7 +32,7 @@
                   <% if current_user.try(:admin?) %>
                   <a class="dropdown-item" href="<%= admin_resources_path %>">Admin</a>
                   <% end %>
-                  <a class="dropdown-item" href="<%= link_to 'Logout', destroy_user_session_path, method: :delete %>">Logout</a>
+                  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
               </div>
             </li>
           <% end %>
