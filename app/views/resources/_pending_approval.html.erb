@@ -1,1 +1,9 @@
-<div class="alert c-brand text-center mb-40">Your resource was submitted and is now pending moderation. We'll have a look at it soon!</div>
+<div class="alert c-brand text-center mb-40">
+  Your resource was submitted and is now pending moderation. We'll have a look at it soon!
+
+  <% if current_user && current_user.admin? %>
+    <p class="mt-30">
+      <%= link_to 'Edit resource', edit_admin_resource_path(@resource), class: 'btn' %>
+    </p>
+  <% end %>
+</div>
