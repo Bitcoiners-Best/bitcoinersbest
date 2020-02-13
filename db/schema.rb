@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_092025) do
+ActiveRecord::Schema.define(version: 2020_02_13_095051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,14 @@ ActiveRecord::Schema.define(version: 2020_02_11_092025) do
     t.string "resourceable_type"
     t.bigint "resourceable_id"
     t.index ["resourceable_type", "resourceable_id"], name: "index_podcasts_on_resourceable_type_and_resourceable_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "resources", force: :cascade do |t|

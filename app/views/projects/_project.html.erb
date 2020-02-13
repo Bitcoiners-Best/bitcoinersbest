@@ -1,0 +1,8 @@
+<a href="<%= project_path(project.resource.slug) %>"><h5 class="medium mb-15 c-white"><%= project.title %></h5></a>
+<h5 class="regular c-gray-1">
+  <% if project.description.to_s.length < 140 %>
+    <%= project.description.to_s %>
+  <% else %>
+    <%= project.description.to_s[0, 140] %>...
+  <% end %>
+</h5>

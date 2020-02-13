@@ -9,7 +9,7 @@ class ResourcesController < ApplicationController
     if params[:type]
       @resources = Resource.where(resourceable_type: params[:type].to_s.classify)
     else
-      @resources = Resource
+      @resources = Resource.where('resourceable_type != ?', 'Project')
     end
 
     @resources = @resources.visible
@@ -45,11 +45,8 @@ class ResourcesController < ApplicationController
   private
 
   def load_resources
-    @resources = {}
-
-    Resource::CATEGORIES.each do |category, display|
-      @resources[category] = Resource.new
-      @resources[category].resourceable = (category.to_s.classify.constantize.new rescue nil)
+    @resources = Hash.new do |hash, key|
+      hash[key] = key.to_s.classify.constantize.new.build_resource
     end
   end
 

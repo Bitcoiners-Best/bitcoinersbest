@@ -5,17 +5,20 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-      resources :users
-      resources :articles
-      resources :votes
-      resources :books
-      resources :twitter_threads
-      resources :resources
-      resources :episodes
-      resources :podcasts
+    resources :users
+    resources :articles
+    resources :votes
+    resources :books
+    resources :twitter_threads
+    resources :resources
+    resources :episodes
+    resources :podcasts
+    resources :projects
+    resources :donations
 
-      root to: "users#index"
-    end
+    root to: "users#index"
+  end
+
   resources :resources, only: [:new, :create] do
     resources :votes, only: [:new, :create, :destroy]
   end
@@ -26,6 +29,9 @@ Rails.application.routes.draw do
   resources :books, controller: :resources, type: 'book', only: [:index, :new, :create, :show]
   resources :twitter_threads, controller: :resources, type: 'twitter_thread', only: [:index, :new, :create]
   resources :twitter_threads, type: 'twitter_thread', only: [:show]
+  resources :projects, controller: :resources, type: 'project', only: [:new, :create]
+  resources :projects, only: [:index, :show]
+  resources :donations, only: [:index, :show]
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' },
     path: '', path_names: { sign_in: 'login', sign_up: 'register', sign_out: 'logout' }

@@ -16,6 +16,10 @@
       </button>
       <div id="w1-collapse" class="collapse navbar-collapse">
         <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
+          <% if current_user && current_user.admin? %>
+            <%= navbar_link(donations_path, 'Donations') %>
+            <%= navbar_link(projects_path, 'Projects') %>
+          <% end %>
           <%= navbar_link(faq_path, 'FAQ') %>
           <%= navbar_link(new_resource_path, 'Submit') %>
           <% unless current_user %>
@@ -31,6 +35,7 @@
                   <a class="dropdown-item" href="<%= user_profile_path %>">Profile</a>
                   <% if current_user.try(:admin?) %>
                   <a class="dropdown-item" href="<%= admin_resources_path %>">Admin</a>
+                  <a class="dropdown-item" href="<%= new_admin_donation_path %>">New Donation</a>
                   <% end %>
                   <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
               </div>

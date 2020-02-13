@@ -321,7 +321,7 @@ path {
     z-index: 1000;
     display: none;
     float: left;
-    min-width: 120px;
+    /*min-width: 120px;*/
     padding: 10px 0px;
     margin: 12px 0 0;
     font-size: 16px;

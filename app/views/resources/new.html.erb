@@ -1,40 +1,53 @@
 <% title 'Submit Resource' %>
 
-<section class="submit-resource mt-50 fade-in new-resource">
-  <div class="section-header pb-20 text-center">
-    <h1 class="mb-0 c-white">
-      Submit your bitcoin resource
-    </h1>
-    <p class="mt-10 c-gray-1">Your submission will be reviewed before it appears live.</p>
-  </div>
-
-  <% if @resource && @resource.errors.any? %>
-    <div id="error_explanation" class="c-white">
-      <p><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</p>
-
-      <ul>
-        <% @resource.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<% if !params[:type] %>
+  <section class="submit-resource mt-50 fade-in new-resource">
+    <div class="section-header pb-20 text-center">
+      <h1 class="mb-0 c-white">
+        Submit your bitcoin resource
+      </h1>
+      <p class="mt-10 c-gray-1">Your submission will be reviewed before it appears live.</p>
     </div>
-  <% end %>
 
-  <div data-controller="resource-type-selector" data-target='resource-type-selector.container'>
-    <!-- <label class="c-white mb-20">Pick your resource type: </label> -->
-    <select class="form-control select-resource mb-20" data-action='change->resource-type-selector#selected' data-target='resource-type-selector.select'>
-      <option value="Select Resource" selected disabled>Select Resource</option>
-      <%- Resource::CATEGORIES.each do |category, display| %>
-        <option value="<%= category %>"><%= display %></option>
-      <% end %>
-    </select>
+    <% if @resource && @resource.errors.any? %>
+      <div id="error_explanation" class="c-white">
+        <p><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</p>
 
-    <%- Resource::CATEGORIES.each do |category, display| %>
-      <div id="<%= category %>" class="category fade-in">
-        <%= render "form_#{category.to_s}", resource: @resources[category] rescue "no #{category} partial yet" %>
+        <ul>
+          <% @resource.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
       </div>
-    <%- end %>
-  </div>
+    <% end %>
 
+    <div data-controller="resource-type-selector" data-target='resource-type-selector.container'>
+      <!-- <label class="c-white mb-20">Pick your resource type: </label> -->
+      <select class="form-control select-resource mb-20" data-action='change->resource-type-selector#selected' data-target='resource-type-selector.select'>
+        <option value="Select Resource" selected disabled>Select Resource</option>
+        <%- Resource::CATEGORIES.each do |category, display| %>
+          <option value="<%= category %>"><%= display %></option>
+        <% end %>
+      </select>
 
-</section>
+      <%- Resource::CATEGORIES.each do |category, display| %>
+        <div id="<%= category %>" class="category fade-in">
+          <%= render "form_#{category.to_s}", resource: @resources[category] %>
+        </div>
+      <%- end %>
+    </div>
+  </section>
+<% else %>
+  <section class="submit-resource mt-50 fade-in new-resource">
+    <div class="section-header pb-20 text-center">
+      <h1 class="mb-0 c-white">
+        Submit a bitcoin <%= params[:type] %>
+      </h1>
+      <p class="mt-10 c-gray-1">Your submission will be reviewed before it appears live.</p>
+    </div>
+
+    <div class="<%= params[:type] %>">
+      <%= render "form_#{params[:type]}", resource: @resources[params[:type].to_sym] %>
+    </div>
+  </section>
+<% end %>
