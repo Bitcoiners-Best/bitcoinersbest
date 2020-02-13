@@ -363,6 +363,10 @@ path {
     background-color: #1D2229;
 }
 
+.dropdown-toggle::after {
+    display: none;
+}
+
 
 /* FOOTER */
 
