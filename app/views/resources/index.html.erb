@@ -7,7 +7,7 @@
   <div class="section-selector">
     <div class="d-flex justify-content-center text-uppercase">
       <% Resource::CATEGORIES.each do |name, display| %>
-        <a href="/<%= name.to_s.pluralize %>" class="module-navigation-element <%= params[:type] == name.to_s ? 'active router-link-active' : '' %>"><%= display %></a>
+        <a href="/<%= name.to_s.pluralize %>" class="module-navigation-element <%= params[:type] == name.to_s ? 'active router-link-active' : '' %>"><%= display.pluralize %></a>
       <% end %>
     </div>
   </div>
