@@ -259,9 +259,11 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  TWITTER_KEY = Rails.application.credentials.dig(:twitter, :key)
-  TWITTER_SECRET = Rails.application.credentials.dig(:twitter, :secret)
-  config.omniauth :twitter, TWITTER_KEY, TWITTER_SECRET, scope: 'r_fullprofile'
+  config.omniauth :twitter,
+    Rails.application.credentials.dig(:twitter, :key),
+    Rails.application.credentials.dig(:twitter, :secret),
+    image_size: 'original',
+    secure_image_url: true
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
