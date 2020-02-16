@@ -1,0 +1,5 @@
+<% if flash.any? %>
+  <% flash.each do |key, value| -%>
+    <div class="alert alert-<%= key %> text-center c-white" role="alert"><%= value %></div>
+  <% end -%>
+<% end %>
