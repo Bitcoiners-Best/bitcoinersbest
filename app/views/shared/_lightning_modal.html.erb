@@ -1,0 +1,32 @@
+<div class="modal fade" id="lightning-modal" tabindex="-1" role="dialog" aria-labelledby="lightning-modal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-black text-center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body c-white">
+        <h2 class="mb-30">Lightning Network Authentication</h2>
+        <h5 class="">Want to use your lightning node to authenticate?</h5>
+        <p class="mb-30 alert c-brand text-center mb-40">
+          Create an invoice for <u>1 sat</u>
+          <br />
+          with <u>bitcoiners best</u> as the description
+          <br />
+          and paste the invoice below.
+        </p>
+
+        <%= form_tag user_lightning_omniauth_callback_path, method: :post do %>
+          <div class="form-group">
+            <label class="d-block">Invoice</label>
+            <%= text_field_tag :invoice, '', placeholder: 'lnbc10...', class: 'form-control', required: true, autocomplete: false %>
+          </div>
+
+          <input type="submit" class='btn btn-rect-lg push-button btn-secondary' value="Login" />
+        <% end %>
+
+        <p class="text-center help-block">Only for non-custodial Lightning wallets!</p>
+      </div>
+    </div>
+  </div>
+</div>

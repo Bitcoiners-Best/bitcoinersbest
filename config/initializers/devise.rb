@@ -265,6 +265,11 @@ Devise.setup do |config|
     image_size: 'original',
     secure_image_url: true
 
+  config.omniauth :lightning,
+    sats_amount: 1,
+    validating_text: 'bitcoiners best',
+    lnpay_key: Rails.application.credentials.dig(:lnpay, :secret)
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

@@ -46,6 +46,8 @@
     </div>
 
     <%= render partial: 'shared/invoice_modal' %>
-    <%= render partial: 'shared/signin_modal' %>
+    <% if ! current_user %>
+      <%= render partial: 'shared/signin_modal' %>
+    <% end %>
   </body>
 </html>

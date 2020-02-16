@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user
+  before_action :authenticate_user!, only: :show, if: -> { !params[:id] }
 
   def show
     @user = @user.decorate
