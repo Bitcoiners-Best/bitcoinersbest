@@ -3,6 +3,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
+      if !@user.name
+        ufs = UserFakerService.new(@user)
+        ufs.fake
+        @user.save
+      end
+
       sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
       set_flash_message(:notice, :success, kind: "Lightning") if is_navigational_format?
     else
