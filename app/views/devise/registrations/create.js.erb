@@ -1,0 +1,6 @@
+<% if resource.errors.any? %>
+  $('#register-modal #error-messages').html("<%= resource.errors.full_messages.join('<br>').html_safe %>");
+  $('#register-modal #error-messages').fadeIn();
+<% else %>
+  window.location.replace('/');
+<% end %>

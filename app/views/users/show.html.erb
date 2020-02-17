@@ -4,7 +4,13 @@
 
   <div class="text-center">
     <img class="br-circle transition mb-20" src="<%= @user.image %>"/>
-    <h4 class="mb-30 c-white"><a href="https://twitter.com/<%= @user.name %>">@<%= @user.name %></a></h4>
+    <h4 class="mb-30 c-white">
+      <% if @user.twitter_url %>
+        <a href="https://twitter.com/<%= @user.name %>">@<%= @user.name %></a>
+      <% else %>
+        <%= @user.name %>
+      <% end %>
+    </h4>
     <p class="c-white"><%= @user.description %></p>
   </div>
 

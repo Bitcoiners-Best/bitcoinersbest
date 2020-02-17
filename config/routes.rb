@@ -27,8 +27,10 @@ Rails.application.routes.draw do
   resources :twitter_threads, controller: :resources, type: 'twitter_thread', only: [:index, :new, :create]
   resources :twitter_threads, type: 'twitter_thread', only: [:show]
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' },
-    path: '', path_names: { sign_in: 'login', sign_up: 'register', sign_out: 'logout' }
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }, path: '', path_names: { sign_in: 'login', sign_up: 'register', sign_out: 'logout' }
 
   resources :users, only: [:show]
   get '/profile', to: 'users#show', as: :user_profile

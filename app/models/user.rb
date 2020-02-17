@@ -2,21 +2,20 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
+         :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[twitter lightning]
 
   has_many :votes, dependent: :destroy
-  has_many :resources, foreign_key: :created_by_id
+  has_many :resources, foreign_key: :created_by_id, dependent: :destroy
 
   extend FriendlyId
   friendly_id :username, use: :slugged
 
   def email_required?
-    false
+    provider == nil
   end
 
   def self.from_omniauth(auth)
-    p auth
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
@@ -36,5 +35,11 @@ class User < ApplicationRecord
 
   def image
     super || 'https://avatars.io/twitter//small'
+  end
+
+  def twitter_url
+    if provider == 'twitter'
+      "https://twitter.com/#{username}"
+    end
   end
 end
