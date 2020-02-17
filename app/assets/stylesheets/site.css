@@ -69,8 +69,8 @@ body {
 }
 
 .container-fluid {
-  padding-left: 27.5% !important;  /* 7.5% */
-  padding-right: 27.5% !important; /* 7.5% */
+  padding-left: 25% !important;  /* 7.5% */
+  padding-right: 25% !important; /* 7.5% */
 }
 .container-fluid.full {
   padding-left: 7.5% !important;  /* 7.5% */
@@ -468,13 +468,18 @@ footer {
   max-width: 80px;
 }
 
-.votes > .vote > svg:hover > path {
+.votes > .vote > svg:hover > path,
+.source-link > svg:hover > path, {
   fill: #ffffff;
 }
+
 .votes > .vote > svg:active > path,
-.votes > .vote > svg:focus > path {
+.votes > .vote > svg:focus > path,
+.source-link > svg:active > path,
+.source-link > svg:focus > path {
   fill: #FFCF53;
 }
+
 
 #vote-increment {
     opacity: 0;
@@ -2051,8 +2056,8 @@ button:not(:disabled),
 .icon-wrap {
   cursor: pointer;
   display: inline-block;
-  margin: -20px;
-  padding: 20px;
+  /* margin: -20px; */
+  padding: 0px 10px 10px 10px;
 }
 
 .icon {
