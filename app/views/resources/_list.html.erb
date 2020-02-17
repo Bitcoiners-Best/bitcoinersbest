@@ -1,17 +1,22 @@
 <div class="container">
   <% resources.each do |resource| %>
     <div class="<%= resource.resourceable_type %>-module d-flex br-4 mb-30 fade-in resource" data-controller='vote' data-vote-type="<%= resource.resourceable_type %>" id="resource-<%= resource.id %>" data-vote-title="<%= resource.title %>" data-vote-url="<%= new_resource_vote_path(resource.id) %>">
-      <div class="pr-20">
-        <%if resource.resourceable.respond_to?(:image) && resource.resourceable.image.attached? %>
-          <%= image_tag resource.resourceable.image.variant(resize_to_limit: [100, 100]), class: 'ew-100 card-img' %>
-        <% else %>
-          <img class='ew-100 card-img' src="" %>
-        <% end %>
+
+      <div class="d-flex flex-sm-row flex-column">
+        <div class="pr-20 mobile-resource-image">
+          <%if resource.resourceable.respond_to?(:image) && resource.resourceable.image.attached? %>
+            <%= image_tag resource.resourceable.image.variant(resize_to_limit: [100, 100]), class: 'ew-100 card-img' %>
+          <% else %>
+            <img class='ew-100 card-img' src="" %>
+          <% end %>
+        </div>
+
+        <div class="flex-grow-1 align-self-center call-render">
+          <%= render resource.resourceable %>
+        </div>
       </div>
-      <div class="flex-grow-1 align-self-center call-render">
-        <%= render resource.resourceable %>
-      </div>
-      <div class="align-self-top pl-20">
+
+      <div class="align-self-top pl-20 ml-auto">
         <div class="votes text-center">
           <a class="vote btn btn-transparent bg-brand icon-wrap" data-user-votes="<%= current_user.try(:settled_votes_for, resource).to_i %>" data-action="click->vote#invoice_modal">
             <svg class="regular-vote" class="active push-button" width="12" height="42" viewBox="0 0 9 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,6 +32,7 @@
           </a>
         </div>
       </div>
+
     </div>
   <% end %>
 </div>
@@ -35,25 +41,8 @@
   <%= will_paginate resources %>
 </div>
 
-<div class="page-load-status">
-  <div class="loader-ellips infinite-scroll-request">
-    <span class="loader-ellips__dot"></span>
-    <span class="loader-ellips__dot"></span>
-    <span class="loader-ellips__dot"></span>
-    <span class="loader-ellips__dot"></span>
-  </div>
-</div>
-
 <script>
   if ($('.next_page').length > 0) {
-    new InfinityScroll(
-      document.querySelector('.container'),
-      {
-        path: '.next_page',
-        append: '.resource',
-        status: '.page-load-status'
-      }
-    );
-    $('#infinite-scrolling').hide();
+    new InfinityScroll(document.querySelector('.container'), {path: '.next_page', append: '.resource'});
   }
 </script>

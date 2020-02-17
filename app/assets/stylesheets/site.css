@@ -1895,6 +1895,13 @@ textarea:-ms-input-placeholder {
       margin-left: -25px;
   }
 
+  .mobile-resource-image {
+      padding-bottom: 20px;
+  }
+
+  .ew-100 {
+      max-width: 100%;
+  }
 
   /* BUTTONS */
   .btn-rect-xl,
