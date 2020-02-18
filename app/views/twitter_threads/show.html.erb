@@ -19,6 +19,7 @@
     <p class="regular c-gray-1 mb-30">Submitted <%= distance_of_time_in_words_to_now(@resource.created_at) %> ago</p>
 
     <p class="mt-30 mb-30"><a target="_blank" class="link" href="<%= @resource.url %>">View Original Source</a></p>
+    <%= link_to 'Back', :back, class: 'c-white' %>
 
    </div>
  </section>
