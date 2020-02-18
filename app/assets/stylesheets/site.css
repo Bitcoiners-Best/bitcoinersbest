@@ -2253,3 +2253,7 @@ button:not(:disabled),
   animation-name: reveal;
   animation-direction: reverse;
 }
+
+#error_explanation li {
+  list-style: none;
+}

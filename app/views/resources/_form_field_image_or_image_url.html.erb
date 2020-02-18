@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <%= form.label :description, 'Image', class: 'd-block' %>
+      <%= form.file_field :image, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="col-1 c-white align-self-center">
+    <span>OR</span>
+  </div>
+
+  <div class="col-5">
+    <div class="form-group">
+      <%= form.label :description, 'Image URL', class: 'd-block' %>
+      <%= form.text_field :image_url, class: 'form-control' %>
+    </div>
+  </div>
+</div>

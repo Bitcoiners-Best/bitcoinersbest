@@ -383,6 +383,9 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.6)
+    validate_url (1.0.8)
+      activemodel (>= 3.0.0)
+      public_suffix
     vcr (5.1.0)
     warden (1.2.8)
       rack (>= 2.0.6)
@@ -451,6 +454,7 @@ DEPENDENCIES
   tweet_url
   twitter!
   tzinfo-data
+  validate_url
   vcr
   web-console (>= 3.3.0)
   webdrivers

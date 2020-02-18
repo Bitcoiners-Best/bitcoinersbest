@@ -1,8 +1,9 @@
 class TwitterThread < ApplicationRecord
+  include Imageable
+
   has_one :resource, as: :resourceable, dependent: :destroy
   after_initialize :pull_tweet_data
   before_validation :validate_tweet_url
-  has_one_attached :image
 
   validates :title, presence: true
 

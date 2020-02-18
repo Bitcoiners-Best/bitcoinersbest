@@ -33,11 +33,12 @@ class ResourcesController < ApplicationController
 
     respond_to do |format|
       if @resource.save
-        format.html { redirect_to "/#{@resource.resourceable_type.underscore.pluralize}/#{@resource.slug}", notice: 'Resource was successfully created.' }
-        format.json { render :show, status: :created, location: @resource }
+        @resource_url = "/#{@resource.resourceable_type.underscore.pluralize}/#{@resource.slug}"
+        format.html { redirect_to @resource_url, notice: 'Resource was successfully created.' }
+        format.js { render :new }
       else
         format.html { render :new }
-        format.json { render json: @resource.errors, status: :unprocessable_entity }
+        format.js { render :new }
       end
     end
   end
@@ -68,6 +69,7 @@ class ResourcesController < ApplicationController
           :description,
           :created_by,
           :image,
+          :image_url,
           :rss
         ]
       )

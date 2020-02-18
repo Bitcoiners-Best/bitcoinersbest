@@ -29,6 +29,12 @@ class Resource < ApplicationRecord
 
   default_scope { order(vote_count: :desc) }
 
+  def self.human_attribute_name(attr, options={})
+    super(attr, options)
+      .gsub(/resourceable /i, '')
+      .capitalize
+  end
+
   def build_resourceable(params)
     self.resourceable = resourceable_type.constantize.new(params)
   end
