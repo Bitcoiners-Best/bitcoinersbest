@@ -8,17 +8,13 @@
     <p class="mt-10 c-gray-1">Your submission will be reviewed before it appears live.</p>
   </div>
 
-  <% if @resource && @resource.errors.any? %>
-    <div id="error_explanation" class="c-white">
-      <p><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</p>
-
-      <ul>
-        <% @resource.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div id="error_explanation" class="c-white alert mb-50 p-30 <%= (@resource && @resource.errors.any?) ? '' : 'is-hidden' %>">
+    <ul>
+      <% @resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end if @resource %>
+    </ul>
+  </div>
 
   <div data-controller="resource-type-selector" data-target='resource-type-selector.container'>
     <!-- <label class="c-white mb-20">Pick your resource type: </label> -->
@@ -31,10 +27,8 @@
 
     <%- Resource::CATEGORIES.each do |category, display| %>
       <div id="<%= category %>" class="category fade-in">
-        <%= render "form_#{category.to_s}", resource: @resources[category] rescue "no #{category} partial yet" %>
+        <%= render "form_#{category.to_s}", resource: @resources[category] %>
       </div>
     <%- end %>
   </div>
-
-
 </section>

@@ -1,6 +1,9 @@
 class Book < ApplicationRecord
+  include RemoteImageable
+  include Imageable
+
   has_one :resource, as: :resourceable, dependent: :destroy
-  has_one_attached :image
 
   validates :title, presence: true
+  validates :url, url: { allow_blank: true }
 end

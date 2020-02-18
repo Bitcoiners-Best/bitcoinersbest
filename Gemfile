@@ -77,3 +77,4 @@ gem 'twitter', github: 'heelhook/twitter'
 gem 'meta-tags'
 gem 'omniauth-lightning'
 gem 'faker'
+gem "validate_url"

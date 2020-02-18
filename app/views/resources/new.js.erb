@@ -1,0 +1,10 @@
+<% if @resource.errors.any? %>
+  $('#error_explanation').html('')
+  <% @resource.errors.full_messages.each do |error| %>
+    $('#error_explanation').append('<li><%= error %></li>')
+  <% end %>
+  $('#error_explanation').slideDown()
+  window.scrollTo(0, 0)
+<% else %>
+  window.location.replace('<%= @resource_url %>')
+<% end %>

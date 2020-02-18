@@ -1,17 +1,5 @@
-<%= form_for(resource, url: resources_path(resource_type: resource.resourceable_type, resource_id: resource.id), local: true, id: 'submit-resource') do |form| %>
+<%= form_for(resource, url: resources_path(resource_type: resource.resourceable_type, resource_id: resource.id), remote: true, id: 'submit-resource') do |form| %>
   <%= form.hidden_field :resourceable_type %>
-  <% if resource.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
-
-      <ul>
-        <% resource.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <%= form.fields_for :resourceable do |form| %>
 
     <div class="form-group">
@@ -21,7 +9,7 @@
 
     <div class="form-group">
       <%= form.label :title, 'Podcast Title', class: 'd-block' %>
-      <%= form.text_field :title, class: 'form-control', required: true %>
+      <%= form.text_field :title, class: 'form-control' %>
     </div>
 
     <div class="form-group">
@@ -29,10 +17,7 @@
       <%= form.text_area :description, class: 'form-control' %>
     </div>
 
-    <div class="form-group">
-      <%= form.label :description, 'Podcast Image', class: 'd-block' %>
-      <%= form.file_field :image, class: 'form-control' %>
-    </div>
+    <%= render partial: 'form_field_image_or_image_url', locals: { form: form } %>
 
     <div class="form-group">
       <%= form.label :created_by, class: 'd-block' %>
