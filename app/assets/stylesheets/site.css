@@ -1842,11 +1842,18 @@ textarea:-ms-input-placeholder {
   margin-left: 50px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .container-fluid,
   .container-fluid.full {
     padding-left: 10% !important;
     padding-right: 10% !important;
+  }
+}
+@media (min-width: 1024px) {
+  .navbar-expand-lg .navbar-collapse {
+      display: -webkit-box !important;
+      display: flex !important;
+      flex-basis: auto;
   }
 }
 
