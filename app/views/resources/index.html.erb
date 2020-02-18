@@ -1,7 +1,6 @@
 <% if params[:type] && Resource::CATEGORIES[params[:type].to_sym] %>
   <% title Resource::CATEGORIES[params[:type].to_sym].pluralize %>
 <% end %>
-<p id="notice"><%= notice %></p>
 
 <div class="container-fluid full">
   <div class="scrolling-wrapper fade-in">
