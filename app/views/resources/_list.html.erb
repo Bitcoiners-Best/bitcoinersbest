@@ -4,7 +4,7 @@
     <div class="d-flex flex-sm-row flex-column">
       <div class="pr-20 mobile-resource-image">
         <%if resource.resourceable.respond_to?(:image) && resource.resourceable.image.attached? %>
-          <%= image_tag resource.resourceable.image.variant(resize_to_limit: [100, 100]), class: 'ew-100 card-img' %>
+          <%= image_tag resource.resourceable.image.variant(resize_to_limit: [400, 400]), class: 'ew-100 card-img' %>
         <% else %>
           <img class='ew-100 card-img' src="" %>
         <% end %>
