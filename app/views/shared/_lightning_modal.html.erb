@@ -1,4 +1,4 @@
-<div class="modal fade" id="lightning-modal" tabindex="-1" role="dialog" aria-labelledby="lightning-modal" aria-hidden="true">
+<div class="modal fade" id="lightning-modal" tabindex="-1" role="dialog" aria-labelledby="lightning-modal" aria-hidden="true" data-controller="lightning-invoice">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content bg-black text-center">
       <div class="modal-header">
@@ -19,7 +19,7 @@
         <%= form_tag user_lightning_omniauth_callback_path, method: :post do %>
           <div class="form-group">
             <label class="d-block">Invoice</label>
-            <%= text_field_tag :invoice, '', placeholder: 'lnbc10...', class: 'form-control', required: true, autocomplete: false %>
+            <%= text_field_tag :invoice, '', placeholder: 'lnbc10...', class: 'form-control', required: true, autocomplete: false, 'data-target' => 'lightning-invoice.invoice', 'data-action' => 'paste->lightning-invoice#validate keyup->lightning-invoice#validate' %>
           </div>
 
           <input type="submit" class='btn btn-rect-lg push-button btn-secondary' value="Login" />
