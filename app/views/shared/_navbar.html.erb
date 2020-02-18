@@ -55,18 +55,18 @@
           <div class="container-fluid full">
               <div class="menu-nav__col">
                   <ul class="menu-nav__ul menu-nav__ul--">
-                      <li class="menu-nav__li"><a href="<%= faq_path %>" class="a-h -ss-01"><h2>FAQ</h2></a></li>
-                      <li class="menu-nav__li"><a href="<%= new_resource_path %>" class="a-h -ss-01"><h2>Submit</h2></a></li>
+                      <li class="menu-nav__li"><a href="<%= faq_path %>" class="a-h -ss-01">FAQ</a></li>
+                      <li class="menu-nav__li"><a href="<%= new_resource_path %>" class="a-h -ss-01">Submit</a></li>
                       <% if current_user %>
-                        <li class="nav-item align-self-center"><a href="<%= user_profile_path %>"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
-                        <li class="menu-nav__li"><a href="<%= link_to 'Logout', destroy_user_session_path, method: :delete %>" class="a-h -ss-01"><h2>Logout</h2></a></li>
+                        <li class="menu-nav__li nav-item align-self-center"><a href="<%= user_profile_path %>" class="a-h -ss-01"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
+                        <li class="menu-nav__li"><a href="<%= destroy_user_session_path %>" rel="nofollow" data-method="delete" class="a-h -ss-01">Logout</a></li>
                       <% end %>
                   </ul>
                   <% unless current_user %>
-                  <ul class="menu-nav__ul menu-nav__ul--">
-                      <li class="menu-nav__li"><a href="<%= new_user_session_path %>" class="a-h -ss-01"><h2>Login</h2></a></li>
-                      <li class="menu-nav__li"><a href="<%= new_user_registration_path %>" class="a-h -ss-01"><h2>Join</h2></a></li>
-                  </ul>
+                    <ul class="menu-nav__ul menu-nav__ul--">
+                        <li class="menu-nav__li"><a href="<%= new_user_session_path %>" class="a-h -ss-01">Login</a></li>
+                        <li class="menu-nav__li"><a href="<%= new_user_registration_path %>" class="a-h -ss-01">Join</a></li>
+                    </ul>
                   <% end %>
               </div>
           </div>
