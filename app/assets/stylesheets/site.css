@@ -466,6 +466,7 @@ footer {
 
 .votes {
   max-width: 80px;
+  min-width: 80px;
 }
 
 .votes > .vote > svg:hover > path,
