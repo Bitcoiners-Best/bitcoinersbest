@@ -10,4 +10,12 @@ module ApplicationHelper
       link_to text, path, class: 'nav-link'
     end
   end
+
+  def resource_category_name(name)
+    case name
+    when :twitter_thread then 'Threads'
+    else
+      Resource::CATEGORIES[name].pluralize
+    end
+  end
 end

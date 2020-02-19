@@ -2285,3 +2285,7 @@ button:not(:disabled),
   animation-name: reveal;
   animation-direction: reverse;
 }
+
+.container-fluid.full.resource-categories-navbar {
+  padding: 0 !important;
+}
