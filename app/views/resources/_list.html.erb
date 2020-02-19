@@ -3,7 +3,7 @@
     <div class="<%= resource.resourceable_type %>-module d-flex br-4 mb-40 fade-in resource" data-controller='vote' data-vote-type="<%= resource.resourceable_type %>" id="resource-<%= resource.id %>" data-vote-title="<%= resource.title %>" data-vote-url="<%= new_resource_vote_path(resource.id) %>">
 
       <div class="d-flex flex-sm-row flex-column">
-        <div class="pr-20 mobile-resource-image">
+        <div class="pr-30 mobile-resource-image">
           <%if resource.resourceable.respond_to?(:image) && resource.resourceable.image.attached? %>
             <%= image_tag resource.resourceable.image.variant(resize_to_limit: [400, 400]), class: 'ew-100 card-img' %>
           <% else %>
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="align-self-top pl-20 ml-auto">
+      <div class="align-self-top pl-20 ml-auto resource-action">
         <div class="votes text-center">
           <a class="vote btn btn-transparent bg-brand icon-wrap" data-user-votes="<%= current_user.try(:settled_votes_for, resource).to_i %>" data-action="click->vote#invoice_modal">
             <svg class="regular-vote" class="active push-button" width="32" height="40" viewBox="0 0 9 28" fill="none" xmlns="http://www.w3.org/2000/svg">

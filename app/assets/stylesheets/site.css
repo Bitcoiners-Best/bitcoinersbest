@@ -1262,8 +1262,8 @@ textarea:-ms-input-placeholder {
   max-width: 80px;
 }
 .ew-100 {
-  min-width: 100px;
-  max-width: 100px;
+  min-width: 150px;
+  max-width: 150px;
 }
 .ew-200 {
   min-width: 200px;
@@ -1912,6 +1912,9 @@ textarea:-ms-input-placeholder {
   .mobile-resource-image {
     padding-right: 0px;
     padding-bottom: 20px;
+  }
+  .resource-action {
+    padding-left: 10px;
   }
 
   .votes {

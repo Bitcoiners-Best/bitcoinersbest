@@ -1,5 +1,5 @@
 <h6 class="text-uppercase c-gray-1 medium mb-15"><%= article.created_by %></h6>
-<a href="<%= article_path(article.resource.slug) %>"><h5 class="medium mb-15 c-white"><%= article.title %></h5></a>
+<a href="<%= article_path(article.resource.slug) %>"><h4 class="medium mb-15 c-white"><%= article.title %></h4></a>
 <h5 class="regular c-gray-1">
   <% if article.description.to_s.length < 120 %>
     <%= article.description.to_s %>
@@ -7,17 +7,3 @@
     <%= article.description.to_s[0, 120] %>...
   <% end %>
 </h5>
-
-
-<template>
-  <article class="article-module d-flex br-4 mb-30 fade-in">
-    <div class="flex-grow-1 align-self-center">
-        <img :src="article.image" class="card-img" alt="...">
-        <h6 class="text-uppercase c-gray-1 medium mt-25 mb-15">{{article.created_by}}</h6>
-        <router-link :to="'/'+article.id+'/'+article.title"><h5 class="medium mb-15 c-white">{{article.title}}</h5></router-link>
-        <h5 v-if="article.description.length < 140" class="regular c-gray-1">{{article.description}}</h5>
-        <h5 v-else class="regular c-gray-1">{{ article.description.substring(0,140) + "..." }}</h5>
-    </div>
-
-  </article>
-</template>
