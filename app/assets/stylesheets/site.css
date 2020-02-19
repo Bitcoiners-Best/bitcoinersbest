@@ -89,6 +89,10 @@ p {
 
 /* fix */
 
+.auth-buttons {
+    display: block;
+}
+
 .back-button {
   color: #fff;
   opacity: 0.7;
@@ -552,6 +556,11 @@ footer {
     opacity: 1;
 }
 
+
+
+
+
+
 /* MODAL */
 
 .modal-header {
@@ -614,8 +623,13 @@ footer {
 }
 
 
-/* BUTTONS */
 
+
+
+
+
+
+/* BUTTONS */
 
 .btn {
   display: inline-block;
