@@ -442,6 +442,12 @@ footer {
 
 }
 
+.twitter-tweet {
+    margin-top: 0px !important;
+    max-width: 100% !important;
+}
+
+
 .scrolling-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -1931,6 +1937,11 @@ textarea:-ms-input-placeholder {
     padding-left: 10px;
   }
 
+  .twitter-tweet {
+      width: 100% !important;
+      min-width: 100% !important;
+  }
+
   .votes {
       max-width: 60px;
       min-width: 60px;
@@ -2284,8 +2295,4 @@ button:not(:disabled),
 .loader-ellips__dot:nth-child(4) {
   animation-name: reveal;
   animation-direction: reverse;
-}
-
-.container-fluid.full.resource-categories-navbar {
-  padding: 0 !important;
 }
