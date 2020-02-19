@@ -1,5 +1,5 @@
 * {
-  font-family: "Graphik Web";
+  font-family: "Graphik";
   -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
@@ -14,6 +14,39 @@ body {
 
 body {
     background-color: #1D2229;
+}
+
+@font-face {
+  font-family: "Graphik Web";
+  src: url(/fonts/graphik/Graphik-Regular-Web.eot);
+  src: url(/fonts/graphik/Graphik-Regular-Web.eot?#iefix) format("embedded-opentype"), url(/fonts/graphik/Graphik-Regular-Web.woff) format("woff"), url(/fonts/graphik/Graphik-Regular-Web.ttf) format("truetype"), url(/fonts/graphik/Graphik-Regular-Web.svg#Graphik-Regular) format("svg");
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 400
+}
+@font-face {
+  font-family: "Graphik Web Medium";
+  src: url(/fonts/graphik/Graphik-Medium-Web.eot);
+  src: url(/fonts/graphik/Graphik-Medium-Web.eot?#iefix) format("embedded-opentype"), url(/fonts/graphik/Graphik-Medium-Web.woff) format("woff"), url(/fonts/graphik/Graphik-Medium-Web.ttf) format("truetype"), url(/fonts/graphik/Graphik-Medium-Web.svg#Graphik-Medium) format("svg");
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 500
+}
+@font-face {
+  font-family: "Graphik Web Medium Italic";
+  src: url(/fonts/graphik/Graphik-Medium-Italic-Web.eot);
+  src: url(/fonts/graphik/Graphik-Medium-Italic-Web.eot?#iefix) format("embedded-opentype"), url(/fonts/graphik/Graphik-Medium-Italic-Web.woff) format("woff"), url(/fonts/graphik/Graphik-Medium-Italic-Web.ttf) format("truetype"), url(/fonts/graphik/Graphik-Medium-Italic-Web.svg#Graphik-Medium) format("svg");
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 500
+}
+@font-face {
+  font-family: "Graphik Web Semibold";
+  src: url(/fonts/graphik/Graphik-Semibold-Web.eot);
+  src: url(/fonts/graphik/Graphik-Semibold-Web.eot?#iefix) format("embedded-opentype"), url(/fonts/graphik/Graphik-Semibold-Web.woff) format("woff"), url(/fonts/graphik/Graphik-Semibold-Web.ttf) format("truetype"), url(/fonts/graphik/Graphik-Semibold-Web.svg#Graphik-Medium) format("svg");
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 600
 }
 
 .wrap {
@@ -69,6 +102,7 @@ h5 {
   font-size: 18px;
   font-weight: 500;
   line-height: 1.37;
+  font-weight: 500;
 }
 h6 {
   font-family: "Graphik Web Medium";
@@ -80,7 +114,7 @@ p {
   font-family: "Graphik Web";
   font-size: 18px;
   line-height: 1.625;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 
@@ -200,7 +234,7 @@ path {
     font-size: 18px;
     line-height: inherit;
     white-space: nowrap;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .navbar-toggler {
@@ -311,7 +345,7 @@ path {
     width: 100%;
     padding: 10px 30px;
     clear: both;
-    font-weight: 500;
+    font-weight: 600;
     color: #fff;
     text-align: inherit;
     white-space: nowrap;
@@ -365,7 +399,7 @@ footer {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: .015em;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .16em;
     color: #7E90A9;
@@ -583,7 +617,7 @@ footer {
 
 .btn {
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -1876,11 +1910,13 @@ textarea:-ms-input-placeholder {
   }
 
   .mobile-resource-image {
-      padding-bottom: 20px;
+    padding-right: 0px;
+    padding-bottom: 20px;
   }
 
-  .ew-100 {
-      max-width: 100%;
+  .votes {
+      max-width: 60px;
+      min-width: 60px;
   }
 
   /* BUTTONS */
@@ -1908,8 +1944,7 @@ textarea:-ms-input-placeholder {
     max-width: 60px;
   }
   .ew-100 {
-    min-width: 60px;
-    max-width: 60px;
+      max-width: 100%;
   }
   .ew-200 {
     min-width: 120px;

@@ -1,9 +1,9 @@
 <h6 class="text-uppercase c-gray-1 medium mb-15"><%= podcast.created_by %></h6>
 <a href="<%= podcast_path(podcast.resource.slug) %>"><h5 class="medium mb-15 c-white"><%= podcast.title %></h5></a>
 <h5 class="regular c-gray-1">
-  <% if podcast.description.to_s.length < 140 %>
+  <% if podcast.description.to_s.length < 120 %>
     <%= podcast.description.to_s %>
   <% else %>
-    <%= podcast.description.to_s[0, 140] %>...
+    <%= podcast.description.to_s[0, 120] %>...
   <% end %>
 </h5>
