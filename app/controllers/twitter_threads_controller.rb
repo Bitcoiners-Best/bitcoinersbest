@@ -2,6 +2,7 @@ class TwitterThreadsController < ApplicationController
   before_action :find_resource
 
   def show
+    @display_back_button = true
   end
 
   private
