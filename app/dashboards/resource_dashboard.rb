@@ -39,6 +39,7 @@ class ResourceDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   created_by
   id
+  votes
   vote_count
   approved
   archived
@@ -70,12 +71,15 @@ class ResourceDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {}.freeze
+  COLLECTION_FILTERS = {
+    all: true,
+    pending_approval: -> (r) {r.where(approved: false, archived: false)}
+  }.freeze
 
   # Overwrite this method to customize how resources are displayed
   # across all pages of the admin dashboard.
   #
   def display_resource(resource)
-    "Resource #{resource.title}"
+    "'#{resource.title}' #{resource.resourceable_type} "
   end
 end

@@ -32,6 +32,15 @@ It renders the `_table` partial to display details about the resources.
     <%= content_for(:title) %>
   </h1>
 
+  <% filters = page.send(:dashboard).class::COLLECTION_FILTERS %>
+  <% if filters && filters.keys %>
+    <% filters.keys.each do |filter| %>
+      <% search = (filter == :all) ? nil : "#{filter}:" %>
+      <%= link_to filter, request.query_parameters.merge(search: search) %>
+      &nbsp;
+    <% end %>
+  <% end %>
+
   <% if show_search_bar %>
     <%= render(
       "search",
