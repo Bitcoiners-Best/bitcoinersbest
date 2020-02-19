@@ -1,5 +1,5 @@
 * {
-  font-family: "Graphik";
+  font-family: "Graphik Web";
   -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
@@ -18,32 +18,32 @@ body {
 
 @font-face {
   font-family: "Graphik Web";
-  src: url(/fonts/graphik/Graphik-Regular-Web.eot);
-  src: url(/fonts/graphik/Graphik-Regular-Web.eot?#iefix) format("embedded-opentype"), url(/fonts/graphik/Graphik-Regular-Web.woff) format("woff"), url(/fonts/graphik/Graphik-Regular-Web.ttf) format("truetype"), url(/fonts/graphik/Graphik-Regular-Web.svg#Graphik-Regular) format("svg");
+  src: url(<%= asset_path('graphik/Graphik-Regular-Web.eot') %>);
+  src: url(<%= asset_path('graphik/Graphik-Regular-Web.eot?#iefix') %>) format("embedded-opentype"), url(<%= asset_path('graphik/Graphik-Regular-Web.woff') %>) format("woff"), url(<%= asset_path('graphik/Graphik-Regular-Web.ttf') %>) format("truetype"), url(<%= asset_path('graphik/Graphik-Regular-Web.svg#Graphik-Regular') %>) format("svg");
   font-style: normal;
   font-stretch: normal;
   font-weight: 400
 }
 @font-face {
   font-family: "Graphik Web Medium";
-  src: url(/fonts/graphik/Graphik-Medium-Web.eot);
-  src: url(/fonts/graphik/Graphik-Medium-Web.eot?#iefix) format("embedded-opentype"), url(/fonts/graphik/Graphik-Medium-Web.woff) format("woff"), url(/fonts/graphik/Graphik-Medium-Web.ttf) format("truetype"), url(/fonts/graphik/Graphik-Medium-Web.svg#Graphik-Medium) format("svg");
+  src: url(<%= asset_path('graphik/Graphik-Medium-Web.eot') %>);
+  src: url(<%= asset_path('graphik/Graphik-Medium-Web.eot?#iefix') %>) format("embedded-opentype"), url(<%= asset_path('graphik/Graphik-Medium-Web.woff') %>) format("woff"), url(<%= asset_path('graphik/Graphik-Medium-Web.ttf') %>) format("truetype"), url(<%= asset_path('graphik/Graphik-Medium-Web.svg#Graphik-Medium') %>) format("svg");
   font-style: normal;
   font-stretch: normal;
   font-weight: 500
 }
 @font-face {
   font-family: "Graphik Web Medium Italic";
-  src: url(/fonts/graphik/Graphik-Medium-Italic-Web.eot);
-  src: url(/fonts/graphik/Graphik-Medium-Italic-Web.eot?#iefix) format("embedded-opentype"), url(/fonts/graphik/Graphik-Medium-Italic-Web.woff) format("woff"), url(/fonts/graphik/Graphik-Medium-Italic-Web.ttf) format("truetype"), url(/fonts/graphik/Graphik-Medium-Italic-Web.svg#Graphik-Medium) format("svg");
+  src: url(<%= asset_path('graphik/Graphik-Medium-Italic-Web.eot') %>);
+  src: url(<%= asset_path('graphik/Graphik-Medium-Italic-Web.eot?#iefix') %>) format("embedded-opentype"), url(<%= asset_path('graphik/Graphik-Medium-Italic-Web.woff') %>) format("woff"), url(<%= asset_path('graphik/Graphik-Medium-Italic-Web.ttf') %>) format("truetype"), url(<%= asset_path('graphik/Graphik-Medium-Italic-Web.svg#Graphik-Medium') %>) format("svg");
   font-style: normal;
   font-stretch: normal;
   font-weight: 500
 }
 @font-face {
   font-family: "Graphik Web Semibold";
-  src: url(/fonts/graphik/Graphik-Semibold-Web.eot);
-  src: url(/fonts/graphik/Graphik-Semibold-Web.eot?#iefix) format("embedded-opentype"), url(/fonts/graphik/Graphik-Semibold-Web.woff) format("woff"), url(/fonts/graphik/Graphik-Semibold-Web.ttf) format("truetype"), url(/fonts/graphik/Graphik-Semibold-Web.svg#Graphik-Medium) format("svg");
+  src: url(<%= asset_path('graphik/Graphik-Semibold-Web.eot') %>);
+  src: url(<%= asset_path('graphik/Graphik-Semibold-Web.eot?#iefix') %>) format("embedded-opentype"), url(<%= asset_path('graphik/Graphik-Semibold-Web.woff') %>) format("woff"), url(<%= asset_path('graphik/Graphik-Semibold-Web.ttf') %>) format("truetype"), url(<%= asset_path('graphik/Graphik-Semibold-Web.svg#Graphik-Medium') %>) format("svg");
   font-style: normal;
   font-stretch: normal;
   font-weight: 600
