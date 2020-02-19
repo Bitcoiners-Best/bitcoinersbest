@@ -16,6 +16,7 @@ class ResourceDashboard < Administrate::BaseDashboard
     created_by_id: Field::Number,
     updated_at: Field::DateTime,
     resourceable: Field::Polymorphic,
+    title: Field::String.with_options(searchable: false),
     approved: Field::Boolean,
     archived: Field::Boolean,
     slug: Field::String,
@@ -28,6 +29,7 @@ class ResourceDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   created_by
+  title
   vote_count
   approved
   archived
