@@ -66,7 +66,7 @@ class EpisodeDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how episodes are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(episode)
-  #   "Episode ##{episode.id}"
-  # end
+  def display_resource(episode)
+    "Episode #{episode.title}"
+  end
 end

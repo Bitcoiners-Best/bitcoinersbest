@@ -25,6 +25,7 @@ class UserDashboard < Administrate::BaseDashboard
     name: Field::String,
     slug: Field::String,
     username: Field::String,
+    name: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -38,6 +39,7 @@ class UserDashboard < Administrate::BaseDashboard
   username
   slug
   admin
+  name
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -53,6 +55,7 @@ class UserDashboard < Administrate::BaseDashboard
   description
   admin
   username
+  name
   slug
   ].freeze
 
@@ -67,6 +70,7 @@ class UserDashboard < Administrate::BaseDashboard
   admin
   description
   username
+  name
   slug
   ].freeze
 
@@ -80,12 +84,16 @@ class UserDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {}.freeze
+  COLLECTION_FILTERS = {
+    all: true,
+    email_users: -> (resources) { resources.where(provider: nil) },
+    lightning_users: -> (resources) { resources.where(provider: 'lightning') }
+  }.freeze
 
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
   def display_resource(user)
-    user.username
+    user.username || user.name || user.email || "#{user.provider} user"
   end
 end
