@@ -87,16 +87,21 @@ p {
 
 /* LINKS & TEXT */
 
+/* fix */
+h4 > a:hover {
+  color: #FFCF53;
+}
+
 a, a:focus, a:hover {
     text-decoration: none;
 }
 
 a,
 path {
-  transition: all 200ms ease;
-  -moz-transition: all 200ms ease;
-  -webkit-transition: all 200ms ease;
-  -ms-transition: all 200ms ease;
+  transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -webkit-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
   font-stretch:normal;
   font-style:normal;
   color: inherit;
@@ -416,6 +421,10 @@ footer {
     -webkit-transition: none;
     transition: none;
     border-radius: 500px;
+}
+
+.resource-content > a:hover > h {
+
 }
 
 .scrolling-wrapper {
@@ -764,6 +773,11 @@ footer {
   }
 }
 
+
+
+
+
+
 .icon-wrap {
     cursor: pointer;
     display: inline-block;
@@ -897,6 +911,9 @@ textarea.form-control {
 }
 
 
+
+
+
 /* TEXT CYCLE */
 
 .cycle-wrapper {
@@ -944,7 +961,6 @@ textarea.form-control {
   -moz-animation: slide-out 0.6s;
   animation: slide-out 0.6s;
 }
-
 @-webkit-keyframes slide-in {
   0% {
     opacity: 0;
@@ -1053,6 +1069,9 @@ textarea.form-control {
     transform: translateY(100%);
   }
 }
+
+
+
 
 /* FORMS */
 
