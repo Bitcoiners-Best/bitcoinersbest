@@ -2,17 +2,19 @@
   <% title Resource::CATEGORIES[params[:type].to_sym].pluralize %>
 <% end %>
 
-<div class="container-fluid full resource-categories-navbar">
-  <div class="scrolling-wrapper fade-in">
-    <div class="section-selector">
-      <div class="d-flex justify-content-center text-uppercase">
-        <a href="<%= root_path %>" class="module-navigation-element <%= Resource::CATEGORIES.keys.include?(params[:type].try(:to_sym)) ? '' : 'active' %>">All</a>
-        <% Resource::CATEGORIES.each do |name, display| %>
-          <a href="/<%= name.to_s.pluralize %>" class="module-navigation-element <%= params[:type] == name.to_s ? 'active' : '' %>"><%= resource_category_name(name) %></a>
-        <% end %>
+<% content_for :top_level_content do %>
+  <div class="container-fluid full resource-categories-navbar">
+    <div class="scrolling-wrapper fade-in">
+      <div class="section-selector">
+        <div class="d-flex justify-content-center text-uppercase">
+          <a href="<%= root_path %>" class="module-navigation-element <%= Resource::CATEGORIES.keys.include?(params[:type].try(:to_sym)) ? '' : 'active' %>">All</a>
+          <% Resource::CATEGORIES.each do |name, display| %>
+            <a href="/<%= name.to_s.pluralize %>" class="module-navigation-element <%= params[:type] == name.to_s ? 'active' : '' %>"><%= resource_category_name(name) %></a>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
 
 <%= render partial: 'list', locals: { resources: @resources } %>

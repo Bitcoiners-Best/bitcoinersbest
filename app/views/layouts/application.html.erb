@@ -38,6 +38,7 @@
   <body class="<%= current_user ? 'signed-in' : '' %>" data-lnpay-key="<%= Rails.application.credentials.dig(:lnpay, :key) %>">
     <%= render partial: 'shared/navbar' %>
     <div class="wrap">
+      <%= yield :top_level_content %>
       <div class="container-fluid">
         <%= render partial: 'shared/flashes' %>
         <%= yield %>
