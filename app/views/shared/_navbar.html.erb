@@ -62,6 +62,9 @@
                   <ul class="menu-nav__ul menu-nav__ul--">
                       <li class="menu-nav__li"><a href="<%= faq_path %>" class="a-h -ss-01"><h2>FAQ</h2></a></li>
                       <li class="menu-nav__li"><a href="<%= new_resource_path %>" class="a-h -ss-01"><h2>Submit</h2></a></li>
+                      <% if current_user.try(:admin?) %>
+                      <li class="menu-nav__li"><a href="<%= admin_resources_path %>" class="a-h -ss-01"><h2>Admin</h2></a></li>
+                      <% end %>
                       <% if current_user %>
                         <li class="menu-nav__li nav-item align-self-center"><a href="<%= user_profile_path %>" class="a-h -ss-01"><img class="profile-picture br-circle transition" src="<%= current_user.image %>"/></a></li>
                         <li class="menu-nav__li"><a href="<%= destroy_user_session_path %>" rel="nofollow" data-method="delete" class="a-h -ss-01"><h2>Logout</h2></a></li>
