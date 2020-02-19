@@ -1,5 +1,5 @@
 <h6 class="text-uppercase c-gray-1 medium mb-15"><%= article.created_by %></h6>
-<h4 class="semibold mb-15 c-white"><a href="<%= article_path(article.resource.slug) %>"><%= article.title %></a></h4>
+<h5 class="semibold mb-15 c-white"><a href="<%= article_path(article.resource.slug) %>"><%= article.title %></a></h5>
 <h5 class="regular c-gray-1">
   <% if article.description.to_s.length < 120 %>
     <%= article.description.to_s %>
