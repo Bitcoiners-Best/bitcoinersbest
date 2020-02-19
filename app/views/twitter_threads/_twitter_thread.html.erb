@@ -1,2 +1,2 @@
-<blockquote class="twitter-tweet" data-theme="dark" data-conversation="none" data-dnt="true" data-cards="hidden"><a href="<%= twitter_thread.url %>"></a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h6 class="text-uppercase c-gray-1 medium mb-15"><%= twitter_thread.created_by %></h6>
+<a href="<%= twitter_thread_path(twitter_thread.resource.slug) %>"><h5 class="medium mb-15 c-white"><%= twitter_thread.title %></h5></a>
