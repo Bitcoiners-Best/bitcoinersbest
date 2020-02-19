@@ -19,6 +19,8 @@ class TwitterThread < ApplicationRecord
         remote_file = Net::HTTP.get_response(uri)
         file = StringIO.new(remote_file.body)
         self.image.attach(io: file, filename: File.basename(uri.path))
+
+        self.image_is_profile = @tweet_service.image_is_profile
       end
     end
   end

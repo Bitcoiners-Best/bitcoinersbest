@@ -18,4 +18,14 @@ module ApplicationHelper
       Resource::CATEGORIES[name].pluralize
     end
   end
+
+  def resource_list_image_class(resource)
+    klass = 'ew-100 card-img'
+
+    if resource.resourceable.try(:image_is_profile)
+      klass << ' br-circle'
+    end
+
+    klass
+  end
 end

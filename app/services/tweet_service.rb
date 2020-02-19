@@ -1,6 +1,8 @@
 class TweetService
   class InvalidResource < StandardError; end
 
+  attr_reader :image_is_profile
+
   def initialize(tweet_url)
     @url = TweetUrl.parse(tweet_url)
 
@@ -26,8 +28,10 @@ class TweetService
 
   def image
     if @tweet.media?
+      @image_is_profile = false
       @tweet.media[0].media_uri.to_s
     else
+      @image_is_profile = true
       profile_image
     end
   end

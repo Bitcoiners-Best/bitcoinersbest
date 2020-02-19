@@ -12,6 +12,7 @@ class TwitterThreadDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     url: Field::String,
+    image_is_profile: Field::Boolean,
     created_by: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -33,6 +34,7 @@ class TwitterThreadDashboard < Administrate::BaseDashboard
   resource
   id
   title
+  image_is_profile
   url
   created_by
   created_at
@@ -45,6 +47,7 @@ class TwitterThreadDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   title
   url
+  image_is_profile
   created_by
   ].freeze
 
