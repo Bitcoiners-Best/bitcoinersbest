@@ -88,8 +88,23 @@ p {
 /* LINKS & TEXT */
 
 /* fix */
-h4 > a:hover {
+
+.back-button {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.back-button:hover {
+  color: #fff;
+  opacity: 1.0;
+}
+
+h4 > a:hover,
+p > a:hover {
   color: #FFCF53;
+}
+.back-button > img {
+    padding-right: 12px;
 }
 
 a, a:focus, a:hover {
