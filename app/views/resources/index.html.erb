@@ -1,6 +1,6 @@
 <% content_for :top_level_content do %>
   <div class="container-fluid full">
-    <div class="scrolling-wrapper fade-in" style="overflow: hidden;">
+    <div class="scrolling-wrapper fade-in">
       <div class="section-selector">
         <div class="d-flex justify-content-center text-uppercase">
           <a href="<%= root_path %>" class="module-navigation-element <%= Resource::CATEGORIES.keys.include?(params[:type].try(:to_sym)) ? '' : 'active' %>">All</a>
