@@ -29,7 +29,7 @@ class VoteService
   private
 
   def create_vote_with_invoice(amount:, vote_count:)
-    data = LnpayService.create_invoice(amount, "Vote for '#{@resource.slug}' on bitcoiners.best")
+    data = LnpayService.create_invoice(amount, "Vote for '#{@resource.title.to_s[0..50]}' on bitcoiners.best")
 
     @user.votes.build(
       resource: @resource,
