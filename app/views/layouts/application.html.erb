@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>
-      <%= if content_for?(:title) then yield(:title) + ' | ' end %>
-      Bitcoiners.best
-    </title>
+    <%=
+      display_meta_tags(
+        site: 'Bitcoiners.best',
+        reverse: true,
+        og: {
+          title: (@page_title ? "#{@page_title} | Bitcoiners.best" : :site),
+          site_name: :site,
+          description: :description,
+          image: (@page_image || image_url('bb-cover.png'))
+        }
+      )
+    %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <%= display_meta_tags %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,6 +23,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#FFCF53">
 
     <link rel="me" href="https://twitter.com/bitcoinersbest">
+    <meta name="twitter:card" content="summary_large_image"></meta>
+    <meta name="twitter:site" content="@bitcoinersbest"></meta>
+    <meta name="twitter:creator" content="@bitcoinersbest" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="../favicons/apple-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="60x60" href="../favicons/apple-icon-60x60.png"/>

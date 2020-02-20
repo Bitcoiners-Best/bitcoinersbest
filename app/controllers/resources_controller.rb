@@ -1,5 +1,7 @@
 class ResourcesController < ApplicationController
-  before_action :set_resource, only: [:show, :edit, :update, :destroy]
+  include Metataggable
+
+  prepend_before_action :set_resource, only: [:show, :edit, :update, :destroy]
   before_action :load_resources, only: [:new, :create]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -8,6 +10,7 @@ class ResourcesController < ApplicationController
   def index
     if params[:type]
       @resources = Resource.where(resourceable_type: params[:type].to_s.classify)
+      @page_title = Resource::CATEGORIES[params[:type].to_sym].pluralize
     else
       @resources = Resource
     end
