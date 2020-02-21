@@ -70,6 +70,7 @@ class VoteDashboard < Administrate::BaseDashboard
     settled: -> (votes) { votes.unscoped.settled },
     unsettled: -> (votes) { votes.unscoped.where(settled: false) },
     tenx: -> (votes) { votes.where(count: 10) },
+    settled10x: -> (votes) { votes.unscoped.settled.where(count: 10) },
   }.freeze
 
   # Overwrite this method to customize how votes are displayed
