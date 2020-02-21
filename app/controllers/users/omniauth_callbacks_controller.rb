@@ -4,8 +4,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       if !@user.name
-        ufs = UserFakerService.new(@user)
-        ufs.fake
         @user.save
       end
 
