@@ -6,4 +6,8 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
   validates :url, presence: true, url: { allow_blank: true}
+
+  def item_path
+    Rails.application.routes.url_helpers.article_path(self.resource.slug)
+  end
 end

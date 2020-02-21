@@ -7,6 +7,10 @@ class TwitterThread < ApplicationRecord
 
   validates :title, presence: true
 
+  def item_path
+    Rails.application.routes.url_helpers.twitter_thread_path(self.resource.slug)
+  end
+
   def pull_tweet_data
     if ! self.title || ! self.image.attached?
       @tweet_service = TweetService.new(url) rescue nil

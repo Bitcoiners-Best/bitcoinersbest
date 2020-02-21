@@ -6,4 +6,8 @@ class Podcast < ApplicationRecord
 
   validates :title, presence: true
   validates :url, url: { allow_blank: true }
+
+  def item_path
+    Rails.application.routes.url_helpers.podcast_path(self.resource.slug)
+  end
 end
