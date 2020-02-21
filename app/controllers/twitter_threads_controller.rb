@@ -3,7 +3,7 @@ class TwitterThreadsController < ApplicationController
   prepend_before_action :find_resource
 
   def show
-    @display_back_button = true
+    @display_back_button = back_link_available?
     @resource = @resource.decorate
   end
 

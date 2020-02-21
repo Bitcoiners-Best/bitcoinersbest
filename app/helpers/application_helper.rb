@@ -24,12 +24,4 @@ module ApplicationHelper
 
     klass
   end
-
-  def back_or_default(default = root_path)
-    if request.env["HTTP_REFERER"].present? && request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
-      :back
-    else
-      default
-    end
-  end
 end
