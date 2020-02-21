@@ -52,7 +52,6 @@ class VoteDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  count
   payment_request
   payment_amount
   payment_id
