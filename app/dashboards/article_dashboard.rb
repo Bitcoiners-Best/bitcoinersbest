@@ -13,6 +13,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     url: Field::String,
     title: Field::String,
     created_by: Field::String,
+    image: Field::ActiveStorage,
     description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -36,6 +37,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   url
   title
   created_by
+  image
   description
   created_at
   updated_at
@@ -48,6 +50,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   url
   title
   created_by
+  image
   description
   ].freeze
 

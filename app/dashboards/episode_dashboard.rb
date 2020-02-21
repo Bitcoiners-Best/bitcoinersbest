@@ -13,6 +13,7 @@ class EpisodeDashboard < Administrate::BaseDashboard
     title: Field::String,
     created_by: Field::String,
     podcast: Field::String,
+    image: Field::ActiveStorage,
     url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -35,6 +36,7 @@ class EpisodeDashboard < Administrate::BaseDashboard
   id
   title
   created_by
+  image
   podcast
   url
   created_at
@@ -47,6 +49,7 @@ class EpisodeDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   title
   created_by
+  image
   podcast
   url
   ].freeze

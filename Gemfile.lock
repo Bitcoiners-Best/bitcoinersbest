@@ -89,6 +89,9 @@ GEM
       momentjs-rails (~> 2.8)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate-field-active_storage (0.2.1)
+      administrate (>= 0.2.2)
+      rails (>= 6.0)
     autoprefixer-rails (9.7.4)
       execjs
     bcrypt (3.1.13)
@@ -419,6 +422,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  administrate-field-active_storage
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.4.1)
   byebug

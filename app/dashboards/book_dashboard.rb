@@ -13,6 +13,7 @@ class BookDashboard < Administrate::BaseDashboard
     title: Field::String,
     created_by: Field::String,
     url: Field::String,
+    image: Field::ActiveStorage,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -24,6 +25,7 @@ class BookDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   title
+  created_by
   id
   ].freeze
 
@@ -34,6 +36,7 @@ class BookDashboard < Administrate::BaseDashboard
   id
   title
   created_by
+  image
   url
   created_at
   updated_at
@@ -45,6 +48,7 @@ class BookDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   title
   created_by
+  image
   url
   ].freeze
 

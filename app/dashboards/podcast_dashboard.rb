@@ -14,6 +14,7 @@ class PodcastDashboard < Administrate::BaseDashboard
     title: Field::String,
     description: Field::Text,
     created_by: Field::String,
+    image: Field::ActiveStorage,
     rss: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -40,6 +41,7 @@ class PodcastDashboard < Administrate::BaseDashboard
   title
   description
   created_by
+  image
   rss
   created_at
   updated_at
@@ -53,6 +55,7 @@ class PodcastDashboard < Administrate::BaseDashboard
   title
   description
   created_by
+  image
   rss
   ].freeze
 
