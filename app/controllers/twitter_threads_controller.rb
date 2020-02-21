@@ -4,6 +4,7 @@ class TwitterThreadsController < ApplicationController
 
   def show
     @display_back_button = true
+    @resource = @resource.decorate
   end
 
   private

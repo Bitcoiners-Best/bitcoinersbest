@@ -23,6 +23,7 @@ class ResourcesController < ApplicationController
   # GET /resources/1.json
   def show
     @display_back_button = true
+    @resource = @resource.decorate
   end
 
   # GET /resources/new
