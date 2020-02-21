@@ -55,7 +55,6 @@ class VoteDashboard < Administrate::BaseDashboard
   payment_request
   payment_amount
   payment_id
-  settled
   expires_at
   ].freeze
 
