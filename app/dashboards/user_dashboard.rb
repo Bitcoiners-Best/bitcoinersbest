@@ -94,6 +94,10 @@ class UserDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(user)
-    user.username || user.name || user.email || "#{user.provider} user"
+    name = user.username
+    name = user.name if name.blank?
+    name = user.email if name.blank?
+    name = "some #{user.provider} user" if name.blank?
+    name
   end
 end
