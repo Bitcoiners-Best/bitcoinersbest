@@ -56,8 +56,6 @@ class ResourceDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   created_by
-  votes
-  vote_count
   approved
   archived
   slug
