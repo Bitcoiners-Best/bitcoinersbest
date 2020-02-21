@@ -1,2 +1,2 @@
 <h6 class="text-uppercase c-gray-1 medium mb-15"><%= episode.created_by %></h6>
-<h5 class="semibold mb-15 c-white"><a href="<%= episode_path(episode) %>"><%= episode.title %></a></h5>
+<h5 class="semibold mb-15 c-white"><a href="<%= episode_path(episode.resource.slug) %>"><%= episode.title %></a></h5>
