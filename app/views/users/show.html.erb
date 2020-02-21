@@ -6,7 +6,7 @@
     <img class="br-circle transition mb-20" src="<%= @user.image %>"/>
     <h4 class="mb-30 c-white">
       <% if @user.twitter_url %>
-        <a href="https://twitter.com/<%= @user.name %>">@<%= @user.name %></a>
+        <%= link_to @user.name, @user.twitter_url %>
       <% else %>
         <%= @user.name %>
       <% end %>
