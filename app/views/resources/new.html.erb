@@ -16,13 +16,14 @@
     </ul>
   </div>
 
-  <div data-controller="resource-type-selector" data-target='resource-type-selector.container'>
-    <!-- <label class="c-white mb-20">Pick your resource type: </label> -->
+  <div data-controller="resource-type-selector" data-target='resource-type-selector.container' class="<%= params[:type] %>">
     <select class="form-control select-resource mb-20 medium" data-action='change->resource-type-selector#selected' data-target='resource-type-selector.select'>
-      <option value="Select Resource" selected disabled>Select Resource</option>
-      <%- Resource::CATEGORIES.each do |category, display| %>
-        <option value="<%= category %>"><%= display %></option>
-      <% end %>
+      <%=
+        options_for_select(
+          ['Select Resource']+Resource::CATEGORIES.map{|c,d| [d,c]},
+          selected: params[:type] || 'Select Resource',
+          disabled: 'Select Resource'
+        ) %>
     </select>
 
     <%- Resource::CATEGORIES.each do |category, display| %>
