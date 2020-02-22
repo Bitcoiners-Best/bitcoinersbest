@@ -14,23 +14,21 @@ section.new-resource {
   .twitter_thread .category#twitter_thread { display: block; }
 }
 
-.votes {
-  .vote[data-user-votes="0"] {
-    .regular-vote { display: inline-block; }
-    .ten-x { display: none; }
-  }
+.votes[data-vote-user-votes="0"] {
+  .regular-vote { display: inline-block; }
+  .ten-x { display: none; }
+}
 
-  .vote[data-user-votes="1"] {
-    .regular-vote { display: none; }
-    .ten-x { display: inline-block; }
-  }
+.votes[data-vote-user-votes="1"] {
+  .regular-vote { display: none; }
+  .ten-x { display: inline-block; }
+}
 
-  .vote[data-user-votes="2"] {
-    .regular-vote { display: none; }
-    .ten-x { display: inline-block; }
+.votes[data-vote-user-votes="2"] {
+  .regular-vote { display: none; }
+  .ten-x { display: inline-block; }
 
-    svg.ten-x > path {
-      fill: #FFCF53;
-    }
+  svg.ten-x > path {
+    fill: #FFCF53;
   }
 }

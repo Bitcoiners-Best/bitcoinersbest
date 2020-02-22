@@ -33,7 +33,7 @@ export default class extends Controller {
   }
 
   invoiceSettled(resource_id) {
-    $(`#resource-${resource_id} .votes .vote`).attr('data-user-votes', 2);
+    this.data.set('user-votes', 2);
 
     const titleElement = $('#invoiceModal [data-invoice-role="title"]')
     titleElement.fadeOut((el) => {
@@ -80,7 +80,7 @@ export default class extends Controller {
         .then(data => {
           // When the server comes back immediately with a settled vote, there's a single vote
           if (data.settled) {
-            $(`#resource-${data.resource_id} .votes .vote`).attr('data-user-votes', 1);
+            this.data.set('user-votes', 1)
           } else if (!data.error) {
             this.setup_invoice(data);
           } else {
