@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_095051) do
+ActiveRecord::Schema.define(version: 2020_02_13_130237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(version: 2020_02_13_095051) do
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.decimal "amount_donated"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "period"
+    t.index ["project_id"], name: "index_donations_on_project_id"
   end
 
   create_table "episodes", force: :cascade do |t|
@@ -155,6 +164,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_095051) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "donations", "projects"
   add_foreign_key "votes", "resources"
   add_foreign_key "votes", "users"
 end

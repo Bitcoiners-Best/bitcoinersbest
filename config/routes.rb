@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   resources :twitter_threads, controller: :resources, type: 'twitter_thread', only: [:index, :new, :create]
   resources :twitter_threads, type: 'twitter_thread', only: [:show]
   resources :projects, controller: :resources, type: 'project', only: [:new, :create]
-  resources :projects, only: [:index, :show]
+  resources :projects, only: :show
+  get '/vote', to: 'projects#index', as: :vote
   resources :donations, only: [:index, :show]
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' },
