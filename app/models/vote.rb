@@ -2,7 +2,7 @@ class Vote < ApplicationRecord
   belongs_to :user
   belongs_to :resource
 
-  after_save :reload_resource_vote_count
+  after_save :reload_resource_vote_count, if: -> { settled? }
   after_destroy :reload_resource_vote_count
 
   scope :settled, -> { where(settled: true) }

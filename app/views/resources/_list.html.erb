@@ -1,6 +1,6 @@
-<div class="container-that-doesnt-break-dstrukts-shit" data-controller="infinity-scroll">
+<div class="resources-container" data-controller="infinity-scroll">
   <% resources.each do |resource| %>
-    <div class="<%= resource.resourceable_type %>-module d-flex br-4 mb-40 fade-in resource">
+    <div class="<%= resource.resourceable_type %>-module d-flex br-4 mb-40 resource" id="resource-<%= resource.id %>" data-vote-count="<%= resource.vote_count %>">
 
       <div class="d-flex flex-sm-row flex-column">
         <div class="pr-30 mobile-resource-image">

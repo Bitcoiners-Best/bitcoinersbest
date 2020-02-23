@@ -19,9 +19,11 @@ import { definitionsFromContext } from "stimulus/webpack-helpers"
 
 import "controllers"
 import 'jquery'
+import tinysort from 'tinysort'
 import('src/plugins')
 
 import JQuery from 'jquery';
 window.$ = window.JQuery = JQuery;
+window.tinysort = tinysort;
 
 import QRCode from 'qrcode';
