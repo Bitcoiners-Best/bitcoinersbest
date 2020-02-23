@@ -30,6 +30,8 @@ class Resource < ApplicationRecord
 
   default_scope { order(vote_count: :desc) }
 
+  after_create :notify_new_resource, if: -> { !approved? }
+
   def self.human_attribute_name(attr, options={})
     super(attr, options)
       .gsub(/resourceable /i, '')
@@ -47,5 +49,9 @@ class Resource < ApplicationRecord
   def update_vote_count
     update(vote_count: votes.settled.sum('count'))
     ActionCable.server.broadcast('votes_channel', {resource_id: id, votes: vote_count})
+  end
+
+  def notify_new_resource
+    ResourceNotifierJob.perform_later(self)
   end
 end

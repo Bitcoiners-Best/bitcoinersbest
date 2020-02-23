@@ -14,4 +14,17 @@ Eye.application 'bitcoinersbest' do
     daemonize true
     stdall "#{BASE}/log/transactions_monitor.log"
   end
+
+  process 'sidekiq' do
+    working_dir BASE
+    rails_env = env['RAILS_ENV']
+    start_command "sidekiq -e #{rails_env} -C ./config/sidekiq.yml"
+    pid_file "tmp/pids/#{name}.pid"
+    stdall "log/#{name}.log"
+    daemonize true
+    stop_signals [:USR1, 0, :TERM, 10.seconds, :KILL]
+
+    check :cpu, every: 30, below: 100, times: 5
+    check :memory, every: 30, below: 300.megabytes, times: 5
+  end
 end
