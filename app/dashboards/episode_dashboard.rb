@@ -11,9 +11,9 @@ class EpisodeDashboard < Administrate::BaseDashboard
     resource: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
-    created_by: Field::String,
     podcast: Field::String,
     image: Field::ActiveStorage,
+    authors: Field::ActsAsTaggable,
     url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -26,6 +26,7 @@ class EpisodeDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   title
+  authors
   id
   ].freeze
 
@@ -35,8 +36,8 @@ class EpisodeDashboard < Administrate::BaseDashboard
   resource
   id
   title
-  created_by
   image
+  authors
   podcast
   url
   created_at
@@ -48,9 +49,9 @@ class EpisodeDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   title
-  created_by
   image
   podcast
+  authors
   url
   ].freeze
 

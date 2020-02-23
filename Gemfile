@@ -80,3 +80,5 @@ gem 'faker'
 gem "validate_url"
 gem 'administrate-field-active_storage'
 gem 'sidekiq'
+gem 'acts-as-taggable-on', '~> 6.0'
+gem 'administrate-field-acts_as_taggable'

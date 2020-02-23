@@ -1,0 +1,21 @@
+<div data-controller="authors">
+  <div class="form-group">
+    <label class="d-block">
+      Created by
+    </label>
+
+    <ul data-target="authors.list">
+    </ul>
+
+    <div class="row">
+      <div class="input-group col-4 mb-3">
+        <input type="text" class="form-control basicAutoComplete" data-target="authors.input" data-action="keydown->authors#input_change change->authors#add_passively" autocomplete="off" />
+        <div class="input-group-append">
+          <button data-action="click->authors#add" class="btn btn-outline-secondary">+</button>
+        </div>
+      </div>
+    </div>
+
+    <%= form.hidden_field :author_list, "data-target" => 'authors.real_field', class: 'form-control' %>
+  </div>
+</div>

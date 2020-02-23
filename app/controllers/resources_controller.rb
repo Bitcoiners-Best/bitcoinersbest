@@ -75,7 +75,8 @@ class ResourcesController < ApplicationController
           :created_by,
           :image,
           :image_url,
-          :rss
+          :rss,
+          :author_list,
         ]
       )
     end

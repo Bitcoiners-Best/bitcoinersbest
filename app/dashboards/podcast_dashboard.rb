@@ -13,8 +13,8 @@ class PodcastDashboard < Administrate::BaseDashboard
     url: Field::String,
     title: Field::String,
     description: Field::Text,
-    created_by: Field::String,
     image: Field::ActiveStorage,
+    authors: Field::ActsAsTaggable,
     rss: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -29,6 +29,7 @@ class PodcastDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   title
+  authors
   id
   ].freeze
 
@@ -40,7 +41,7 @@ class PodcastDashboard < Administrate::BaseDashboard
   url
   title
   description
-  created_by
+  authors
   image
   rss
   created_at
@@ -54,8 +55,8 @@ class PodcastDashboard < Administrate::BaseDashboard
   url
   title
   description
-  created_by
   image
+  authors
   rss
   ].freeze
 
