@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  default_url_options protocol: 'https', host: "bitcoiners.best"
   if Rails.env.development?
     require 'mr_video'
     mount MrVideo::Engine => '/mr_video'
