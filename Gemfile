@@ -79,3 +79,4 @@ gem 'omniauth-lightning'
 gem 'faker'
 gem "validate_url"
 gem 'administrate-field-active_storage'
+gem 'sidekiq'

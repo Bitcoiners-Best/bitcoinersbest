@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   default_url_options protocol: 'https', host: "bitcoiners.best"
+
+  authenticate :user, lambda { |u| u.admin? } do
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   if Rails.env.development?
     require 'mr_video'
     mount MrVideo::Engine => '/mr_video'
