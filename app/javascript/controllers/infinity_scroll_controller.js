@@ -9,7 +9,7 @@ export default class extends Controller {
   connect() {
     if ($('.next_page').length > 0) {
       this.infinityscroll = new InfinityScroll(
-        document.querySelector('.container-that-doesnt-break-dstrukts-shit'),
+        document.querySelector('.resources-container'),
         {
           path: '.next_page',
           append: '.resource',
