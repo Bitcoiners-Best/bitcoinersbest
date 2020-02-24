@@ -8,7 +8,7 @@ class ResourceNotifierJob < ApplicationJob
       resource_url = Rails.application.routes.url_helpers.edit_admin_resource_url(resource.id)
 
       RestClient.get(url, params: {
-        msg: "'#{resource.title}' submitted by #{resource.created_by.name} pending approval: #{resource_url}"
+        msg: "'#{resource.title}' submitted by #{resource.created_by.decorate.name} pending approval: #{resource_url}"
       })
     end
   end
