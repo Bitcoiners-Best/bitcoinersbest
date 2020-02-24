@@ -13,17 +13,12 @@
     </div>
 
     <div class="form-group">
-      <%= form.label 'Podcast Created By', class: 'd-block' %>
-      <%= form.text_field :created_by, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label 'Podcast Name', class: 'd-block' %>
+      <%= form.label 'Episode Name', class: 'd-block' %>
       <%= form.text_field :podcast, class: 'form-control' %>
     </div>
 
     <%= render partial: 'form_field_image_or_image_url', locals: { form: form } %>
-
+    <%= render partial: 'form_field_authors', locals: { form: form } %>
   <%- end %>
 
   <div class="actions">

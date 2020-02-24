@@ -22,6 +22,7 @@ class Resource < ApplicationRecord
            :rss,
            :image,
            :item_path,
+           :authors,
            to: :resourceable, prefix: false
 
   accepts_nested_attributes_for :resourceable

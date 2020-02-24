@@ -12,8 +12,8 @@ class ArticleDashboard < Administrate::BaseDashboard
     id: Field::Number,
     url: Field::String,
     title: Field::String,
-    created_by: Field::String,
     image: Field::ActiveStorage,
+    authors: Field::ActsAsTaggable,
     description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -26,6 +26,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   title
+  authors
   id
   ].freeze
 
@@ -36,9 +37,9 @@ class ArticleDashboard < Administrate::BaseDashboard
   id
   url
   title
-  created_by
   image
   description
+  authors
   created_at
   updated_at
   ].freeze
@@ -49,8 +50,8 @@ class ArticleDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   url
   title
-  created_by
   image
+  authors
   description
   ].freeze
 

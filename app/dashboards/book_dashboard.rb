@@ -11,9 +11,9 @@ class BookDashboard < Administrate::BaseDashboard
     resource: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
-    created_by: Field::String,
     url: Field::String,
     image: Field::ActiveStorage,
+    authors: Field::ActsAsTaggable,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -25,7 +25,7 @@ class BookDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   title
-  created_by
+  authors
   id
   ].freeze
 
@@ -35,7 +35,7 @@ class BookDashboard < Administrate::BaseDashboard
   resource
   id
   title
-  created_by
+  authors
   image
   url
   created_at
@@ -47,8 +47,8 @@ class BookDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   title
-  created_by
   image
+  authors
   url
   ].freeze
 

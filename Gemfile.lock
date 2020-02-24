@@ -76,6 +76,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    acts-as-taggable-on (6.5.0)
+      activerecord (>= 5.0, < 6.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     administrate (0.12.0)
@@ -92,6 +94,9 @@ GEM
     administrate-field-active_storage (0.2.1)
       administrate (>= 0.2.2)
       rails (>= 6.0)
+    administrate-field-acts_as_taggable (0.0.2)
+      acts-as-taggable-on (~> 6.0)
+      administrate (< 1.0.0)
     autoprefixer-rails (9.7.4)
       execjs
     bcrypt (3.1.13)
@@ -137,6 +142,7 @@ GEM
     childprocess (3.0.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
+    connection_pool (2.2.2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.6)
@@ -273,6 +279,8 @@ GEM
     puma (4.3.1)
       nio4r (~> 2.0)
     rack (2.1.2)
+    rack-protection (2.0.8.1)
+      rack
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -426,8 +434,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 6.0)
   administrate
   administrate-field-active_storage
+  administrate-field-acts_as_taggable
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.4.1)
   byebug

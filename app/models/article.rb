@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   include RemoteImageable
   include Imageable
+  acts_as_taggable_on :authors
 
   has_one :resource, as: :resourceable, dependent: :destroy
 
