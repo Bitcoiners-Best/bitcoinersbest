@@ -19,14 +19,20 @@ export default class extends Controller {
   }
 
   add(e) {
+    if (e) { e.preventDefault() }
+
     let val = this.inputTarget.value
+
+    if (val.replace(/[^0-9a-z]/gi, '').length < 1) {
+      return;
+    }
+
     var li = document.createElement('li')
     li.classList.add('fade-in')
     li.innerHTML = `<span class="c-white author">${val}</span> <a href='#' class="link" data-action="click->authors#clicked">x</a>`
     this.listTarget.appendChild(li)
     this.inputTarget.value = ''
     this.updateList()
-    if (e) { e.preventDefault() }
   }
 
   clicked(e){
