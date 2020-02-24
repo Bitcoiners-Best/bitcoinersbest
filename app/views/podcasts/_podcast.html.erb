@@ -1,4 +1,4 @@
-<h6 class="text-uppercase c-gray-1 medium mb-15"><%= podcast.created_by %></h6>
+<h6 class="text-uppercase c-gray-1 medium mb-15"><%= podcast.authors.first %></h6>
 <h5 class="semibold mb-15 c-white"><a href="<%= podcast_path(podcast.resource.slug) %>"><%= podcast.title %></a></h5>
 <h5 class="regular c-gray-1">
   <% if podcast.description.to_s.length < 120 %>
