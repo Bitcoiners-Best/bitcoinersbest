@@ -19,5 +19,8 @@ class ApplicationController < ActionController::Base
 
   def load_donations
     @donations = Donation.all
+    @donation_amount = Vote.settled
+    @donation_amount = @donation_amount.where('created_at > ?', @last_donation_time) if @last_donation_time
+    @donation_amount = @donation_amount.sum(:payment_amount)
   end
 end

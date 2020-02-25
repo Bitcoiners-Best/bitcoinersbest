@@ -3,7 +3,7 @@
 <section class="submit-resource mt-50 fade-in new-resource">
   <div class="section-header pb-20 text-center">
     <h1 class="mb-0 c-white">
-      Submit your bitcoin resource
+      Submit your bitcoin <%= params[:type] ? params[:type] : 'resource' %>
     </h1>
     <p class="mt-10 c-gray-1">Your submission will be reviewed before it appears live.</p>
   </div>
@@ -17,14 +17,16 @@
   </div>
 
   <div data-controller="resource-type-selector" data-target='resource-type-selector.container' class="<%= params[:type] %>">
-    <select class="form-control select-resource mb-20 medium" data-action='change->resource-type-selector#selected' data-target='resource-type-selector.select'>
-      <%=
-        options_for_select(
-          ['Select Resource']+Resource::CATEGORIES.map{|c,d| [d,c]},
-          selected: params[:type] || 'Select Resource',
-          disabled: 'Select Resource'
-        ) %>
-    </select>
+    <% if !params[:type] %>
+      <select class="form-control select-resource mb-20 medium" data-action='change->resource-type-selector#selected' data-target='resource-type-selector.select'>
+        <%=
+          options_for_select(
+            ['Select Resource'] + @resource_categories,
+            selected: params[:type] || 'Select Resource',
+            disabled: 'Select Resource'
+          ) %>
+      </select>
+    <% end %>
 
     <%- Resource::CATEGORIES.each do |category, display| %>
       <div id="<%= category %>" class="category fade-in">

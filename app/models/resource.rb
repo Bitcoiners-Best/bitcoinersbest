@@ -5,6 +5,7 @@ class Resource < ApplicationRecord
     article: 'Article'.freeze,
     book: 'Book'.freeze,
     twitter_thread: 'Twitter Thread'.freeze,
+    project: 'Project'.freeze,
   }.freeze
 
   extend FriendlyId

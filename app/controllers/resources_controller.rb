@@ -27,6 +27,13 @@ class ResourcesController < ApplicationController
 
   # GET /resources/new
   def new
+    @resource_categories = Resource::CATEGORIES
+
+    if params[:type] != 'project'
+      @resource_categories = @resource_categories.reject{|k| k == :project }
+    end
+
+    @resource_categories = @resource_categories.map{|c,d| [d,c]}
   end
 
   # POST /resources

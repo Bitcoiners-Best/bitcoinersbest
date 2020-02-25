@@ -387,6 +387,7 @@ footer {
 .book-module,
 .podcast-module,
 .thread-module,
+.project-module,
 .section-selector {
   flex: 0 0 100%;
 }

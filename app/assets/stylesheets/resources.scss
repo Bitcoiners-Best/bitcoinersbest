@@ -12,6 +12,7 @@ section.new-resource {
   .article .category#article { display: block; }
   .book .category#book { display: block; }
   .twitter_thread .category#twitter_thread { display: block; }
+  .project .category#project { display: block; }
 }
 
 .votes[data-vote-user-votes="0"] {

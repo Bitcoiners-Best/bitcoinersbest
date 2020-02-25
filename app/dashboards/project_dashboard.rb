@@ -12,6 +12,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
+    authors: Field::ActsAsTaggable,
     url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -33,6 +34,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   resource
   title
   description
+  authors
   url
   created_at
   updated_at
@@ -44,6 +46,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   title
   description
+  authors
   url
   ].freeze
 
