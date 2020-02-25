@@ -20,6 +20,15 @@
             </svg>
          </span>
       </button>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav navbar-right flex-grow-1 nav">
+          <li class="nav-item align-self-center d-block d-flex flex-grow-1 justify-content-end">
+              <span class="bg-brand d-block" style="padding: 1rem; border-radius: 0.25rem;"><b>
+                <%= nice_sats_number @donation_amount %> raised
+              </b></span>
+          </li>
+        </ul>
+      </div>
       <div id="w1-collapse" class="collapse navbar-collapse">
         <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
           <% if @donations.any? %>
