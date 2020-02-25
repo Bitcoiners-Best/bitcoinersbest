@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :set_meta_tags
   before_action :load_resources_pending_approval, if: -> { current_user.try(:admin?) }
+  before_action :load_donations
 
   def set_meta_tags
     @page_description = "Bitcoiners Best is the best bitcoin content curated by bitcoiners."
@@ -14,5 +15,9 @@ class ApplicationController < ActionController::Base
 
   def load_resources_pending_approval
     @resources_pending_approval = Resource.pending_approval.count
+  end
+
+  def load_donations
+    @donations = Donation.all
   end
 end

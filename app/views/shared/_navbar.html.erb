@@ -22,7 +22,9 @@
       </button>
       <div id="w1-collapse" class="collapse navbar-collapse">
         <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
-          <%= navbar_link(donations_path, 'Donations') %>
+          <% if @donations.any? %>
+            <%= navbar_link(donations_path, 'Donations') %>
+          <% end %>
           <%= navbar_link(vote_path, 'Vote') %>
           <%= navbar_link(faq_path, 'FAQ') %>
           <%= navbar_link(new_resource_path, 'Submit') %>
