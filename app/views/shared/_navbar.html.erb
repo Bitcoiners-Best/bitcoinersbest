@@ -32,7 +32,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img class="profile-picture br-circle transition" src="<%= current_user.image %>"/>
-                  <% if @resources_pending_approval %>
+                  <% if @resources_pending_approval.to_i > 0 %>
                     <span class="badge badge-primary"><%= @resources_pending_approval %></span>
                   <% end %>
                 </a>
@@ -41,7 +41,7 @@
                   <% if current_user.try(:admin?) %>
                   <a class="dropdown-item" href="<%= admin_resources_path %>">Admin</a>
                   <% end %>
-                  <% if @resources_pending_approval %>
+                  <% if @resources_pending_approval.to_i > 0 %>
                     <a class="dropdown-item" href="<%= admin_resources_path(search: 'pending_approval:') %>">
                       <%= pluralize(@resources_pending_approval, 'resource') %>
                     </a>
