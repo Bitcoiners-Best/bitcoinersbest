@@ -22,6 +22,8 @@
       </button>
       <div id="w1-collapse" class="collapse navbar-collapse">
         <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
+          <%= navbar_link(donations_path, 'Donations') %>
+          <%= navbar_link(vote_path, 'Vote') %>
           <%= navbar_link(faq_path, 'FAQ') %>
           <%= navbar_link(new_resource_path, 'Submit') %>
           <% unless current_user %>
@@ -40,6 +42,7 @@
                   <a class="dropdown-item" href="<%= user_profile_path %>">Profile</a>
                   <% if current_user.try(:admin?) %>
                   <a class="dropdown-item" href="<%= admin_resources_path %>">Admin</a>
+                  <a class="dropdown-item" href="<%= new_admin_donation_path %>">New Donation</a>
                   <% end %>
                   <% if @resources_pending_approval.to_i > 0 %>
                     <a class="dropdown-item" href="<%= admin_resources_path(search: 'pending_approval:') %>">

@@ -9,8 +9,12 @@ class VotesController < ApplicationController
       @vote = vote_service.create_free_vote(vote_count: 1)
       @vote.save!
     when 1
-      @vote = vote_service.get_voting_invoice(amount: VOTE_10X_PRICE, vote_count: 10)
-      @vote.save!
+      if @resource.resourceable_type == 'Project'
+        @vote = { error: 'already-voted' }
+      else
+        @vote = vote_service.get_voting_invoice(amount: VOTE_10X_PRICE, vote_count: 10)
+        @vote.save!
+      end
     else
       @vote = { error: 'already-voted' }
     end

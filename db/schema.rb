@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(version: 2020_02_22_231708) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "donations", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.decimal "amount_donated"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "period"
+    t.index ["project_id"], name: "index_donations_on_project_id"
+  end
+
   create_table "episodes", force: :cascade do |t|
     t.string "title"
     t.string "podcast"
@@ -80,6 +89,14 @@ ActiveRecord::Schema.define(version: 2020_02_22_231708) do
     t.string "resourceable_type"
     t.bigint "resourceable_id"
     t.index ["resourceable_type", "resourceable_id"], name: "index_podcasts_on_resourceable_type_and_resourceable_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "resources", force: :cascade do |t|
@@ -171,6 +188,7 @@ ActiveRecord::Schema.define(version: 2020_02_22_231708) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "donations", "projects"
   add_foreign_key "taggings", "tags"
   add_foreign_key "votes", "resources"
   add_foreign_key "votes", "users"

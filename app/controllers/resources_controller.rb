@@ -50,11 +50,8 @@ class ResourcesController < ApplicationController
   private
 
   def load_resources
-    @resources = {}
-
-    Resource::CATEGORIES.each do |category, display|
-      @resources[category] = Resource.new
-      @resources[category].resourceable = (category.to_s.classify.constantize.new rescue nil)
+    @resources = Hash.new do |hash, key|
+      hash[key] = key.to_s.classify.constantize.new.build_resource
     end
   end
 

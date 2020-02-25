@@ -32,3 +32,20 @@ section.new-resource {
     fill: #FFCF53;
   }
 }
+
+.Project-module {
+  .votes {
+    .vote[data-user-votes="1"] {
+      .regular-vote { display: inline-block; }
+      .ten-x { display: none; }
+
+      svg.regular-vote > path {
+        fill: #FFCF53;
+      }
+    }
+  }
+}
+
+h1.donation-amount {
+  font-size: 3rem;
+}

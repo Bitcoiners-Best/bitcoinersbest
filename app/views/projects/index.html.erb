@@ -1,0 +1,27 @@
+<section class="mt-50 fade-in">
+  <div class="section-header pt-20 pb-20 c-white text-center">
+    <h1 class="mb-0">Projects</h1>
+   </div>
+
+  <div class="c-white text-center mb-30">
+    <p>Every month we donate all proceeds we raise to an open source project choosen by you.</p>
+    <p class="mt-50">So far, this month we have raised</p>
+
+    <h1 class="donation-amount"><%= nice_sats_number @donation_amount %></h1>
+
+    <p>
+      Vote on your favorite project or
+      <br>
+      <%= link_to 'propose a new one', new_project_path, class: 'link' %>
+    </p>
+
+  <% if @projects.any? %>
+    <%= render partial: 'resources/list', locals: { resources: @projects } %>
+  <% else %>
+    <p>No projects proposed yet.</p>
+    <%= link_to 'Submit project', new_project_path, class: 'btn btn btn-rect-lg push-button btn-secondary' %>
+  <% end %>
+
+  </div>
+</section>
+
