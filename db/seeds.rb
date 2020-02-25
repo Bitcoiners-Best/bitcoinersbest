@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 print "creating users"
-users = 50.times.map do
+users = 25.times.map do
   u = User.new(
     name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -22,7 +22,7 @@ puts
 creation_times = (1.month.ago.to_i..Time.now.to_i).to_a
 
 print "creating resources"
-resources = 5000.times.map do |i|
+resources = 300.times.map do |i|
   print " #{i}" if i % 1000 == 0
   r = Resource.new(
     created_by: users.sample,
@@ -39,7 +39,7 @@ end
 puts
 
 print "creating votes"
-100000.times do |i|
+5000.times do |i|
   print " #{i}" if i % 1000 == 0
   Vote.create!(
     user: users.sample,
