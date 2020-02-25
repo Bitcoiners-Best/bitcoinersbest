@@ -25,10 +25,12 @@
       <%= link_to @resource.created_by.name, @resource.created_by, class: 'c-white' %>
     </p>
 
-    <p class="regular c-gray-1 mb-30">
-      Created by
-      <span class="c-white"><%= @resource.authors.join(', ') %></span>
-    </p>
+    <% if @resource.authors.any? %>
+      <p class="regular c-gray-1 mb-30">
+        Created by
+        <span class="c-white"><%= @resource.authors.join(', ') %></span>
+      </p>
+    <% end %>
 
     <p class="mt-30 mb-30"><a target="_blank" href="<%= @resource.url %>">View Original Source<svg class="ml-10" width="14" height="14" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M7.96507 3.55805L1.73694 9.70591C1.33959 10.098 0.695365 10.098 0.298013 9.70591C-0.0993378 9.31364 -0.0993378 8.67772 0.298013 8.28549L6.65681 2.00871H1.41508C0.853153 2.00871 0.397614 1.55904 0.397614 1.00435C0.397614 0.449664 0.853153 0 1.41508 0H10V8.36961C10 8.9243 9.54449 9.37397 8.98255 9.37397C8.42061 9.37397 7.96507 8.9243 7.96507 8.36961V3.55805Z" fill="white"/>
