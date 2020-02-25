@@ -2,11 +2,17 @@
   <div class="container-fluid full">
     <div class="scrolling-wrapper fade-in">
       <div class="section-selector">
-        <div class="d-flex justify-content-center text-uppercase">
-          <a href="<%= root_path %>" class="module-navigation-element <%= Resource::CATEGORIES.keys.include?(params[:type].try(:to_sym)) ? '' : 'active' %>">All</a>
-          <% Resource::CATEGORIES.each do |name, display| %>
-            <a href="/<%= name.to_s.pluralize %>" class="module-navigation-element <%= params[:type] == name.to_s ? 'active' : '' %>"><%= resource_category_name(name) %></a>
-          <% end %>
+        <div class="d-flex justify-content-between text-uppercase">
+          <div>
+            <%= resource_navbar_link('This week', category: params[:type], time_scope: nil) %>
+            <%= resource_navbar_link('All time', category: params[:type], time_scope: 'all') %>
+          </div>
+          <div>
+            <%= resource_navbar_link('All', category: nil, time_scope: params[:time_scope]) %>
+            <% Resource::CATEGORIES.each do |name, display| %>
+              <%= resource_navbar_link(resource_category_name(name), category: name, time_scope: params[:time_scope]) %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

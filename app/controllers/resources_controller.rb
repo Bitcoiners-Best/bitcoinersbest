@@ -8,15 +8,14 @@ class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
   def index
-    if params[:type]
-      @resources = Resource.where(resourceable_type: params[:type].to_s.classify)
-      @page_title = Resource::CATEGORIES[params[:type].to_sym].pluralize
-    else
-      @resources = Resource
-    end
+    @resources = ResourceQuery.query(
+      type: params[:type],
+      time_scope: params[:time_scope] || 'week',
+    ).paginate(page: params[:page], per_page: 15)
 
-    @resources = @resources.visible
-    @resources = @resources.paginate(page: params[:page], per_page: 15)
+    if params[:type]
+      @page_title = Resource::CATEGORIES[params[:type].to_sym].pluralize
+    end
   end
 
   # GET /resources/1

@@ -1,4 +1,16 @@
 module ApplicationHelper
+  def resource_navbar_link(text, category:, time_scope:)
+    path = ""
+    path << "/#{category.to_s.pluralize}" if category
+    path << "/#{time_scope}" if time_scope
+    path = "/" if path.blank?
+
+    klass = "module-navigation-element"
+    klass << " active" if request.path == path
+
+    link_to text, path, class: klass
+  end
+
   def navbar_link(path, text)
     klass = 'nav-item align-self-center'
     klass << ' active' if request.path == path

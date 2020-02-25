@@ -27,6 +27,14 @@ Rails.application.routes.draw do
     resources :votes, only: [:new, :create, :destroy]
   end
 
+  %w(all).each do |time_scope|
+    get "/#{time_scope}", to: 'resources#index', time_scope: time_scope
+
+    Resource::CATEGORIES.each_key do |name|
+      get "/#{name.to_s.pluralize}/#{time_scope}", to: 'resources#index', type: name.to_s, time_scope: time_scope
+    end
+  end
+
   resources :podcasts, controller: :resources, type: 'podcast', only: [:index, :new, :create, :show]
   resources :episodes, controller: :resources, type: 'episode', only: [:index, :new, :create, :show]
   resources :articles, controller: :resources, type: 'article', only: [:index, :new, :create, :show]
