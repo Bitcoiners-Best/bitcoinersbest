@@ -1,4 +1,4 @@
-<%= form_for(resource, url: resources_path(resource_type: resource.resourceable_type, resource_id: resource.id), local: true, id: 'submit-resource') do |form| %>
+<%= form_for(resource, url: resources_path(resource_type: resource.resourceable_type, resource_id: resource.id), remote: true, id: 'submit-resource') do |form| %>
   <%= form.hidden_field :resourceable_type %>
   <% if resource.errors.any? %>
     <div id="error_explanation">
@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <%= form.label :title, 'Project Title', class: 'd-block' %>
-      <%= form.text_field :title, class: 'form-control', required: true %>
+      <%= form.text_field :title, class: 'form-control' %>
     </div>
 
     <div class="form-group">
@@ -29,10 +29,8 @@
       <%= form.text_area :description, class: 'form-control' %>
     </div>
 
-    <div class="form-group">
-      <%= form.label :description, 'Project Image', class: 'd-block' %>
-      <%= form.file_field :image, class: 'form-control' %>
-    </div>
+    <%= render partial: 'form_field_image_or_image_url', locals: { form: form } %>
+    <%= render partial: 'form_field_authors', locals: { form: form } %>
   <%- end %>
 
   <div class="actions">
