@@ -9,7 +9,7 @@
           </div>
           <div>
             <%= resource_navbar_link('All', category: nil, time_scope: params[:time_scope]) %>
-            <% Resource::CATEGORIES.each do |name, display| %>
+            <% Resource::CATEGORIES.except(:project).each do |name, display| %>
               <%= resource_navbar_link(resource_category_name(name), category: name, time_scope: params[:time_scope]) %>
             <% end %>
           </div>
