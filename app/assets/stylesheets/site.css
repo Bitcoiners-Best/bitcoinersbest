@@ -259,6 +259,12 @@ path {
   opacity: 0.7;
 }
 
+.nav-item > a > .badge {
+  position: relative;
+  left: -26%;
+  top: 10px;
+}
+
 .nav-link {
     display: block;
     padding: 10px;

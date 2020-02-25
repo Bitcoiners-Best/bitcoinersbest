@@ -32,11 +32,19 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img class="profile-picture br-circle transition" src="<%= current_user.image %>"/>
+                  <% if @resources_pending_approval %>
+                    <span class="badge badge-primary"><%= @resources_pending_approval %></span>
+                  <% end %>
                 </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="<%= user_profile_path %>">Profile</a>
                   <% if current_user.try(:admin?) %>
                   <a class="dropdown-item" href="<%= admin_resources_path %>">Admin</a>
+                  <% end %>
+                  <% if @resources_pending_approval %>
+                    <a class="dropdown-item" href="<%= admin_resources_path(search: 'pending_approval:') %>">
+                      <%= pluralize(@resources_pending_approval, 'resource') %>
+                    </a>
                   <% end %>
                   <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
               </div>

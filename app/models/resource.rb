@@ -28,6 +28,7 @@ class Resource < ApplicationRecord
   accepts_nested_attributes_for :resourceable
 
   scope :visible, -> { where(approved: true, archived: false) }
+  scope :pending_approval, -> { where.not(approved: true).where(archived: false) }
 
   default_scope { order(vote_count: :desc) }
 
