@@ -2,20 +2,13 @@
   <div class="section-header pt-20 pb-20 c-white text-center">
     <h1 class="mb-0">Vote for this month's open-source donation</h1>
    </div>
+  <div class="text-center mb-50 c-gray-1">
+    <p>Every month we donate all proceeds from 10x votes to the bitcoin open-source project at the top of this list. When a project wins a donation it's votes are reset to zero. All projects retain their votes until they win the donation. Vote on your favorite project or <%= link_to 'propose a new one', new_project_path, class: 'link' %>. View our list of <%= link_to 'past donations', donations_path, class: 'link' %>.</p>
 
-  <div class="text-center mb-30 c-gray-1">
-    <p>Every month we donate all proceeds from 10x votes to the bitcoin open-source project at the top of this list. When a project wins a donation it's votes are reset to zero. All projects retain their votes until they win the donation.</p>
-
-
-    <h1 class="c-brand donation-amount">
+    <h1 class="c-brand donation-amount mb-0">
       <%= nice_sats_number @donation_amount %>
     </h1>
     <p class="c-white"><b>raised this month</b></p>
-
-    <p>
-      Vote on your favorite project or
-      <%= link_to 'propose a new one', new_project_path, class: 'link' %>
-    </p>
   </div>
 </section>
 

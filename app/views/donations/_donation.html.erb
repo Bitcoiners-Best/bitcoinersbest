@@ -1,5 +1,5 @@
-<h4 class="c-white medium mb-15"><%= donation.period %> donation</h4>
-<div class="d-flex br-4 mb-30 fade-in resource">
+<h4 class="c-gray-1 medium mb-20"><%= donation.period %></h4>
+<div class="d-flex br-4 mb-50 fade-in resource">
   <div class="pr-20">
     <%if donation.project.image.attached? %>
       <%= image_tag donation.project.image.variant(resize_to_limit: [100, 100]), class: 'ew-100 card-img' %>
@@ -12,7 +12,7 @@
   </div>
   <div class="align-self-top pl-20">
     <div class="vote-total" id="vote-total">
-      <h6 class="medium mt-10 c-white"><%= nice_sats_number donation.amount_donated %> donated</h6>
+      <h6 class="medium mt-10 c-gray-1"><%= nice_sats_number donation.amount_donated %> donated</h6>
     </div>
   </div>
 </div>

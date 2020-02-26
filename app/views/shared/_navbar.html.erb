@@ -20,22 +20,10 @@
             </svg>
          </span>
       </button>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav navbar-right flex-grow-1 nav">
-          <li class="nav-item align-self-center d-block d-flex flex-grow-1 justify-content-end">
-              <span class="bg-brand d-block" style="padding: 1rem; border-radius: 0.25rem;"><b>
-                <%= nice_sats_number @donation_amount %> raised
-              </b></span>
-          </li>
-        </ul>
-      </div>
       <div id="w1-collapse" class="collapse navbar-collapse">
         <ul id="w2" class="navbar-nav navbar-right flex-grow-1 justify-content-end nav">
-          <% if @donations.any? %>
-            <%= navbar_link(donations_path, 'Donations') %>
-          <% end %>
-          <%= navbar_link(vote_path, 'Vote') %>
           <%= navbar_link(faq_path, 'FAQ') %>
+          <%= navbar_link(vote_path, 'Vote') %>
           <%= navbar_link(new_resource_path, 'Submit') %>
           <% unless current_user %>
             <%= navbar_link(new_user_session_path, 'Login') %>
@@ -55,15 +43,17 @@
                   <a class="dropdown-item" href="<%= admin_resources_path %>">Admin</a>
                   <a class="dropdown-item" href="<%= new_admin_donation_path %>">New Donation</a>
                   <% end %>
-                  <% if @resources_pending_approval.to_i > 0 %>
-                    <a class="dropdown-item" href="<%= admin_resources_path(search: 'pending_approval:') %>">
-                      <%= pluralize(@resources_pending_approval, 'resource') %>
-                    </a>
-                  <% end %>
                   <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
               </div>
             </li>
           <% end %>
+          <li class="nav-item align-self-center">
+              <a href="<%= vote_path %>">
+                <span class="btn btn-secondary c-black" style="padding: 10px 16px; border-radius: 4px;"><b>
+                  <%= nice_sats_number @donation_amount %> raised
+                </b></span>
+              </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -83,6 +73,7 @@
               <div class="menu-nav__col">
                   <ul class="menu-nav__ul menu-nav__ul--">
                       <li class="menu-nav__li"><a href="<%= faq_path %>" class="a-h -ss-01"><h2>FAQ</h2></a></li>
+                      <li class="menu-nav__li"><a href="<%= vote_path %>" class="a-h -ss-01"><h2>Vote</h2></a></li>
                       <li class="menu-nav__li"><a href="<%= new_resource_path %>" class="a-h -ss-01"><h2>Submit</h2></a></li>
                       <% if current_user.try(:admin?) %>
                       <li class="menu-nav__li"><a href="<%= admin_resources_path %>" class="a-h -ss-01"><h2>Admin</h2></a></li>
