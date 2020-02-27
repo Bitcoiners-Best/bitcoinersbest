@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
                         .visible
                         .paginate(page: params[:page], per_page: 15)
 
-    @page_title = "Vote for this month's open-source donation"
+    @page_title = "#{helpers.nice_sats_number(@donation_amount)} raised! Vote for this month's donation."
     @page_description = "Every month we donate all proceeds from 10x votes to the bitcoin open-source project at the top of this list."
   end
 
