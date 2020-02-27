@@ -368,6 +368,12 @@ path {
 }
 
 
+.badge-primary {
+    color: #1D2229;
+    background-color: #FFCF53;
+}
+
+
 /* FOOTER */
 
 footer {
