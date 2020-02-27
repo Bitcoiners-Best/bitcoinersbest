@@ -13,6 +13,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     title: Field::String,
     description: Field::Text,
     authors: Field::ActsAsTaggable,
+    image: Field::ActiveStorage,
     url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -35,6 +36,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   title
   description
   authors
+  image
   url
   created_at
   updated_at
@@ -47,6 +49,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   title
   description
   authors
+  image
   url
   ].freeze
 
