@@ -35,15 +35,16 @@ section.new-resource {
 }
 
 .Project-module {
-  .votes {
-    .vote[data-user-votes="1"] {
-      .regular-vote { display: inline-block; }
-      .ten-x { display: none; }
+  .votes[data-vote-user-votes="1"] {
+    .vote {
+      .regular-vote { display: inline-block !important; }
+      .ten-x { display: none !important; }
 
       svg.regular-vote > path {
-        fill: #FFCF53;
+        fill: #FFCF53 !important;
       }
     }
+
   }
 }
 
