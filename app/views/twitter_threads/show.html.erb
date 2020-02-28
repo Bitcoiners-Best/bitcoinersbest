@@ -12,7 +12,7 @@
     <%= render partial: 'resources/pending_approval' if !@resource.approved %>
 
     <div class="row mt-30">
-      <div class="col-11">
+      <div class="col-10">
         <h1 class="mb-30 c-white"><%= @resource.title %></h1>
 
         <div style="margin: auto; max-width: 500px;" class="mb-30 mt-30">
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="col-1">
+      <div class="col-2">
         <%= render partial: 'resources/votes', locals: { resource: @resource } %>
       </div>
     </div>

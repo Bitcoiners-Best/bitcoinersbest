@@ -5,10 +5,8 @@
   <div class="text-center mb-50 c-gray-1">
     <p>Every month we donate all proceeds from 10x votes to the bitcoin open-source project at the top of this list. When a project wins a donation it's votes are reset to zero. All projects retain their votes until they win the donation. Vote on your favorite project or <%= link_to 'propose a new one', new_project_path, class: 'link' %>. View our list of <%= link_to 'past donations', donations_path, class: 'link' %>.</p>
 
-    <h1 class="c-brand donation-amount mb-0 mt-50">
-      <%= nice_sats_number @donation_amount %>
-    </h1>
-    <p class="c-white"><b>raised this month</b></p>
+    <div class="sats-raised text-center c-brand mt-50"><h4 class="mb-0 mt-0"><%= nice_sats_number @donation_amount %> raised this month</h4></div>
+
   </div>
 </section>
 
