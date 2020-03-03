@@ -13,7 +13,11 @@
     <h1 class="mt-30 mb-30 c-white"><%= @resource.title %></h1>
 
     <%- if @resource.resourceable.respond_to?(:image) && @resource.image.attached? %>
-      <%= image_tag @resource.image.variant(resize_to_limit: [640, 640]), class: 'img-fluid' %>
+      <% if donation.project.image.variable? %>
+        <%= image_tag @resource.image, class: 'ew-100 card-img' %>
+      <% else %>
+        <%= image_tag @resource.image.variant(resize_to_limit: [640, 640]), class: 'ew-100 card-img' %>
+      <% end %>
     <% end %>
 
     <% if @resource.resourceable.respond_to?(:description) %>
