@@ -5,7 +5,11 @@
     <div class="row mt-30">
       <div class="col-10">
         <%- if @resource.resourceable.respond_to?(:image) && @resource.image.attached? %>
-        <%= image_tag @resource.image.variant(resize_to_limit: [640, 640]), class: 'img-fluid' %>
+          <% if !@resource.image.variable? %>
+            <%= image_tag @resource.image, class: 'img-fluid' %>
+          <% else %>
+            <%= image_tag @resource.image.variant(resize_to_limit: [640, 640]), class: 'img-fluid' %>
+          <% end %>
         <% end %>
 
         <h1 class="mb-30 mt-30 c-white"><%= @resource.title %></h1>

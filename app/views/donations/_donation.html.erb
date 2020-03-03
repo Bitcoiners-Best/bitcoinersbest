@@ -2,7 +2,11 @@
 <div class="d-flex br-4 mb-50 fade-in resource">
   <div class="pr-20">
     <%if donation.project.image.attached? %>
-      <%= image_tag donation.project.image.variant(resize_to_limit: [100, 100]), class: 'ew-100 card-img' %>
+      <% if !donation.project.image.variable? %>
+        <%= image_tag donation.project.image, class: 'ew-100 card-img' %>
+      <% else %>
+        <%= image_tag donation.project.image.variant(resize_to_limit: [100, 100]), class: 'ew-100 card-img' %>
+      <% end %>
     <% else %>
       <img class='ew-100 card-img' src="" %>
     <% end %>
