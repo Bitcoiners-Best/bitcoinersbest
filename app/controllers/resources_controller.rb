@@ -10,7 +10,7 @@ class ResourcesController < ApplicationController
   def index
     @resources = ResourceQuery.query(
       type: params[:type],
-      time_scope: params[:time_scope] || 'week',
+      time_scope: params[:time_scope] || 'month',
     ).paginate(page: params[:page], per_page: 15)
 
     if params[:type]

@@ -8,7 +8,7 @@ class ResourceQuery
     end
 
     r = case time_scope
-    when 'week' then r.where('created_at > ?', 1.week.ago)
+    when 'month' then r.where('created_at > ?', 1.month.ago)
     when 'all' then r
     end
 
