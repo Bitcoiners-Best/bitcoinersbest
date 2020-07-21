@@ -1,0 +1,34 @@
+<% title 'Resource classification' %>
+
+<div class="container">
+  <h1 class="c-gray-1 medium mb-15">
+    What type of resource is
+    <%= link_to params[:url], params[:url], class: 'link-white' %>?
+  </h1>
+
+
+  <%= form_with url: classify_resource_url(@resource) do |form| %>
+    <%= form.fields_for :resourceable_attributes do |f| %>
+      <%= f.hidden_field :url, value: params[:url] %>
+      <%= f.hidden_field :author_list, value: params[:author] %>
+      <label>
+        Title:
+        <%= f.text_field :title, value: params[:title], autocomplete: 'off' %>
+      </label>
+    <% end -%>
+
+    <% Resource::CATEGORIES.each do |key, label| %>
+      <label style="display: block; padding: 0.5rem 0;">
+        <%= form.radio_button :resourceable_type, key.to_s.classify %>
+        <%= label %>
+      </label>
+    <% end %>
+
+    <label style="display: block; margin: 1.5rem 0;">
+      <%= form.check_box :approved %>
+      Approved?
+    </label>
+
+    <%= form.submit 'Confirm', class: 'btn btn-primary' %>
+  <% end -%>
+</div>

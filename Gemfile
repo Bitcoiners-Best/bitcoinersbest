@@ -53,6 +53,7 @@ group :test do
   gem 'rspec-rails'
   gem 'vcr'
   gem 'webmock'
+  gem 'factory_bot_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -82,3 +83,4 @@ gem 'administrate-field-active_storage'
 gem 'sidekiq'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'administrate-field-acts_as_taggable'
+gem 'tweetstream'

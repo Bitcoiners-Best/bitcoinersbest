@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,6 +12,10 @@ class User < ApplicationRecord
   friendly_id :username, use: :slugged
 
   def email_required?
+    provider == nil
+  end
+
+  def password_required?
     provider == nil
   end
 

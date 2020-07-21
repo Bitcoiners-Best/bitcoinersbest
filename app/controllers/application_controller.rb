@@ -23,4 +23,8 @@ class ApplicationController < ActionController::Base
     @donation_amount = @donation_amount.where('created_at > ?', @last_donation_time) if @last_donation_time
     @donation_amount = @donation_amount.sum(:payment_amount)
   end
+
+  def require_admin
+    redirect_to root_path unless current_user.try(:admin?)
+  end
 end

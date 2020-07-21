@@ -38,3 +38,7 @@ yarn-debug.log*
 config/*.enc
 config/credentials
 spec/examples.txt
+
+/config/credentials/development.key
+
+/config/credentials/test.key

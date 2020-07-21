@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   resources :resources, only: [:new, :create] do
     resources :votes, only: [:new, :create, :destroy]
+    get :classify, on: :member, as: :classify
+    post :classify, on: :member
   end
 
   %w(all).each do |time_scope|

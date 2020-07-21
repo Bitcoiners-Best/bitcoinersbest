@@ -60,5 +60,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  routes.default_url_options = {host: 'localhost:3000', protocol: 'http'} # https is necessary!
   config.hosts << "bitcoinersbest.local"
 end

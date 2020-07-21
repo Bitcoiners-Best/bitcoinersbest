@@ -24,7 +24,7 @@ class Resource < ApplicationRecord
            :image,
            :item_path,
            :authors,
-           to: :resourceable, prefix: false
+           to: :resourceable, prefix: false, allow_nil: true
 
   accepts_nested_attributes_for :resourceable
 
@@ -33,12 +33,21 @@ class Resource < ApplicationRecord
 
   default_scope { order(vote_count: :desc) }
 
-  after_create :notify_new_resource, if: -> { !approved? }
+  after_create :notify_new_resource, if: -> { !approved? && resourceable }
+  before_update :notify_approval_to_submitter_via_tweet, if: -> { submitted_via_tweet_id && approved? && changed_attribute_names_to_save.include?('approved') }
+
+  def should_generate_new_friendly_id?
+    slug.nil?
+  end
 
   def self.human_attribute_name(attr, options={})
     super(attr, options)
       .gsub(/resourceable /i, '')
       .capitalize
+  end
+
+  def should_generate_new_friendly_id?
+    resourceable.try(:title_changed?) || slug == nil
   end
 
   def build_resourceable(params)
@@ -54,7 +63,15 @@ class Resource < ApplicationRecord
     ActionCable.server.broadcast('votes_channel', {resource_id: id, votes: vote_count})
   end
 
+  def notify_approval_to_submitter_via_tweet
+    NotifyApprovalToSubmitterViaTweetJob.perform_now(self.id)
+  end
+
   def notify_new_resource
     ResourceNotifierJob.perform_later(self)
+  end
+
+  def url
+    Rails.application.routes.url_helpers.send("#{resourceable_type.underscore}_url", slug)
   end
 end

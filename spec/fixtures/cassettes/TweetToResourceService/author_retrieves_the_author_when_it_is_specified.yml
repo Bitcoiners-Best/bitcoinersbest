@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/show/1284826673003855873.json
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - TwitterRubyGem/6.2.0
+      Authorization:
+      - OAuth oauth_consumer_key="Ir9OmUHVzrvnc0WjW82Uxw", oauth_nonce="e6f2440a51a103c18ab5910639fc32e0",
+        oauth_signature="kqyusbnIIPvVgJFXjROY6Lg7f7Q%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1595167035", oauth_token="24938383-Gn31ZGAqR40F9mxFNvrLA30B1kuwYUWCTBeBX2c2k",
+        oauth_version="1.0"
+      Connection:
+      - close
+      Host:
+      - api.twitter.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Connection:
+      - close
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '67'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 19 Jul 2020 13:57:15 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Sun, 19 Jul 2020 13:57:15 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_f
+      Set-Cookie:
+      - guest_id=v1%3A159516703546705315; Max-Age=63072000; Expires=Tue, 19 Jul 2022
+        13:57:15 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - lang=en; Path=/
+      - personalization_id="v1_h2qHitaxQ/W2TCdu1yn6ag=="; Max-Age=63072000; Expires=Tue,
+        19 Jul 2022 13:57:15 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      Status:
+      - 404 Not Found
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - f0e9d485955bf9d7dfdd92d927f0a927
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '900'
+      X-Rate-Limit-Remaining:
+      - '899'
+      X-Rate-Limit-Reset:
+      - '1595167935'
+      X-Response-Time:
+      - '114'
+      X-Transaction:
+      - 00cbf86900d848c8
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"code":144,"message":"No status found with that ID."}]}'
+    http_version: null
+  recorded_at: Sun, 19 Jul 2020 13:57:15 GMT
+recorded_with: VCR 5.1.0

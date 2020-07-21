@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_231708) do
+ActiveRecord::Schema.define(version: 2020_07_19_213435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 2020_02_22_231708) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "demo_api_credentials", force: :cascade do |t|
+    t.string "key"
+    t.string "secret"
+    t.boolean "used", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -109,6 +117,7 @@ ActiveRecord::Schema.define(version: 2020_02_22_231708) do
     t.string "slug"
     t.boolean "approved", default: false
     t.boolean "archived", default: false
+    t.string "submitted_via_tweet_id"
     t.index ["created_by_id"], name: "index_resources_on_created_by_id"
     t.index ["resourceable_id", "resourceable_type"], name: "index_resources_on_resourceable_id_and_resourceable_type"
     t.index ["slug"], name: "index_resources_on_slug", unique: true

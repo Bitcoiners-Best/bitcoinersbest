@@ -1,9 +1,10 @@
 class ResourcesController < ApplicationController
   include Metataggable
 
-  prepend_before_action :set_resource, only: [:show, :edit, :update, :destroy]
+  prepend_before_action :set_resource, only: [:show, :edit, :update, :destroy, :classify]
   before_action :load_resources, only: [:new, :create]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :require_admin, only: [:classify]
 
   # GET /resources
   # GET /resources.json
@@ -54,7 +55,24 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def classify
+    if request.post?
+      @resource.update(classify_resource_params)
+
+      # Handling separately so approved triggers happen when the model has been properly updated
+      @resource.update(approved: true) if params[:approved]
+      redirect_to @resource.url
+    end
+  end
+
   private
+
+  def classify_resource_params
+    params.permit(
+      :resourceable_type,
+      resourceable_attributes: [:url, :title, :author_list]
+    )
+  end
 
   def load_resources
     @resources = Hash.new do |hash, key|

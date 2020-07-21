@@ -1,0 +1,2 @@
+class DemoApiCredential < ApplicationRecord
+end
