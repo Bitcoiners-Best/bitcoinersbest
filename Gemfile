@@ -66,7 +66,7 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'rest-client'
 gem 'redis'
 gem 'eye'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'pg'
 gem 'will_paginate'
 gem "administrate"
